@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Solutions That Work. Results That Last.">
+  <link rel="icon" href="images/logo.png" />
+  <meta name="author" content="Collins Kandie">
+  <title>Troycity Africa - What We Do</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fontawesome CSS -->
+  <link href="css/all.css" rel="stylesheet">
+  <!-- Owl Carousel CSS -->
+  <link href="css/owl.carousel.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper-main">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="social-media">
+              <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact-details">
+              <ul>
+                <li><i class="fas fa-phone fa-rotate-90"></i> +254113094450</li>
+                <li><i class="fas fa-map-marker-alt"></i> Commodore, Kilimani, Nairobi Kenya</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="images/logo.png" alt="logo" />
+				</a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="fas fa-bars"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link active" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> About Us <i
+									class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+								<a class="dropdown-item" href="about.html">About Us</a>
+								<a class="dropdown-item active" href="whatwedo.html">What we do</a>
+								<a class="dropdown-item" href="whatwebelieve.html">What We Believe</a>
+								<a class="dropdown-item" href="ourleadership.html">Our Leadership</a>
+								<a class="dropdown-item" href="becomeamember.html">Become a Member</a>
+								<a class="dropdown-item" href="awardsrecognition.html">Awards & Recognition</a>
+								<a class="dropdown-item" href="socialimpact.html">Social Impact</a>
+								<a class="dropdown-item" href="sustainability.html">Sustainability</a>
+								<a class="dropdown-item" href="annualreports.html">Annual Reports</a>
+								<a class="dropdown-item" href="faq.html">Frequently Asked Questions</a>
+							</div>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="services.html">Our Capabilities</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownIndustries" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">Industries <i
+									class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" id="industriesDropdown"></div>
+						</li>
+
+						<script>
+							fetch("json/industries.json")
+								.then(res => res.json())
+								.then(data => {
+									const dropdown = document.getElementById("industriesDropdown");
+									data.forEach(industry => {
+										const link = document.createElement("a");
+										link.className = "dropdown-item";
+										link.href = "industries.html?slug=" + industry.slug;
+										link.textContent = industry.title;
+										dropdown.appendChild(link);
+									});
+								});
+						</script>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">Overview <i class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+								<a class="dropdown-item" href="careers.html">Careers</a>
+								<a class="dropdown-item" href="partnerships.html">Partnerships</a>
+								<a class="dropdown-item" href="ongoing-projects.html">Our Ongoing Projects</a>
+								<a class="dropdown-item" href="pricing.html">Pricing Table</a>
+								<a class="dropdown-item" href="webinars.html">Webinars</a>
+								<a class="dropdown-item" href="publications.html">Publications</a>
+
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">INSIGHTS <i class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="portfolio-3-col.html">Artificial Intelligence</a>
+								<a class="dropdown-item" href="portfolio-4-col.html">News And Events</a>
+								<a class="dropdown-item" href="portfolio-item.html">Sustainability</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">Blog <i class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+								<a class="dropdown-item" href="blog.html">Blog</a>
+								<a class="dropdown-item" href="blog-post.html">Blog Post</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+    <!-- Page Title -->
+    <div class="full-title">
+      <div class="container">
+        <h1 class="mt-4 mb-3">What We Do</h1>
+        <div class="breadcrumb-main">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">What We Do</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- What We Do Section -->
+    <div class="services-bar py-5 bg-light">
+      <div class="container">
+
+        <!-- Business Growth -->
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6 mb-3">
+            <img src="images/services/growth.jpg" alt="Business Growth" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-md-6">
+            <h3>Business Growth Strategies</h3>
+            <p>We design customized growth plans that align with your industry, resources, and long-term vision. From market expansion to diversification, we help you scale sustainably.</p>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-bullseye text-primary mr-2"></i> Market Expansion & Diversification</li>
+              <li><i class="fas fa-chart-line text-success mr-2"></i> Sustainable Scaling Strategies</li>
+              <li><i class="fas fa-lightbulb text-warning mr-2"></i> Tailored Growth Roadmaps</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Marketing -->
+        <div class="row align-items-center mb-5 flex-md-row-reverse">
+          <div class="col-md-6 mb-3">
+            <img src="images/services/marketing.jpg" alt="Marketing" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-md-6">
+            <h3>Marketing Strategy & Branding</h3>
+            <p>Our experts craft strategies that blend traditional and digital channels. We focus on building strong brands, compelling messaging, and impactful customer reach.</p>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-bullhorn text-danger mr-2"></i> Integrated Marketing Campaigns</li>
+              <li><i class="fas fa-feather-alt text-primary mr-2"></i> Branding & Messaging</li>
+              <li><i class="fas fa-users text-success mr-2"></i> Customer Engagement Focus</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Digital Marketing -->
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6 mb-3">
+            <img src="images/services/digital.jpg" alt="Digital Marketing" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-md-6">
+            <h3>Digital Marketing & Online Presence</h3>
+            <p>We guide clients in leveraging SEO, social media, and online advertising to boost visibility, generate leads, and engage audiences effectively.</p>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-search text-info mr-2"></i> SEO & Visibility Boost</li>
+              <li><i class="fab fa-facebook text-primary mr-2"></i> Social Media Marketing</li>
+              <li><i class="fas fa-ad text-warning mr-2"></i> Online Advertising Campaigns</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sales Optimization -->
+        <div class="row align-items-center mb-5 flex-md-row-reverse">
+          <div class="col-md-6 mb-3">
+            <img src="images/services/sales.jpg" alt="Sales Optimization" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-md-6">
+            <h3>Sales Optimization</h3>
+            <p>We analyze sales processes, identify bottlenecks, and implement systems to improve conversion, retention, and overall performance.</p>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-handshake text-success mr-2"></i> Improved Lead Conversion</li>
+              <li><i class="fas fa-user-check text-primary mr-2"></i> Customer Retention Strategies</li>
+              <li><i class="fas fa-cogs text-secondary mr-2"></i> Sales Process Automation</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Research & Strategy -->
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6 mb-3">
+            <img src="images/services/research.jpg" alt="Research" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-md-6">
+            <h3>Research & Development, Strategy & Proposal Development</h3>
+            <p>We empower organizations to innovate, compete, and secure funding through research-driven insights, strategic planning, and persuasive proposals.</p>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-microscope text-danger mr-2"></i> Applied Research & Innovation</li>
+              <li><i class="fas fa-project-diagram text-primary mr-2"></i> Business Strategy Design</li>
+              <li><i class="fas fa-file-alt text-warning mr-2"></i> Proposal Development & Grants</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- AI & Websites -->
+        <div class="row align-items-center mb-5 flex-md-row-reverse">
+          <div class="col-md-6 mb-3">
+            <img src="images/services/ai.jpg" alt="AI Solutions" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-md-6">
+            <h3>AI Insight Solutions & Customizable Websites</h3>
+            <p>We merge technology and creativity to deliver AI-powered insights and 2,500+ customizable, ready-to-launch websites that save time, reduce costs, and unlock digital opportunities.</p>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-robot text-info mr-2"></i> Data-Driven AI Insights</li>
+              <li><i class="fas fa-laptop-code text-success mr-2"></i> Customizable Website Templates</li>
+              <li><i class="fas fa-clock text-warning mr-2"></i> 24-Hour Customization & Launch</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Legal Services -->
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6 mb-3">
+            <img src="images/services/legal.jpg" alt="Legal Services" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-md-6">
+            <h3>Business & Legal Services</h3>
+            <p>We provide end-to-end legal support, from registration to compliance, and lead advocacy efforts such as DriveLegal for ride-hailing fairness in Kenya.</p>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-file-signature text-primary mr-2"></i> Business & NGO Registration</li>
+              <li><i class="fas fa-balance-scale text-warning mr-2"></i> Corporate & Commercial Law</li>
+              <li><i class="fas fa-file-contract text-success mr-2"></i> Legal Compliance & Operations</li>
+              <li><i class="fas fa-car text-danger mr-2"></i> DriveLegal – Justice for Ride-Hailing</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="copyright text-center">
+          All Rights Reserved. &copy; 2025 <a href="#">Troycity Africa</a>. Design By:
+          <a href="https://troythemes.troycityafrica.com/">Troythemes Africa</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JS -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

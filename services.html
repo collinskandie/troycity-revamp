@@ -48,7 +48,9 @@
 				<a class="navbar-brand" href="index.html">
 					<img src="images/logo.png" alt="logo" />
 				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+					aria-label="Toggle navigation">
 					<span class="fas fa-bars"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
@@ -56,13 +58,13 @@
 						<li class="nav-item">
 							<a class="nav-link" href="index.html">Home</a>
 						</li>
-
 						<li class="nav-item dropdown">
 							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"> About Us <i
 									class="fas fa-sort-down"></i></a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-								<a class="dropdown-item" href="about.html">What we do</a>
+								<a class="dropdown-item" href="about.html">About Us</a>
+								<a class="dropdown-item" href="whatwedo.html">What we do</a>
 								<a class="dropdown-item" href="whatwebelieve.html">What We Believe</a>
 								<a class="dropdown-item" href="ourleadership.html">Our Leadership</a>
 								<a class="dropdown-item" href="becomeamember.html">Become a Member</a>
@@ -73,15 +75,42 @@
 								<a class="dropdown-item" href="faq.html">Frequently Asked Questions</a>
 							</div>
 						</li>
+
 						<li class="nav-item">
 							<a class="nav-link active" href="services.html">Our Capabilities</a>
 						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownIndustries" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">Industries <i
+									class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" id="industriesDropdown"></div>
+						</li>
+
+						<script>
+							fetch("json/industries.json")
+								.then(res => res.json())
+								.then(data => {
+									const dropdown = document.getElementById("industriesDropdown");
+									data.forEach(industry => {
+										const link = document.createElement("a");
+										link.className = "dropdown-item";
+										link.href = "industries.html?slug=" + industry.slug;
+										link.textContent = industry.title;
+										dropdown.appendChild(link);
+									});
+								});
+						</script>
 						<li class="nav-item dropdown">
 							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false">Overview <i class="fas fa-sort-down"></i></a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
 								<a class="dropdown-item" href="careers.html">Careers</a>
+								<a class="dropdown-item" href="partnerships.html">Partnerships</a>
+								<a class="dropdown-item" href="ongoing-projects.html">Our Ongoing Projects</a>
 								<a class="dropdown-item" href="pricing.html">Pricing Table</a>
+								<a class="dropdown-item" href="webinars.html">Webinars</a>
+								<a class="dropdown-item" href="publications.html">Publications</a>
+
 							</div>
 						</li>
 						<li class="nav-item dropdown">
@@ -124,116 +153,167 @@
 		</div>
 
 		<!-- Services Section -->
-		<div class="services-bar py-5">
+		<!-- Services Section -->
+		<!-- Services Section -->
+		<div class="services-bar py-5 bg-light">
 			<div class="container">
-				<h2 class="mb-4">What We Offer</h2>
-				<div class="row">
+				<h2 class="mb-5 text-center">Our Capabilities</h2>
 
-					<!-- Financial Analysis -->
-					<div class="col-lg-6 mb-4">
-						<div class="card h-100">
-							<div class="card-body">
-								<h4 class="card-title">Financial Analysis & Accounts Consultancy</h4>
-								<p>We provide guidance in bookkeeping, tax advisory, reporting, and empower clients to
-									make informed decisions, improve financial health, and achieve long-term growth.</p>
-								<ul>
-									<li>Bookkeeping & tax advisory</li>
-									<li>Compliance reporting & audits</li>
-									<li>Financial health diagnostics</li>
-									<li>Strategic cost management</li>
-								</ul>
-							</div>
-						</div>
+				<!-- Capability Block -->
+				<div class="row align-items-center mb-5">
+					<div class="col-md-6 mb-3">
+						<img src="images/blog-img-01.jpg" alt="Financial Analysis"
+							class="img-fluid rounded shadow">
 					</div>
-
-					<!-- Climate & Sustainability -->
-					<div class="col-lg-6 mb-4">
-						<div class="card h-100">
-							<div class="card-body">
-								<h4 class="card-title">Climate Change & Sustainability</h4>
-								<p>We help organizations adopt environmentally conscious practices, manage climate
-									risks, and unlock opportunities in green innovation and renewable solutions.</p>
-								<ul>
-									<li>Renewable energy & green finance</li>
-									<li>Sustainable supply chains</li>
-									<li>Community engagement & awareness</li>
-									<li>Policy & compliance advisory</li>
-								</ul>
-							</div>
-						</div>
+					<div class="col-md-6">
+						<h3>Financial Analysis & Accounts Consultancy</h3>
+						<p>
+							At Troycity Africa, we believe that strong financial management is the backbone of every
+							successful business.
+							Our services provide accurate insights, reliable records, and actionable strategies that
+							enhance performance,
+							ensure compliance, and drive sustainable growth.
+						</p>
+						<ul class="list-unstyled">
+							<li><i class="fas fa-chart-line text-success mr-2"></i> Financial Analysis & Reporting</li>
+							<li><i class="fas fa-book text-primary mr-2"></i> Accounting Advisory & Bookkeeping</li>
+							<li><i class="fas fa-bullseye text-danger mr-2"></i> Budgeting, Forecasting & Strategic
+								Planning</li>
+							<li><i class="fas fa-balance-scale text-warning mr-2"></i> Tax Advisory & Compliance</li>
+							<li><i class="fas fa-clipboard-check text-info mr-2"></i> Audit Preparation & Assurance</li>
+							<li><i class="fas fa-file-invoice-dollar text-secondary mr-2"></i> Customized Financial
+								Reports</li>
+						</ul>
 					</div>
-
-					<!-- Growth & Marketing -->
-					<div class="col-lg-6 mb-4">
-						<div class="card h-100">
-							<div class="card-body">
-								<h4 class="card-title">Growth, Marketing & Sales</h4>
-								<p>We empower businesses with strategies that strengthen brand positioning, attract
-									customers, and drive consistent revenue growth.</p>
-								<ul>
-									<li>Business growth strategies</li>
-									<li>Branding & digital marketing</li>
-									<li>Sales optimization</li>
-									<li>Market research & consumer insights</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<!-- R&D & Strategy -->
-					<div class="col-lg-6 mb-4">
-						<div class="card h-100">
-							<div class="card-body">
-								<h4 class="card-title">Research, Business Strategy & Proposal Development</h4>
-								<p>We guide organizations to innovate, compete, and secure funding through research,
-									strategy, and compelling proposals.</p>
-								<ul>
-									<li>Applied research & innovation</li>
-									<li>Business strategy design (SWOT, PESTEL, Competitive Analysis)</li>
-									<li>Grant & tender proposal writing</li>
-									<li>Funding & partnership support</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<!-- AI & Websites -->
-					<div class="col-lg-6 mb-4">
-						<div class="card h-100">
-							<div class="card-body">
-								<h4 class="card-title">AI Insight Solutions & Customizable Websites</h4>
-								<p>We merge technology and creativity to deliver AI-powered insights and more than 2,500
-									customizable, ready-to-launch websites.</p>
-								<ul>
-									<li>AI for smarter decisions & automation</li>
-									<li>Predictive analytics & innovation tools</li>
-									<li>Industry-specific website templates</li>
-									<li>24-hour customization & launch</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<!-- Business & Legal -->
-					<div class="col-lg-6 mb-4">
-						<div class="card h-100">
-							<div class="card-body">
-								<h4 class="card-title">Business & Legal Services</h4>
-								<p>From registration to compliance and advocacy, we ensure organizations operate
-									lawfully, sustainably, and confidently.</p>
-								<ul>
-									<li>Business & NGO registration</li>
-									<li>Corporate & commercial law advisory</li>
-									<li>Contracts & compliance frameworks</li>
-									<li>Justice for Ride-Hailing in Kenya (DriveLegal)</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
 				</div>
+				<!-- End Capability -->
+
+				<!-- Capability Block -->
+				<div class="row align-items-center mb-5 flex-md-row-reverse">
+					<div class="col-md-6 mb-3">
+						<img src="images/pricing-bg-01.jpg" alt="Sustainability"
+							class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-6">
+						<h3>Climate Change & Sustainability</h3>
+						<p>
+							We integrate sustainability principles into our services and partnerships, ensuring growth
+							that is both
+							profitable and responsible. From climate-aware operations to green innovation, we help
+							businesses thrive in an
+							eco-conscious world.
+						</p>
+						<ul class="list-unstyled">
+							<li><i class="fas fa-leaf text-success mr-2"></i> Climate-Aware Business Solutions</li>
+							<li><i class="fas fa-solar-panel text-primary mr-2"></i> Renewable Energy & Green Innovation
+							</li>
+							<li><i class="fas fa-seedling text-info mr-2"></i> Sustainable Finance & Investment</li>
+							<li><i class="fas fa-users text-warning mr-2"></i> Community Engagement & Awareness</li>
+							<li><i class="fas fa-gavel text-danger mr-2"></i> Policy & Compliance Advisory</li>
+						</ul>
+					</div>
+				</div>
+				<!-- End Capability -->
+
+				<!-- Capability Block -->
+				<div class="row align-items-center mb-5">
+					<div class="col-md-6 mb-3">
+						<img src="images/services-img-02.jpg" alt="Growth & Marketing"
+							class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-6">
+						<h3>Growth, Marketing & Sales</h3>
+						<p>
+							We help businesses unlock their potential by connecting strategy with execution. Our
+							consultancy strengthens
+							brand positioning, attracts the right customers, and drives consistent revenue growth.
+						</p>
+						<ul class="list-unstyled">
+							<li><i class="fas fa-lightbulb text-warning mr-2"></i> Business Growth Strategies</li>
+							<li><i class="fas fa-bullhorn text-primary mr-2"></i> Branding & Digital Marketing</li>
+							<li><i class="fas fa-handshake text-success mr-2"></i> Sales Optimization</li>
+							<li><i class="fas fa-chart-pie text-danger mr-2"></i> Market Research & Consumer Insights
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- End Capability -->
+
+				<!-- Capability Block -->
+				<div class="row align-items-center mb-5 flex-md-row-reverse">
+					<div class="col-md-6 mb-3">
+						<img src="images/services-img-03.jpg" alt="Research & Strategy"
+							class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-6">
+						<h3>Research, Business Strategy & Proposal Development</h3>
+						<p>
+							We guide organizations to innovate, compete, and secure funding through research, strategy,
+							and compelling proposals.
+						</p>
+						<ul class="list-unstyled">
+							<li><i class="fas fa-microscope text-success mr-2"></i> Applied Research & Innovation</li>
+							<li><i class="fas fa-project-diagram text-primary mr-2"></i> Business Strategy Design</li>
+							<li><i class="fas fa-file-alt text-warning mr-2"></i> Grant & Tender Proposal Writing</li>
+							<li><i class="fas fa-handshake text-danger mr-2"></i> Funding & Partnership Support</li>
+						</ul>
+					</div>
+				</div>
+				<!-- End Capability -->
+
+				<!-- Capability Block -->
+				<div class="row align-items-center mb-5">
+					<div class="col-md-6 mb-3">
+						<img src="images/blog-img-03.jpg" alt="AI Solutions" class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-6">
+						<h3>AI Insight Solutions & Customizable Websites</h3>
+						<p>
+							We merge technology and creativity to deliver AI-powered insights and more than 2,500
+							customizable,
+							ready-to-launch websites.
+						</p>
+						<ul class="list-unstyled">
+							<li><i class="fas fa-robot text-info mr-2"></i> AI for smarter decisions & automation</li>
+							<li><i class="fas fa-chart-bar text-success mr-2"></i> Predictive analytics & innovation
+								tools</li>
+							<li><i class="fas fa-laptop-code text-primary mr-2"></i> Industry-specific website templates
+							</li>
+							<li><i class="fas fa-clock text-warning mr-2"></i> 24-hour customization & launch</li>
+						</ul>
+					</div>
+				</div>
+				<!-- End Capability -->
+
+				<!-- Capability Block -->
+				<div class="row align-items-center mb-5 flex-md-row-reverse">
+					<div class="col-md-6 mb-3">
+						<img src="images/blog-img-01.jpg" alt="Business & Legal"
+							class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-6">
+						<h3>Business & Legal Services</h3>
+						<p>
+							From registration to compliance and advocacy, we ensure organizations operate lawfully,
+							sustainably, and confidently.
+						</p>
+						<ul class="list-unstyled">
+							<li><i class="fas fa-file-signature text-primary mr-2"></i> Business & NGO Registration</li>
+							<li><i class="fas fa-balance-scale text-warning mr-2"></i> Corporate & Commercial Law
+								Advisory</li>
+							<li><i class="fas fa-file-contract text-success mr-2"></i> Contracts & Compliance Frameworks
+							</li>
+							<li><i class="fas fa-car text-danger mr-2"></i> Justice for Ride-Hailing in Kenya
+								(DriveLegal)</li>
+						</ul>
+					</div>
+				</div>
+				<!-- End Capability -->
+
 			</div>
 		</div>
+
+
 
 		<!-- Clients -->
 		<div class="container py-5">

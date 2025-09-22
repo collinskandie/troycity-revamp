@@ -1,0 +1,1088 @@
+[
+    {
+        "title": "Aerospace & Defense",
+        "slug": "aerospace-defense",
+        "description": "At Troycity Africa, we bring innovation, precision, and reliability to the Aerospace & Defense sector. Our services are designed to support governments, defense contractors, and private organizations in enhancing security, efficiency, and technological advancement.",
+        "expertise": [
+            "Aerospace Manufacturing & Innovation – Advisory on aircraft production, MRO, and advanced aerospace technologies.",
+            "Defense & Security Solutions – Structuring defense procurement, contracting, and compliance with international standards.",
+            "Space Economy & Satellite Systems – Support for satellite deployment, space exploration, and communications infrastructure.",
+            "Cybersecurity & Defense Tech – Advisory on military-grade cybersecurity, AI, drones, and unmanned systems.",
+            "Cross-Border Trade & Export Control – Guidance on international defense trade, licensing, and compliance frameworks.",
+            "Public-Private Partnerships (PPPs) – Structuring collaborations between governments and private players in aerospace and defense.",
+            "Investment & Financing – Linking defense and aerospace ventures with investors, financing institutions, and development banks.",
+            "Sustainability & ESG – Promoting green aerospace innovations, renewable energy integration, and responsible defense practices."
+        ],
+        "solutions": [
+            {
+                "title": "Aerospace Solutions",
+                "items": [
+                    "Aircraft procurement, leasing, and registration support",
+                    "Aviation compliance and regulatory advisory",
+                    "Maintenance, repair, and overhaul (MRO) services coordination",
+                    "Airspace management and safety solutions",
+                    "Research and development partnerships in aviation technology"
+                ]
+            },
+            {
+                "title": "Defense Solutions",
+                "items": [
+                    "Supply and logistics of defense equipment and technologies",
+                    "Cybersecurity, intelligence, and surveillance systems",
+                    "Defense strategy consulting and risk assessment",
+                    "Training programs for defense personnel",
+                    "Partnerships with global defense manufacturers and agencies"
+                ]
+            },
+            {
+                "title": "Innovation & Technology Integration",
+                "items": [
+                    "Application of AI, data analytics, and automation in defense operations",
+                    "Smart drones, UAVs, and remote sensing solutions",
+                    "Space technology research and satellite communications"
+                ]
+            }
+        ],
+        "images": [
+            "images/portfolio-big-01.jpg"
+        ]
+    },
+    {
+        "title": "Automotive & Mobility",
+        "slug": "automotive-mobility",
+        "description": "At Troycity Africa, we help organizations in the automotive and mobility industry adapt to rapid technological change, sustainability demands, and evolving consumer expectations. From traditional automakers to next-generation mobility providers, we deliver solutions that accelerate growth and resilience.",
+        "expertise": [
+            "Vehicle Manufacturing & Assembly – Advisory on compliance, supply chain, and market entry strategies.",
+            "Electric & Smart Mobility – Support for EV adoption, charging infrastructure, and mobility-as-a-service (MaaS) models.",
+            "Supply Chain & Logistics – Streamlining distribution networks for efficiency and cost reduction.",
+            "Policy & Regulation – Guidance on safety, emissions, and trade regulations.",
+            "Innovation & Partnerships – Connecting stakeholders in automotive tech, AI, and IoT integration."
+        ],
+        "solutions": [
+            {
+                "title": "Vehicle Manufacturing & Assembly",
+                "items": [
+                    "Support for setting up compliant assembly plants",
+                    "Market entry strategies for new OEMs and component suppliers",
+                    "Advisory on global supply chain integration"
+                ]
+            },
+            {
+                "title": "Electric & Smart Mobility",
+                "items": [
+                    "Advisory on electric vehicle (EV) adoption and transition",
+                    "Deployment of EV charging infrastructure",
+                    "Mobility-as-a-service (MaaS) strategy and integration with smart cities"
+                ]
+            },
+            {
+                "title": "Supply Chain & Logistics",
+                "items": [
+                    "Optimization of distribution and dealership networks",
+                    "Cost reduction and efficiency improvements in logistics",
+                    "Integration of IoT and AI for supply chain visibility"
+                ]
+            },
+            {
+                "title": "Policy & Regulation",
+                "items": [
+                    "Compliance with safety, emissions, and trade regulations",
+                    "Advisory on incentives and policy frameworks for green mobility",
+                    "Support with homologation and certification processes"
+                ]
+            },
+            {
+                "title": "Innovation & Partnerships",
+                "items": [
+                    "Connecting automakers with AI and IoT solution providers",
+                    "Structuring collaborations with startups and mobility platforms",
+                    "Driving R&D partnerships for next-generation automotive technologies"
+                ]
+            }
+        ],
+        "images": [
+            "images/portfolio-big-02.jpg"
+        ]
+    },
+    {
+        "title": "Aviation",
+        "slug": "aviation",
+        "description": "At Troycity Africa, we provide strategic, legal, and operational support to organizations across the aviation sector. From airlines and airport operators to regulators and aerospace innovators, we help businesses navigate complex regulations, enhance safety, and embrace new technologies that shape the future of flight.",
+        "expertise": [
+            "Aircraft Acquisition & Leasing – Advisory on procurement, leasing, financing, and registration.",
+            "Regulatory Compliance – Guidance on local and international aviation laws, safety standards, and certifications.",
+            "Airport & Airspace Management – Support for airport development, operations, and efficiency improvement.",
+            "Maintenance, Repair & Overhaul (MRO) – Coordination and advisory for maintenance and engineering services.",
+            "Aerospace Technology & Innovation – Integration of drones, AI, data analytics, and satellite systems into aviation.",
+            "Training & Capacity Building – Programs for pilots, crew, and aviation professionals.",
+            "Sustainability in Aviation – Advisory on green aviation technologies, fuel efficiency, and carbon reduction strategies."
+        ],
+        "solutions": [
+            {
+                "title": "Aircraft Acquisition & Leasing",
+                "items": [
+                    "Advisory on procurement, leasing, and financing of aircraft",
+                    "Support with aircraft registration and compliance",
+                    "Structuring cross-border aircraft leasing arrangements"
+                ]
+            },
+            {
+                "title": "Regulatory Compliance",
+                "items": [
+                    "Advisory on local and international aviation laws",
+                    "Support with certifications and safety audits",
+                    "Compliance with ICAO and regional aviation standards"
+                ]
+            },
+            {
+                "title": "Airport & Airspace Management",
+                "items": [
+                    "Development and modernization of airports",
+                    "Airspace management and optimization solutions",
+                    "Operational efficiency improvements for airports"
+                ]
+            },
+            {
+                "title": "Maintenance, Repair & Overhaul (MRO)",
+                "items": [
+                    "Coordination of aircraft maintenance and engineering services",
+                    "Partnerships with certified MRO providers",
+                    "Optimization of maintenance schedules and costs"
+                ]
+            },
+            {
+                "title": "Aerospace Technology & Innovation",
+                "items": [
+                    "Integration of drones and UAV systems into aviation",
+                    "Use of AI, data analytics, and automation for aviation safety and efficiency",
+                    "Satellite systems for navigation, communications, and monitoring"
+                ]
+            },
+            {
+                "title": "Training & Capacity Building",
+                "items": [
+                    "Pilot and crew training programs",
+                    "Technical and engineering capacity building",
+                    "Leadership and management development for aviation professionals"
+                ]
+            },
+            {
+                "title": "Sustainability in Aviation",
+                "items": [
+                    "Advisory on fuel-efficient aviation practices",
+                    "Integration of green aviation technologies",
+                    "Carbon reduction strategies and ESG alignment"
+                ]
+            }
+        ],
+        "images": [
+            "images/portfolio-big-03.jpg"
+        ]
+    },
+    {
+        "title": "Construction & Infrastructure",
+        "slug": "construction-infrastructure",
+        "description": "At Troycity Africa, we partner with governments, investors, and private sector players to deliver sustainable and future-ready infrastructure. From urban development to mega projects, we provide legal, financial, and strategic advisory that ensures compliance, efficiency, and long-term value.",
+        "expertise": [
+            "Project Development & Management – Structuring, financing, and executing construction projects of all sizes.",
+            "Public-Private Partnerships (PPPs) – Advisory on structuring and managing PPPs for infrastructure development.",
+            "Urban Development & Smart Cities – Support for modern, sustainable, and technology-driven city projects.",
+            "Engineering, Procurement & Construction (EPC) – Guidance on contracts, risk management, and compliance.",
+            "Real Estate & Housing – Legal and commercial advisory for housing projects, estates, and mixed-use developments.",
+            "Transport & Logistics Infrastructure – Roads, rail, ports, and airports to improve connectivity and trade.",
+            "Utilities & Social Infrastructure – Water, sanitation, schools, and hospitals for community development.",
+            "Sustainability & Green Building – Promoting energy-efficient construction and environmentally friendly infrastructure."
+        ],
+        "solutions": [
+            {
+                "title": "Project Development & Management",
+                "items": [
+                    "Structuring and financing of mega construction projects",
+                    "Execution strategies for timely and cost-effective delivery",
+                    "Risk management and project governance frameworks"
+                ]
+            },
+            {
+                "title": "Public-Private Partnerships (PPPs)",
+                "items": [
+                    "Advisory on PPP frameworks for infrastructure",
+                    "Structuring government-private investor collaborations",
+                    "Long-term financing and compliance support"
+                ]
+            },
+            {
+                "title": "Urban Development & Smart Cities",
+                "items": [
+                    "Planning and advisory for smart city initiatives",
+                    "Integration of sustainable and digital solutions in urban projects",
+                    "Support for housing, mobility, and urban infrastructure"
+                ]
+            },
+            {
+                "title": "Engineering, Procurement & Construction (EPC)",
+                "items": [
+                    "Guidance on EPC contracts and negotiations",
+                    "Risk assessment and compliance monitoring",
+                    "Cost optimization and contractor management"
+                ]
+            },
+            {
+                "title": "Real Estate & Housing",
+                "items": [
+                    "Legal and commercial advisory for real estate projects",
+                    "Structuring and financing housing estates and mixed-use developments",
+                    "Support with property compliance and title registration"
+                ]
+            },
+            {
+                "title": "Transport & Logistics Infrastructure",
+                "items": [
+                    "Development of roads, rail, and port facilities",
+                    "Airport expansion and modernization projects",
+                    "Advisory on logistics and trade connectivity improvements"
+                ]
+            },
+            {
+                "title": "Utilities & Social Infrastructure",
+                "items": [
+                    "Water and sanitation projects",
+                    "Advisory on education and healthcare infrastructure",
+                    "Support for sustainable energy and community development projects"
+                ]
+            },
+            {
+                "title": "Sustainability & Green Building",
+                "items": [
+                    "Promoting eco-friendly construction materials",
+                    "Advisory on energy-efficient building design",
+                    "Integration of ESG principles into infrastructure projects"
+                ]
+            }
+        ],
+        "images": [
+            "images/portfolio-big-03.jpg"
+        ]
+    },
+    {
+        "title": "Consumer Products",
+        "slug": "consumer-products",
+        "description": "At Troycity Africa, we help consumer product companies stay competitive in a fast-changing marketplace. From food and beverages to fashion, electronics, and household goods, we provide legal, financial, and strategic support that enables brands to innovate, expand, and connect with customers.",
+        "expertise": [
+            "Market Entry & Expansion – Advisory for local and international brands entering or scaling within African markets.",
+            "Product Development & Innovation – Guidance on launching new products, R&D partnerships, and commercialization.",
+            "Regulatory Compliance – Ensuring adherence to consumer protection laws, labeling, safety, and quality standards.",
+            "Supply Chain & Distribution – Optimization of manufacturing, logistics, and retail networks.",
+            "Brand Protection & Intellectual Property – Trademark registration, IP enforcement, and anti-counterfeit measures.",
+            "E-commerce & Digital Retail – Advisory on online platforms, digital payments, and consumer engagement.",
+            "Sustainability – Supporting eco-friendly packaging, ethical sourcing, and circular economy initiatives."
+        ],
+        "solutions": [
+            {
+                "title": "Market Entry & Expansion",
+                "items": [
+                    "Advisory for foreign and local consumer brands entering African markets",
+                    "Market research and feasibility studies",
+                    "Scaling strategies for regional and global expansion"
+                ]
+            },
+            {
+                "title": "Product Development & Innovation",
+                "items": [
+                    "Guidance on launching new consumer products",
+                    "Facilitation of R&D partnerships and collaborations",
+                    "Support with commercialization and go-to-market strategies"
+                ]
+            },
+            {
+                "title": "Regulatory Compliance",
+                "items": [
+                    "Advisory on consumer protection laws and quality standards",
+                    "Labeling and safety compliance for consumer goods",
+                    "Support with international certifications and export regulations"
+                ]
+            },
+            {
+                "title": "Supply Chain & Distribution",
+                "items": [
+                    "Optimization of manufacturing and production networks",
+                    "Advisory on logistics, warehousing, and distribution systems",
+                    "Enhancing resilience of supply chains in emerging markets"
+                ]
+            },
+            {
+                "title": "Brand Protection & Intellectual Property",
+                "items": [
+                    "Trademark registration and portfolio management",
+                    "Enforcement of IP rights against counterfeit and infringement",
+                    "Support with brand licensing and franchising"
+                ]
+            },
+            {
+                "title": "E-commerce & Digital Retail",
+                "items": [
+                    "Advisory on launching online platforms and digital stores",
+                    "Integration of digital payments and fintech solutions",
+                    "Consumer engagement through digital marketing and loyalty programs"
+                ]
+            },
+            {
+                "title": "Sustainability",
+                "items": [
+                    "Advisory on eco-friendly packaging and recycling models",
+                    "Ethical sourcing strategies across supply chains",
+                    "Implementation of circular economy initiatives"
+                ]
+            }
+        ],
+        "images": [
+            "images/portfolio-big-04.jpg"
+        ]
+    },
+    {
+        "title": "Energy & Natural Resources",
+        "slug": "energy-natural-resources",
+        "description": "At Troycity Africa, we provide integrated solutions across the energy and natural resources sector, helping businesses and governments unlock value while driving sustainability and resilience. Our expertise spans agribusiness, chemicals, mining, oil & gas, and utilities & renewables.",
+        "subIndustries": [
+            {
+                "title": "Agribusiness",
+                "slug": "agribusiness",
+                "description": "At Troycity Africa, we support the entire agricultural value chain — from smallholder farmers to large-scale agribusiness enterprises. We combine legal, financial, and strategic expertise to help organizations improve productivity, strengthen supply chains, and build sustainable food systems that feed communities and drive economic growth.",
+                "expertise": [
+                    "Farm & Agribusiness Development – Structuring and scaling farming operations for profitability and sustainability.",
+                    "Agri-Finance & Investment – Access to funding, credit facilities, and investment advisory for agribusiness ventures.",
+                    "Supply Chain & Market Access – Enhancing efficiency in storage, logistics, and distribution to local and export markets.",
+                    "Agri-Technology & Innovation – Supporting adoption of precision farming, mechanization, AI, and digital platforms.",
+                    "Food Processing & Value Addition – Advisory on agro-processing, packaging, and product diversification.",
+                    "Regulatory Compliance & Standards – Guidance on food safety, quality certifications, and export regulations.",
+                    "Sustainability & Climate-Smart Agriculture – Promoting green practices, renewable energy in farming, and resilience against climate change.",
+                    "Farmer Training & Capacity Building – Skills development, cooperative strengthening, and knowledge transfer."
+                ],
+                "solutions": [],
+                "images": [
+                    "images/portfolio-big-05.jpg"
+                ]
+            },
+            {
+                "title": "Chemicals",
+                "slug": "chemicals",
+                "description": "At Troycity Africa, we help companies in the chemical industry navigate complex markets, regulations, and innovation demands. From petrochemicals and specialty chemicals to agrochemicals and industrial materials, we provide legal, financial, and strategic advisory that supports growth, compliance, and sustainability.",
+                "expertise": [
+                    "Regulatory Compliance & Safety – Guidance on chemical safety laws, environmental standards, and hazardous materials management.",
+                    "Manufacturing & Operations – Advisory on plant setup, supply chain optimization, and operational efficiency.",
+                    "Trade & Market Access – Support for local and international trade, customs, and export regulations.",
+                    "Research & Innovation – Partnering on R&D, new product development, and commercialization strategies.",
+                    "Sustainability & Green Chemistry – Promoting eco-friendly solutions, renewable materials, and waste reduction.",
+                    "Mergers & Partnerships – Advisory on joint ventures, strategic alliances, and industry collaborations.",
+                    "Risk Management – Addressing environmental, health, and safety risks across the value chain."
+                ],
+                "solutions": [],
+                "images": [
+                    "images/portfolio-big-05.jpg"
+                ]
+            },
+            {
+                "title": "Mining",
+                "slug": "mining",
+                "description": "At Troycity Africa, we provide end-to-end advisory and support services to the mining sector, helping companies, investors, and governments unlock the value of natural resources responsibly. We ensure projects are commercially viable, environmentally sustainable, and compliant with regulatory standards.",
+                "expertise": [
+                    "Exploration & Licensing – Guidance on permits, exploration rights, and mineral concession agreements.",
+                    "Project Development & Financing – Structuring mining projects, securing investments, and financial advisory.",
+                    "Regulatory & Legal Compliance – Support with mining laws, environmental regulations, and community agreements.",
+                    "Sustainability & ESG – Promoting responsible mining, community engagement, and climate-conscious practices.",
+                    "Operations & Supply Chain – Advisory on extraction, processing, logistics, and value chain optimization.",
+                    "Partnerships & Joint Ventures – Facilitating collaboration between mining companies, investors, and governments.",
+                    "Risk Management – Addressing operational, environmental, and geopolitical risks in mining operations.",
+                    "Value Addition & Local Content – Supporting beneficiation, local processing, and inclusive economic development."
+                ],
+                "solutions": [],
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ]
+            },
+            {
+                "title": "Oil & Gas",
+                "slug": "oil-gas",
+                "description": "At Troycity Africa, we support stakeholders across the upstream, midstream, and downstream oil and gas value chain. We combine legal, financial, and strategic expertise to help companies optimize operations, comply with regulations, and transition toward a sustainable energy future.",
+                "expertise": [
+                    "Exploration & Production (Upstream) – Licensing, exploration agreements, and drilling project advisory.",
+                    "Transportation & Storage (Midstream) – Support for pipelines, LNG facilities, shipping, and logistics.",
+                    "Refining & Distribution (Downstream) – Advisory on refining operations, retail networks, and fuel distribution.",
+                    "Regulatory & Legal Compliance – Navigating petroleum laws, environmental standards, and international agreements.",
+                    "Energy Transition & Renewables – Supporting diversification into natural gas, biofuels, and clean energy.",
+                    "Joint Ventures & Partnerships – Structuring collaborations between governments, investors, and oil companies.",
+                    "Risk Management & Security – Addressing operational, financial, and geopolitical risks in oil and gas projects.",
+                    "Sustainability & ESG – Promoting responsible extraction, carbon reduction strategies, and community engagement."
+                ],
+                "solutions": [],
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ]
+            },
+            {
+                "title": "Utilities & Renewables",
+                "slug": "utilities-renewables",
+                "description": "At Troycity Africa, we work with governments, investors, and energy providers to build sustainable, reliable, and affordable utility systems. From traditional energy infrastructure to next-generation renewable solutions, we help organizations embrace innovation, expand access, and transition toward a clean energy future.",
+                "expertise": [
+                    "Power Generation & Distribution – Advisory on electricity production, grid expansion, and distribution efficiency.",
+                    "Renewable Energy Projects – Support for solar, wind, hydro, geothermal, and biomass projects.",
+                    "Energy Transition Strategy – Helping companies diversify from fossil fuels to clean energy solutions.",
+                    "Utilities Management – Advisory for water, sanitation, and waste management infrastructure.",
+                    "Regulatory Compliance – Guidance on energy policies, environmental laws, and international standards.",
+                    "Public-Private Partnerships (PPPs) – Structuring utility and renewable projects through collaborative financing models.",
+                    "Sustainability & ESG – Driving low-carbon development, green financing, and climate-conscious initiatives.",
+                    "Smart Grids & Technology – Integration of digital solutions, IoT, and AI to enhance energy efficiency."
+                ],
+                "solutions": [],
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ]
+            }
+        ],
+        "images": [
+            "images/industries/energy-banner.jpg",
+            "images/industries/energy-solutions.jpg"
+        ]
+    },
+    {
+        "title": "Financial Services",
+        "slug": "financial-services",
+        "description": "At Troycity Africa, we provide advisory across banking, insurance, payments, fintech, and digital assets — helping organizations embrace innovation, manage risks, and achieve sustainable growth.",
+        "images": [
+            "images/portfolio-big-02.jpg"
+        ],
+        "subIndustries": [
+            {
+                "title": "Banking",
+                "slug": "banking",
+                "description": "We support banks and financial institutions in strengthening operations, embracing digital transformation, and meeting evolving regulatory demands.",
+                "images": [
+                    "images/industries/banking.jpg",
+                    "images/industries/banking2.jpg"
+                ],
+                "expertise": [
+                    "Regulatory Compliance – AML, KYC, and Basel standards.",
+                    "Digital Transformation – Mobile banking, fintech, and digital engagement.",
+                    "Risk Management & Governance – Credit, market, and operational risk frameworks.",
+                    "Corporate & Retail Banking – Growth strategies and market penetration.",
+                    "Mergers & Acquisitions – Advisory on consolidation and partnerships.",
+                    "Trade Finance & Treasury – Cross-border transactions and liquidity management.",
+                    "Cybersecurity & Data Protection – Safeguarding systems against digital threats.",
+                    "Sustainability & Green Finance – Climate finance, ESG investments, and sustainable lending."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Insurance",
+                "slug": "insurance",
+                "description": "We help insurers, reinsurers, and intermediaries modernize operations, manage risks, and adapt to customer and regulatory demands.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Regulatory Compliance – Insurance laws, solvency standards, and frameworks.",
+                    "Product Development & Innovation – Life, health, property, and microinsurance.",
+                    "Risk Management & Reinsurance – Reinsurance agreements and ERM strategies.",
+                    "Digital Transformation – AI-driven underwriting and digital claims processing.",
+                    "Distribution & Market Expansion – Agency networks and digital sales channels.",
+                    "Mergers & Acquisitions – Strategic alliances and capital raising.",
+                    "Claims Management & Dispute Resolution – Efficiency in claims handling.",
+                    "Sustainability & Inclusive Insurance – ESG compliance and financial inclusion."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Payments",
+                "slug": "payments",
+                "description": "We empower payment providers, banks, and fintechs to deliver secure, efficient, and innovative solutions for the digital economy.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Digital Payments & Mobile Money – Wallets, remittances, and P2P transfers.",
+                    "Payment Infrastructure – Gateways, POS systems, and clearing houses.",
+                    "Regulatory & Compliance Advisory – Payments regulation and AML.",
+                    "Cross-Border Transactions – Trade payments and currency exchange.",
+                    "Fintech Partnerships – Collaboration between banks and startups.",
+                    "Cybersecurity & Fraud Prevention – Protecting ecosystems from threats.",
+                    "Blockchain & Digital Assets – Distributed ledger integration.",
+                    "Financial Inclusion – Expanding access to unbanked populations."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Wealth & Asset Management",
+                "slug": "wealth-asset-management",
+                "description": "We help asset managers, investment firms, and wealth advisors design strategies that grow and preserve value sustainably.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Portfolio Strategy & Management – Asset allocation and diversification.",
+                    "Private Wealth Advisory – Solutions for HNWIs and institutions.",
+                    "Regulatory & Compliance Support – Investment and tax law guidance.",
+                    "Alternative Investments – Private equity, real estate, and venture capital.",
+                    "Sustainable & ESG Investing – Integrating ESG into investment decisions.",
+                    "Digital Transformation – Adoption of robo-advisors and fintech platforms.",
+                    "Fund Structuring & Administration – Mutual funds, pensions, and hedge funds.",
+                    "Cross-Border Wealth Management – International wealth planning."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Fintech",
+                "slug": "fintech",
+                "description": "We empower fintech startups, investors, and institutions to innovate, scale, and remain compliant in a fast-changing digital economy.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Regulatory & Licensing Advisory – Fintech laws, AML/KYC compliance.",
+                    "Digital Payments & Mobile Money – Wallets and remittance platforms.",
+                    "Lending & Credit Platforms – Digital lending and alternative scoring.",
+                    "Insurtech & Wealthtech – Digital insurance and wealth solutions.",
+                    "Blockchain & Cryptocurrencies – Tokenization and crypto exchanges.",
+                    "Cybersecurity & Data Privacy – Protecting fintech ecosystems.",
+                    "Funding & Partnerships – Linking fintechs with VCs and investors.",
+                    "Financial Inclusion – Expanding banking access to underserved groups."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Blockchain & Digital Assets",
+                "slug": "blockchain-digital-assets",
+                "description": "We help organizations leverage blockchain and digital assets to drive innovation, transparency, and operational efficiency.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Regulatory & Compliance Advisory – Crypto laws, AML/KYC, and tax frameworks.",
+                    "Blockchain Strategy & Adoption – Applying DLT across industries.",
+                    "Tokenization & Digital Assets – NFTs, stablecoins, and security tokens.",
+                    "Cryptocurrency Exchanges & Wallets – Setup and compliance support.",
+                    "Smart Contracts & DeFi – Legal and technical support.",
+                    "Cybersecurity & Risk Management – Safeguarding blockchain systems.",
+                    "Cross-Border Payments & Remittances – Faster, cheaper global transactions.",
+                    "Education & Capacity Building – Training stakeholders on blockchain."
+                ],
+                "solutions": []
+            }
+        ]
+    },
+    {
+        "title": "Forest Products, Paper & Packaging",
+        "slug": "forest-products-paper-packaging",
+        "description": "At Troycity Africa, we support companies across the forest products and packaging value chain to balance growth, efficiency, and sustainability. From pulp and paper manufacturing to eco-friendly packaging solutions, we help businesses adapt to shifting consumer demands, regulatory pressures, and environmental responsibilities.",
+        "images": [
+            "images/portfolio-big-02.jpg"
+        ],
+        "expertise": [
+            "Sustainable Forestry & Resource Management – Responsible sourcing, certification, and forest conservation.",
+            "Pulp & Paper Manufacturing – Operational efficiency, market expansion, and compliance.",
+            "Packaging Solutions – Innovation in packaging design, eco-friendly materials, and circular economy models.",
+            "Trade & Market Access – Global trade requirements, supply chain management, and export regulations.",
+            "Innovation & Technology – Automation, digital platforms, and smart packaging technologies.",
+            "ESG & Sustainability – Carbon reduction, waste management, and green financing initiatives.",
+            "Mergers & Partnerships – Structuring collaborations, acquisitions, and joint ventures."
+        ],
+        "solutions": []
+    },
+    {
+        "title": "Healthcare & Life Sciences",
+        "slug": "healthcare-life-sciences",
+        "description": "At Troycity Africa, we partner with pharmaceutical companies, medtech innovators, healthcare payers, and providers to advance innovation, ensure compliance, and expand access to quality care across the healthcare ecosystem.",
+        "images": [
+            "images/portfolio-big-02.jpg"
+        ],
+        "subIndustries": [
+            {
+                "title": "Pharmaceuticals",
+                "slug": "pharmaceuticals",
+                "description": "Driving innovation, compliance, and access across the pharmaceutical value chain — from R&D to manufacturing and distribution.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Regulatory Approvals & Compliance – Drug registration, licensing, clinical trials, and global regulations.",
+                    "Research & Development (R&D) Support – Partnerships, funding, and commercialization strategies.",
+                    "Manufacturing & Supply Chain – GMP compliance, production efficiency, and distribution networks.",
+                    "Intellectual Property Protection – Patents, trademarks, and proprietary formulations.",
+                    "Market Access & Expansion – Entry strategies and distribution channel development.",
+                    "Partnerships & Collaborations – Pharma, research institutions, and government joint ventures.",
+                    "Digital Transformation – AI, big data, and digital platforms in drug discovery and patient engagement.",
+                    "Sustainability & ESG – Ethical practices, affordable medicine, and responsible operations."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Medical Technology",
+                "slug": "medical-technology",
+                "description": "Supporting medtech companies, providers, and investors to advance safe, scalable, and sustainable innovations that transform patient care.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Product Development & Commercialization – Design, testing, certification, and market launch of devices.",
+                    "Regulatory Compliance – Approvals, quality standards, and global medtech regulations.",
+                    "Digital Health & Telemedicine – AI, IoT, and remote care technologies.",
+                    "R&D Partnerships – Collaborations with universities and research institutions.",
+                    "Intellectual Property Protection – Safeguarding patents, designs, and medtech innovations.",
+                    "Supply Chain & Distribution – Reliable and compliant distribution of devices and equipment.",
+                    "Investment & Funding – Access to venture capital, grants, and strategic partners.",
+                    "Sustainability & Access – Promoting affordable, inclusive, and eco-friendly healthcare technologies."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Healthcare Payers",
+                "slug": "healthcare-payers",
+                "description": "Advisory for insurers, governments, and financing organizations to strengthen affordability, access, and sustainability in healthcare.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Insurance & Financing Models – Health insurance plans, microinsurance, and financing schemes.",
+                    "Regulatory & Compliance Support – Healthcare finance regulations, data protection, and standards.",
+                    "Digital Transformation – AI, blockchain, and analytics for claims, fraud prevention, and engagement.",
+                    "Cost & Risk Management – Balancing premiums, claims, and healthcare costs.",
+                    "Public-Private Partnerships (PPPs) – Collaborations between governments, NGOs, and payers.",
+                    "Healthcare Access Expansion – Models to reach underserved populations.",
+                    "Sustainability & ESG – Ethical financing, transparency, and social responsibility."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Healthcare Providers & Services",
+                "slug": "healthcare-providers-services",
+                "description": "Helping hospitals, clinics, and diagnostic centers improve delivery, expand access, and deliver patient-centered healthcare.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Hospital & Clinic Management – Governance, operations, and patient care optimization.",
+                    "Healthcare Infrastructure Development – Financing, building, and equipping facilities.",
+                    "Regulatory & Licensing Compliance – Meeting national and global healthcare standards.",
+                    "Digital Health & Innovation – Telemedicine, EMRs, and AI-driven care solutions.",
+                    "Workforce & Training Development – Capacity-building for medical staff and administrators.",
+                    "Financing & Partnerships – Funding models, PPPs, and NGO collaborations.",
+                    "Quality & Patient Safety Programs – Enhancing outcomes and reducing risks.",
+                    "Sustainability & Social Impact – Equitable, inclusive, and affordable healthcare services."
+                ],
+                "solutions": []
+            }
+        ]
+    },
+    {
+        "title": "Machinery & Equipment",
+        "slug": "machinery-equipment",
+        "description": "We partner with manufacturers, distributors, and investors to drive innovation, efficiency, and global competitiveness in the machinery and equipment sector.",
+        "images": [
+            "images/portfolio-big-02.jpg"
+        ],
+        "expertise": [
+            "Manufacturing & Supply Chain Advisory – Optimizing production, sourcing, and global distribution.",
+            "Regulatory Compliance – Safety standards, certifications, and trade regulations.",
+            "Technology & Innovation – Adoption of automation, robotics, AI, and IoT.",
+            "Aftermarket & Services – Maintenance, leasing, and lifecycle management models.",
+            "Trade & Market Access – Cross-border trade, export documentation, and tariff strategies.",
+            "Mergers, Acquisitions & Partnerships – Joint ventures, alliances, and investments.",
+            "Sustainability & ESG – Energy-efficient machinery and green manufacturing.",
+            "Financing & Investment – Linking manufacturers with investors and lenders."
+        ],
+        "solutions": []
+    },
+    {
+        "title": "Media & Entertainment",
+        "slug": "media-entertainment",
+        "description": "Helping media, entertainment, and creative industry players thrive in the era of digital disruption and evolving consumer demands.",
+        "images": [
+            "images/portfolio-big-02.jpg"
+        ],
+        "expertise": [
+            "Intellectual Property Protection – Copyrights, trademarks, and royalties.",
+            "Digital Transformation – Streaming, online platforms, and monetization models.",
+            "Production & Distribution – Financing, co-productions, licensing, and distribution.",
+            "Talent & Brand Management – Contracts, sponsorships, endorsements, and influencer deals.",
+            "Media Regulation & Compliance – Broadcasting, advertising, and censorship laws.",
+            "Technology Integration – AI, AR/VR, and blockchain for content.",
+            "Mergers & Strategic Partnerships – Collaborations, acquisitions, and joint ventures.",
+            "Social Impact & Cultural Development – Promoting diversity, inclusion, and cultural exchange."
+        ],
+        "solutions": []
+    },
+    {
+        "title": "Metals",
+        "slug": "metals",
+        "description": "Supporting mining companies, processors, and manufacturers across the metals value chain — from extraction and refining to trade and industrial applications.",
+        "images": [
+            "images/industries/metals.jpg",
+            "images/industries/metals2.jpg"
+        ],
+        "expertise": [
+            "Exploration & Extraction Advisory – Licensing, permits, and compliance for mining.",
+            "Processing & Refining – Plant development, efficiency, and environmental compliance.",
+            "Trade & Market Access – Export, tariffs, and international trade advisory.",
+            "Technology & Innovation – Automation, AI, and metallurgy advancements.",
+            "Sustainability & ESG – Responsible sourcing and emissions reduction.",
+            "Investment & Financing – Structuring funding and partnerships.",
+            "Supply Chain & Logistics – Optimizing distribution channels.",
+            "Mergers & Strategic Deals – Acquisitions and alliances in the metals sector."
+        ],
+        "solutions": []
+    },
+    {
+        "title": "Private Equity",
+        "slug": "private-equity",
+        "description": "Working with private equity firms and investors to unlock value, drive growth, and maximize returns across diverse industries.",
+        "images": [
+            "images/portfolio-big-02.jpg"
+        ],
+        "expertise": [
+            "Fund Formation & Structuring – Private equity funds, compliance, and agreements.",
+            "Deal Advisory & Due Diligence – Support for acquisitions and investments.",
+            "Portfolio Company Support – Strategic and operational performance improvement.",
+            "Regulatory & Compliance Advisory – Local and global investment regulations.",
+            "Exit Strategies – IPOs, trade sales, and secondary buyouts.",
+            "Cross-Border Investments – Supporting international and African market expansion.",
+            "Sustainability & ESG Integration – Responsible investment principles.",
+            "Partnerships & Co-Investments – Collaborations with institutional investors and financiers."
+        ],
+        "solutions": []
+    },
+    {
+        "title": "Real Estate",
+        "slug": "real-estate",
+        "description": "Supporting developers, investors, and governments in building sustainable and profitable real estate ventures across Africa.",
+        "images": [
+            "images/portfolio-big-02.jpg"
+        ],
+        "expertise": [
+            "Property Development & Investment – Land acquisition, financing, and management.",
+            "Commercial & Residential Real Estate – Office, retail, housing, and mixed-use projects.",
+            "Regulatory & Compliance Advisory – Zoning, licensing, and permits.",
+            "Real Estate Financing – Debt, equity, REITs, and PPPs.",
+            "Asset & Property Management – Leasing, valuation, and optimization.",
+            "Cross-Border Investments – Entry into African and global markets.",
+            "Smart & Sustainable Cities – Green building, renewable energy, and digital infrastructure.",
+            "Mergers, Acquisitions & Partnerships – Strategic alliances and joint ventures."
+        ],
+        "solutions": []
+    },
+    {
+        "title": "Retail",
+        "slug": "retail",
+        "description": "Helping retailers adapt to consumer shifts, digital transformation, and sustainability demands across grocery, fashion, and restaurants.",
+        "images": [
+            "images/portfolio-big-02.jpg"
+        ],
+        "subIndustries": [
+            {
+                "title": "Grocery",
+                "slug": "grocery",
+                "description": "Advisory for grocery retailers and distributors to enhance efficiency, growth, and consumer trust.",
+                "images": [
+                    "images/industries/grocery.jpg",
+                    "images/industries/grocery2.jpg"
+                ],
+                "expertise": [
+                    "Retail Operations & Expansion – Store rollout and supply chain optimization.",
+                    "E-Commerce & Digital Platforms – Online grocery delivery and digital payments.",
+                    "Supply Chain & Logistics – Efficient sourcing, distribution, and inventory systems.",
+                    "Regulatory & Compliance Advisory – Food safety, labeling, and consumer protection.",
+                    "Private Labels & Branding – Development of in-house brands and concepts.",
+                    "Sustainability & ESG – Ethical sourcing and environmentally friendly practices.",
+                    "Mergers & Strategic Partnerships – Alliances and acquisitions with distributors.",
+                    "Consumer Insights & Analytics – Data-driven customer engagement."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Fashion & Luxury",
+                "slug": "fashion-luxury",
+                "description": "Helping fashion houses and luxury brands grow globally while staying digital, sustainable, and consumer-driven.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Brand Development & Protection – Safeguarding trademarks and designs.",
+                    "Market Entry & Expansion – Launching and scaling brands across markets.",
+                    "E-Commerce & Digital Retail – Online platforms and omnichannel strategies.",
+                    "Supply Chain & Sourcing – Ethical sourcing and distribution efficiency.",
+                    "Consumer Engagement & Analytics – Personalized customer experiences.",
+                    "Sustainability & ESG – Eco-friendly fashion and ethical luxury models.",
+                    "Partnerships & Collaborations – Alliances with influencers and fashion houses.",
+                    "Investment & Financing – Connecting brands with investors and VCs."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Restaurants",
+                "slug": "restaurants",
+                "description": "Supporting restaurants, franchises, and food service investors to build sustainable and profitable dining businesses.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Restaurant Development & Expansion – Concept design and franchising.",
+                    "Licensing & Compliance – Food safety, health, and labor laws.",
+                    "Franchising & Partnerships – Franchise agreements and joint ventures.",
+                    "Digital Transformation – Online ordering and digital engagement.",
+                    "Supply Chain & Procurement – Optimizing sourcing and logistics.",
+                    "Branding & Marketing – Building loyalty and visibility.",
+                    "Sustainability & ESG – Green operations and waste reduction.",
+                    "Investment & Financing – Linking with investors and growth capital providers."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Social Impact",
+                "slug": "social-impact",
+                "description": "Partnering with NGOs, governments, and institutions to deliver transformative programs.",
+                "details": [
+                    "NGO collaboration for community transformation.",
+                    "Government partnerships for sustainability.",
+                    "Institutional impact investment strategies."
+                ],
+                "image": "images/industries/social.jpg"
+            },
+            {
+                "title": "Technology",
+                "slug": "technology",
+                "description": "Driving transformation across hardware, software, and IT services.",
+                "details": [
+                    "Hardware – Supporting innovation in next-gen devices.",
+                    "IT Services – Cloud, cybersecurity, and automation.",
+                    "Semiconductors – Enabling transformation across industries.",
+                    "Software – Scalable, secure platforms."
+                ],
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ]
+            },
+            {
+                "title": "Telecommunications",
+                "slug": "telecommunications",
+                "description": "Helping providers expand connectivity and embrace next-gen innovations.",
+                "details": [
+                    "5G and broadband expansion.",
+                    "Customer-centric service innovations.",
+                    "Telecom infrastructure financing."
+                ],
+                "image": "images/portfolio-big-02.jpg"
+            },
+            {
+                "title": "Transportation",
+                "slug": "transportation",
+                "description": "Advisory for freight, logistics, and transit systems.",
+                "details": [
+                    "Freight & Logistics – Efficiency and trade growth.",
+                    "Public Transit – Safe, reliable, and sustainable systems."
+                ],
+                "image": "images/portfolio-big-02.jpg"
+            },
+            {
+                "title": "Travel & Leisure",
+                "slug": "travel-leisure",
+                "description": "Supporting travel and tourism organizations in building resilience and enhancing customer experiences.",
+                "details": [
+                    "Hospitality and tourism advisory.",
+                    "Digital transformation in leisure services.",
+                    "Global tourism strategies."
+                ],
+                "image": "images/portfolio-big-02.jpg"
+            }
+        ]
+    },
+    {
+        "title": "Social Impact",
+        "slug": "social-impact",
+        "description": "Driving sustainable development and inclusive growth across Africa through innovation, strategy, and partnerships.",
+        "images": [
+            "images/portfolio-big-02.jpg"
+        ],
+        "expertise": [
+            "Community Development Programs – Education, health, youth empowerment, and poverty alleviation.",
+            "Impact Investing & Financing – Structuring investments with financial and social returns.",
+            "Corporate Social Responsibility (CSR) & ESG – Embedding sustainability into operations.",
+            "Public-Private Partnerships (PPPs) – Expanding access to services and infrastructure.",
+            "Capacity Building & Training – Empowering local communities with skills and resources.",
+            "Monitoring & Evaluation (M&E) – Tracking and reporting social impact.",
+            "Gender & Inclusion Strategies – Promoting women, youth, and marginalized groups.",
+            "Climate Action & Sustainability – Supporting green initiatives and renewable energy."
+        ],
+        "solutions": []
+    },
+    {
+        "title": "Technology",
+        "slug": "technology",
+        "description": "Empowering Africa’s digital future across hardware, software, IT services, and semiconductors.",
+        "images": [
+            "images/portfolio-big-02.jpg"
+        ],
+        "subIndustries": [
+            {
+                "title": "Hardware",
+                "slug": "hardware",
+                "description": "Supporting hardware innovators, manufacturers, and distributors to build resilient and scalable businesses.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Product Development & Commercialization – Design, testing, certification, and launch.",
+                    "Manufacturing & Supply Chain Optimization – Scaling production and logistics.",
+                    "Regulatory Compliance & Standards – Meeting global trade and safety requirements.",
+                    "Intellectual Property Protection – Safeguarding patents, trademarks, and designs.",
+                    "Smart Devices & IoT – Integrating AI, IoT, and edge computing.",
+                    "Sustainability & ESG – Energy efficiency, e-waste management, and circular economy.",
+                    "Financing & Investment – Linking innovators with capital and funding.",
+                    "Global Market Access – Advisory on exports and trade agreements."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "IT Services",
+                "slug": "it-services",
+                "description": "Delivering IT solutions that enhance efficiency, security, and digital growth for businesses and governments.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Digital Transformation Strategy – Cloud, AI, and automation adoption.",
+                    "Cloud Services & Infrastructure – Migration, deployment, and optimization.",
+                    "Cybersecurity & Data Protection – Safeguarding IT systems and compliance.",
+                    "Managed IT Services – Outsourced IT operations and support.",
+                    "Enterprise Software Solutions – ERP, CRM, and BI implementation.",
+                    "IT Governance & Compliance – Risk management and IT audits.",
+                    "Financing & Investment – Connecting IT service providers with funding.",
+                    "Emerging Tech – Blockchain, AI, and IoT adoption."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Semiconductors",
+                "slug": "semiconductors",
+                "description": "Enabling Africa’s role in the global semiconductor ecosystem powering AI, cloud, and digital infrastructure.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "R&D & Innovation Support – Chip design, testing, and partnerships.",
+                    "Manufacturing & Supply Chain – Fabrication, assembly, and logistics.",
+                    "Trade & Market Access – Export regulations and trade agreements.",
+                    "Regulatory & Compliance – International standards and controls.",
+                    "Intellectual Property Protection – Safeguarding semiconductor technology.",
+                    "Investment & Financing – Connecting firms with venture capital and incentives.",
+                    "Sustainability & ESG – Promoting energy-efficient production.",
+                    "Strategic Partnerships – Collaborations with governments and tech leaders."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Software",
+                "slug": "software",
+                "description": "Designing, deploying, and scaling software solutions that power digital transformation across industries.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Software Development & Deployment – Agile methods and go-to-market strategies.",
+                    "Enterprise Solutions – ERP, CRM, and management platforms.",
+                    "Cloud & SaaS Models – Secure and scalable SaaS solutions.",
+                    "Cybersecurity & Data Compliance – Global security and privacy standards.",
+                    "Open Source & Licensing – Licensing and IP protection.",
+                    "Digital Platforms & Applications – E-commerce, fintech, healthtech, and edtech.",
+                    "Emerging Tech – AI, blockchain, and advanced integrations.",
+                    "Investment & Financing – Venture capital and accelerator partnerships."
+                ],
+                "solutions": []
+            }
+        ]
+    },
+    {
+        "title": "Telecommunications",
+        "slug": "telecommunications",
+        "description": "Strengthening Africa’s connectivity ecosystem with telecom, broadband, and satellite infrastructure.",
+        "images": [
+            "images/portfolio-big-02.jpg"
+        ],
+        "expertise": [
+            "Telecom Infrastructure Development – Towers, fiber optics, satellites, and 5G.",
+            "Regulatory & Licensing Support – Spectrum allocation and compliance.",
+            "Mobile & Broadband Services – Expanding affordable connectivity.",
+            "Digital Platforms & VAS – Mobile money, identity, and applications.",
+            "Mergers, Acquisitions & Partnerships – Cross-border deals and joint ventures.",
+            "Cybersecurity & Data Privacy – Secure networks and global standards.",
+            "Innovation & Emerging Tech – IoT, AI, and edge computing.",
+            "Sustainability & ESG – Green telecom and inclusive access."
+        ],
+        "solutions": []
+    },
+    {
+        "title": "Transportation",
+        "slug": "transportation",
+        "description": "Transforming freight, logistics, and public transit systems across Africa for efficiency, inclusivity, and sustainability.",
+        "images": [
+            "images/portfolio-big-02.jpg"
+        ],
+        "subIndustries": [
+            {
+                "title": "Freight & Logistics",
+                "slug": "freight-logistics",
+                "description": "Optimizing freight operations, supply chains, and logistics efficiency for global competitiveness.",
+                "images": [
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Supply Chain Optimization – Warehousing, distribution, and inventory management.",
+                    "Cross-Border Trade & Customs – Regulatory compliance and trade facilitation.",
+                    "Digital Logistics Solutions – Real-time tracking and automation.",
+                    "Infrastructure Development – Ports, warehouses, and transport hubs.",
+                    "Fleet Management & Operations – Vehicle leasing and route optimization.",
+                    "Investment & Financing – Connecting logistics players with funding.",
+                    "Sustainability & Green Logistics – Renewable energy and carbon reduction.",
+                    "Mergers & Strategic Partnerships – Alliances and acquisitions."
+                ],
+                "solutions": []
+            },
+            {
+                "title": "Public Transit",
+                "slug": "public-transit",
+                "description": "Advisory for governments and operators to deliver sustainable, efficient, and accessible public transit systems.",
+                "images": [
+                    "images/portfolio-big-02.jpg",
+                    "images/portfolio-big-02.jpg"
+                ],
+                "expertise": [
+                    "Urban Transit Planning – BRT, commuter rail, and metro systems.",
+                    "Infrastructure Development – Financing and construction of transit facilities.",
+                    "Public-Private Partnerships (PPPs) – Attracting private investment in transit.",
+                    "Smart Mobility Solutions – Ticketing systems and real-time passenger info.",
+                    "Policy & Regulatory Compliance – Urban mobility laws and standards.",
+                    "Sustainability & Green Transit – Electric and low-emission vehicles.",
+                    "Funding & Investment – Connecting projects with capital and donors.",
+                    "Community Engagement – Ensuring affordability and inclusivity."
+                ],
+                "solutions": []
+            }
+        ]
+    },
+    {
+        "title": "Travel & Leisure",
+        "slug": "travel-leisure",
+        "description": "Supporting airlines, hotels, tour companies, and leisure providers in Africa’s growing tourism ecosystem.",
+        "images": [
+            "images/portfolio-big-02.jpg",
+            "images/portfolio-big-02.jpg"
+        ],
+        "expertise": [
+            "Airlines & Hospitality – Aviation partnerships and hotel investments.",
+            "Tourism Development – Eco-tourism, cultural, and luxury travel strategies.",
+            "Travel Technology – Booking platforms, digital payments, and engagement tools.",
+            "Infrastructure & Operations – Airports, seaports, and resorts.",
+            "Policy & Regulatory Compliance – Safety protocols and licensing.",
+            "Mergers & Partnerships – Cross-border deals and joint ventures.",
+            "Sustainability & ESG – Green tourism and community engagement.",
+            "Crisis Management & Risk Advisory – Travel disruptions and health risks."
+        ],
+        "solutions": []
+    }
+]

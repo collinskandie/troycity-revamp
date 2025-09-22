@@ -2,52 +2,45 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Solutions That Work. Results That Last.">
-	<link rel="icon" href="images/logo.png" />
-	<meta name="author" content="Collins Kandie">
-	<title> Troycity Africa </title>
-	<!-- Bootstrap core CSS -->
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Fontawesome CSS -->
-	<link href="css/all.css" rel="stylesheet">
-	<!-- Owl Carousel CSS -->
-	<link href="css/owl.carousel.min.css" rel="stylesheet">
-	<!-- Custom styles for this template -->
-	<link href="css/style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Solutions That Work. Results That Last.">
+  <link rel="icon" href="images/logo.png" />
+  <meta name="author" content="Collins Kandie">
+  <title>Troycity Africa - What We Believe</title>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fontawesome CSS -->
+  <link href="css/all.css" rel="stylesheet">
+  <!-- Custom styles -->
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-	<div class="wrapper-main">
-		<!-- Top Bar -->
-		<div class="top-bar">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="social-media">
-							<ul>
-								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="contact-details">
-							<ul>
-								<li><i class="fas fa-phone fa-rotate-90"></i> +254113094450</li>
-								<li><i class="fas fa-map-marker-alt"></i> Commodore, Kilimani, Nairobi Kenya</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Navigation -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav">
+  <div class="wrapper-main">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container d-flex justify-content-between">
+        <div class="social-media">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="contact-details">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><i class="fas fa-phone fa-rotate-90"></i> +254113094450</li>
+            <li class="list-inline-item"><i class="fas fa-map-marker-alt"></i> Commodore, Kilimani, Nairobi</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav">
 			<div class="container">
 				<a class="navbar-brand" href="index.html">
 					<img src="images/logo.png" alt="logo" />
@@ -67,11 +60,11 @@
 								aria-haspopup="true" aria-expanded="false"> About Us <i
 									class="fas fa-sort-down"></i></a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-								<a class="dropdown-item" href="about.html">What we do</a>
-								<a class="dropdown-item" href="whatwebelieve.html">What We Believe</a>
+								<a class="dropdown-item" href="about.html">About Us</a>
+								<a class="dropdown-item" href="whatwedo.html">What we do</a>
+								<a class="dropdown-item active" href="whatwebelieve.html">What We Believe</a>
 								<a class="dropdown-item" href="ourleadership.html">Our Leadership</a>
 								<a class="dropdown-item" href="becomeamember.html">Become a Member</a>
-								
 								<a class="dropdown-item" href="awardsrecognition.html">Awards & Recognition</a>
 								<a class="dropdown-item" href="socialimpact.html">Social Impact</a>
 								<a class="dropdown-item" href="sustainability.html">Sustainability</a>
@@ -79,16 +72,42 @@
 								<a class="dropdown-item" href="faq.html">Frequently Asked Questions</a>
 							</div>
 						</li>
+
 						<li class="nav-item">
-							<a class="nav-link" href="services.html">OUR CAPABILITIES</a>
+							<a class="nav-link" href="services.html">Our Capabilities</a>
 						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownIndustries" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">Industries <i
+									class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" id="industriesDropdown"></div>
+						</li>
+
+						<script>
+							fetch("json/industries.json")
+								.then(res => res.json())
+								.then(data => {
+									const dropdown = document.getElementById("industriesDropdown");
+									data.forEach(industry => {
+										const link = document.createElement("a");
+										link.className = "dropdown-item";
+										link.href = "industries.html?slug=" + industry.slug;
+										link.textContent = industry.title;
+										dropdown.appendChild(link);
+									});
+								});
+						</script>
 						<li class="nav-item dropdown">
 							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false">Overview <i class="fas fa-sort-down"></i></a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-
-								<a class="dropdown-item" href="404.html">Careers</a>
+								<a class="dropdown-item" href="careers.html">Careers</a>
+								<a class="dropdown-item" href="partnerships.html">Partnerships</a>
+								<a class="dropdown-item" href="ongoing-projects.html">Our Ongoing Projects</a>
 								<a class="dropdown-item" href="pricing.html">Pricing Table</a>
+								<a class="dropdown-item" href="webinars.html">Webinars</a>
+								<a class="dropdown-item" href="publications.html">Publications</a>
+
 							</div>
 						</li>
 						<li class="nav-item dropdown">
@@ -116,241 +135,100 @@
 			</div>
 		</nav>
 
-		<!-- full Title -->
-		<div class="full-title">
-			<div class="container">
-				<!-- Page Heading/Breadcrumbs -->
-				<h1 class="mt-4 mb-3"> About Us</h1>
-				<div class="breadcrumb-main">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item">
-							<a href="index.html">Home</a>
-						</li>
-						<li class="breadcrumb-item active"> About Us </li>
-						<li class="breadcrumb-item active"> What We Believe </li>
-					</ol>
-				</div>
-			</div>
-		</div>
+    <!-- Page Header -->
+    <div class="full-title bg-light py-4">
+      <div class="container">
+        <h1 class="mb-2">What We Believe</h1>
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">What We Believe</li>
+        </ol>
+      </div>
+    </div>
 
-		<div class="container">
-			<!-- About Content -->
-			<div class="about-main">
-				<div class="row">
-					<div class="col-lg-6">
-						<h2>What We Believe</h2>
-						<p>At Troycity Africa, we believe that business is more than numbers on a spreadsheet,
-							strategies in a presentation, or technology in the cloud. True success is about people,
-							purpose, and progress. It’s about creating solutions that not only help organizations grow
-							but also leave a lasting, positive impact on the world around them.</p>
-						<p>Our belief system is the compass that guides us — shaping how we think, how we serve, and
-							how we partner with clients and communities. </p>
-					</div>
-					<div class="col-lg-6">
-						<img class="img-fluid rounded mb-4" src="images/about-img.jpg" alt="" />
-					</div>
+    <!-- Beliefs Section -->
+    <section class="py-5">
+      <div class="container">
+        <p class="lead text-center mb-5">
+          At Troycity Africa, our work is rooted in a set of beliefs that guide how we serve, innovate, and grow alongside our partners and communities.
+        </p>
 
-				</div>
-				<!-- /.row -->
-			</div>
-		</div>
-		<div class="about-inner">
-			<div class="container">
-				<div class="row mb-4">
-					<div class="col-lg-6">
-						<div class="right-ab">
-							<img class="img-fluid rounded mb-4" src="images/mission-img.jpg" alt="" />
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="left-ab">
-							<h3>People First</h3>
-							<p>We believe people are at the center of everything. Businesses don’t thrive because of
-								logos, buildings, or systems — they thrive because of the people behind them. That’s why
-								we put people first in every solution we create. From our clients and their teams to the
-								communities they serve, we focus on building relationships rooted in trust, respect, and
-								collaboration.</p>
+        <div class="row mb-5">
+          <div class="col-md-6">
+            <h3><i class="fas fa-lightbulb text-warning mr-2"></i> Innovation as a Driver of Change</h3>
+            <p>Innovation is the engine of transformation. From AI tools to our e-TAL system, we turn bold ideas into practical, affordable, and scalable impact.</p>
+          </div>
+          <div class="col-md-6">
+            <h3><i class="fas fa-shield-alt text-primary mr-2"></i> Integrity in Every Action</h3>
+            <p>Trust comes from transparency and accountability. Every project and partnership we deliver is guided by ethical practices and responsibility.</p>
+          </div>
+        </div>
 
-						</div>
-						<div class="left-ab">
-							<h3>Growth With Integrity</h3>
-							<p>To us, growth without integrity is just noise. We believe in building organizations that
-								succeed with transparency, responsibility, and accountability. For us, integrity isn’t
-								just a value — it’s a way of doing business. Every strategy, every recommendation, and
-								every action is designed to create sustainable progress, not quick wins that fade
-								tomorrow.</p>
-						</div>
-					</div>
+        <div class="row mb-5">
+          <div class="col-md-6">
+            <h3><i class="fas fa-users text-success mr-2"></i> People at the Center</h3>
+            <p>People are the heartbeat of progress. By empowering entrepreneurs and communities, we create opportunities that uplift society beyond profit.</p>
+          </div>
+          <div class="col-md-6">
+            <h3><i class="fas fa-balance-scale text-danger mr-2"></i> Fairness and Justice</h3>
+            <p>From ride-hailing justice in Kenya to fair financial systems, we see law and policy as tools of empowerment, not just regulation.</p>
+          </div>
+        </div>
 
-				</div>
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="left-ab">
-							<h3>Innovation For Impact</h3>
-							<p>We believe innovation should do more than just impress — it should make life better.
-								Whether it’s through digital transformation, financial insight, or creative
-								problem-solving, our goal is always the same: create solutions that matter. We use
-								innovation not as a buzzword, but as a tool to drive meaningful, measurable impact for
-								businesses and communities.
-							</p>
+        <div class="row mb-5">
+          <div class="col-md-6">
+            <h3><i class="fas fa-leaf text-success mr-2"></i> Sustainability for Future Generations</h3>
+            <p>True growth balances economic progress with ecological responsibility. We integrate sustainability into every service we deliver.</p>
+          </div>
+          <div class="col-md-6">
+            <h3><i class="fas fa-handshake text-info mr-2"></i> Collaboration for Greater Impact</h3>
+            <p>Working with governments, NGOs, private companies, and communities, we build partnerships that multiply opportunities and impact.</p>
+          </div>
+        </div>
 
-						</div>
-						<div class="left-ab">
-							<h3>Collaboration Over Competition</h3>
-							<p>We believe that Africa doesn’t rise when we work in silos. Real progress happens when
-								businesses, nonprofits, governments, and individuals come together. That’s why we choose
-								collaboration over competition. We partner with clients not as consultants who “know it
-								all,” but as allies walking the journey with them. Together, we build ecosystems that
-								multiply opportunities and expand impact far beyond a single project.
-							</p>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="right-ab">
-							<img class="img-fluid rounded mb-4" src="images/vision-img.jpg" alt="" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="about-inner">
-			<div class="container">
-				<div class="row mb-4">
-					<div class="col-lg-6">
-						<div class="right-ab">
-							<img class="img-fluid rounded mb-4" src="images/mission-img.jpg" alt="" />
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="left-ab">
-							<h3>Excellence As A Habit</h3>
-							<p>For us, excellence isn’t an event — it’s a habit. We believe that every project, no
-								matter the size, deserves the same level of care, creativity, and commitment. Excellence
-								means delivering results that not only meet expectations but set new benchmarks for
-								professionalism and quality. It’s how we earn trust and how we keep it.</p>
+        <div class="text-center">
+          <h4 class="font-italic">Our Promise</h4>
+          <p class="mb-0">These beliefs are more than words — they are the compass that directs our work. At Troycity Africa, we are committed to solutions that are innovative, ethical, people-driven, fair, sustainable, and collaborative.</p>
+        </div>
+      </div>
+    </section>
 
-						</div>
-						<div class="left-ab">
-							<h3>Sustainability Is Non-Negotiable</h3>
-							<p>We believe the future belongs to organizations that take responsibility today. That means
-								designing solutions that are not only effective but also ethical, climate-conscious, and
-								socially responsible. Sustainability is not an afterthought for us — it’s baked into
-								every strategy, every project, every outcome. Because true growth doesn’t come at the
-								expense of future generations.</p>
-						</div>
-					</div>
+    <!-- Leadership Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Our Leadership</h2>
+        <p class="lead text-center">Leadership at Troycity Africa is about vision, accountability, and service. Our team brings diverse expertise in business, law, technology, finance, and community development — united by a commitment to innovation and impact.</p>
 
-				</div>
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="left-ab">
-							<h3>Why This Matters</h3>
-							<p>Our beliefs are not just ideals written on a page. They show up in how we design
-								strategies, how we support clients, and how we measure success. They are the reason why
-								businesses trust us to guide their growth, why nonprofits partner with us to scale their
-								impact, and why communities benefit from the solutions we create.
-							</p>
-							<p>
-								At Troycity Africa, what we believe defines who we are — and who we are becoming.
-							</p>
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <ul class="list-unstyled">
+              <li><i class="fas fa-eye text-primary mr-2"></i> <strong>Vision-Driven:</strong> Bold paths for growth and transformation.</li>
+              <li><i class="fas fa-gavel text-danger mr-2"></i> <strong>Integrity-Led:</strong> Transparency and ethical conduct in all decisions.</li>
+              <li><i class="fas fa-user-friends text-success mr-2"></i> <strong>People-Focused:</strong> Empowering teams, partners, and communities.</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-unstyled">
+              <li><i class="fas fa-sync-alt text-info mr-2"></i> <strong>Innovative & Adaptive:</strong> Leveraging change and technology.</li>
+              <li><i class="fas fa-globe-africa text-warning mr-2"></i> <strong>Impact-Oriented:</strong> Measuring success by social and economic progress.</li>
+            </ul>
+          </div>
+        </div>
 
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="right-ab">
-							<img class="img-fluid rounded mb-4" src="images/vision-img.jpg" alt="" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+        <p class="text-center mt-4">Our leadership matters because it ensures Troycity Africa is not just a consultancy — but a trusted partner in shaping a sustainable and fair future.</p>
+      </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="footer py-4">
+      <div class="container">
+        <p class="copyright text-center">All Rights Reserved. &copy; 2025 <a href="#">Troycity Africa</a>. Design By <a href="https://troythemes.troycityafrica.com/">Troythemes Africa</a></p>
+      </div>
+    </footer>
+  </div>
 
-		<!--footer starts from here-->
-		<footer class="footer">
-			<div class="container bottom_border">
-				<div class="row">
-					<div class="col-lg-3 col-md-6 col-sm-6 col">
-						<h5 class="headin5_amrc col_white_amrc pt2">About Us</h5>
-						<!--headin5_amrc-->
-						<p class="mb10">We believe in building long term relationships with our clients, partners and
-							associates instead of a transaction driven approach.</p>
-						<ul class="footer-social">
-							<li><a class="facebook hb-xs-margin" href="#"><span class="hb hb-xs spin hb-facebook"><i
-											class="fab fa-facebook-f"></i></span></a></li>
-							<li><a class="twitter hb-xs-margin" href="#"><span class="hb hb-xs spin hb-twitter"><i
-											class="fab fa-twitter"></i></span></a></li>
-							<li><a class="instagram hb-xs-margin" href="#"><span class="hb hb-xs spin hb-instagram"><i
-											class="fab fa-instagram"></i></span></a></li>
-							<li><a class="googleplus hb-xs-margin" href="#"><span
-										class="hb hb-xs spin hb-google-plus"><i
-											class="fab fa-google-plus-g"></i></span></a></li>
-							<li><a class="dribbble hb-xs-margin" href="#"><span class="hb hb-xs spin hb-dribbble"><i
-											class="fab fa-dribbble"></i></span></a></li>
-						</ul>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
-						<!--headin5_amrc-->
-						<ul class="footer_ul_amrc">
-							<li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Default Version</a></li>
-							<li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Boxed Version</a></li>
-							<li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Our Team </a></li>
-							<li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>About Us</a></li>
-							<li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Our Services</a></li>
-							<li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Get In Touch</a></li>
-						</ul>
-						<!--footer_ul_amrc ends here-->
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6 col">
-						<h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
-						<!--headin5_amrc ends here-->
-						<ul class="footer_ul2_amrc">
-							<li>
-								<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
-								<p>Lorem Ipsum is simply dummy...<a href="#">https://www.lipsum.com/</a></p>
-							</li>
-							<li>
-								<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
-								<p>Lorem Ipsum is simply dummy...<a href="#">https://www.lipsum.com/</a></p>
-							</li>
-							<li>
-								<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
-								<p>Lorem Ipsum is simply dummy...<a href="#">https://www.lipsum.com/</a></p>
-							</li>
-						</ul>
-						<!--footer_ul2_amrc ends here-->
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6 ">
-						<div class="news-box">
-							<h5 class="headin5_amrc col_white_amrc pt2">Newsletter</h5>
-							<p>Get the latest news and ideas to your inbox</p>
-							<form action="#">
-								<div class="input-group">
-									<input class="form-control" placeholder="Search for..." type="text">
-									<span class="input-group-btn">
-										<button class="btn btn-secondary" type="button">Go!</button>
-									</span>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container">
-				<p class="copyright text-center">All Rights Reserved. &copy; 2025 <a href="#">Troycity Africa</a> Design
-					By :
-					<a href="https://troythemes.troycityafrica.com/">Troythemes Africa</a>
-				</p>
-			</div>
-		</footer>
-	</div>
-	<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="js/jquery.appear.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/script.js"></script>
+  <!-- JS -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

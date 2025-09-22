@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Solutions That Work. Results That Last.">
+	<link rel="icon" href="images/logo.png" />
+	<meta name="author" content="Collins Kandie">
+	<title>Troycity Africa - Industries</title>
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/all.css" rel="stylesheet">
+	<link href="css/owl.carousel.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<style>
+		.industry-detail img {
+			max-height: 400px;
+			object-fit: cover;
+		}
+
+		.industry-detail h3 {
+			font-weight: 700;
+			color: #0d2c54;
+			/* brandy navy blue */
+		}
+
+		.industry-detail ul {
+			padding-left: 20px;
+			margin-top: 15px;
+		}
+
+		.industry-detail li {
+			margin-bottom: 8px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper-main">
+		<!-- Top Bar -->
+		<div class="top-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="social-media">
+							<ul>
+								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="contact-details">
+							<ul>
+								<li><i class="fas fa-phone fa-rotate-90"></i> +254113094450</li>
+								<li><i class="fas fa-map-marker-alt"></i> Commodore, Kilimani, Nairobi Kenya</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Navigation -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="images/logo.png" alt="logo" />
+				</a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="fas fa-bars"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> About Us <i
+									class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+								<a class="dropdown-item" href="about.html">About Us</a>
+								<a class="dropdown-item" href="whatwedo.html">What we do</a>
+								<a class="dropdown-item" href="whatwebelieve.html">What We Believe</a>
+								<a class="dropdown-item" href="ourleadership.html">Our Leadership</a>
+								<a class="dropdown-item" href="becomeamember.html">Become a Member</a>
+								<a class="dropdown-item" href="awardsrecognition.html">Awards & Recognition</a>
+								<a class="dropdown-item" href="socialimpact.html">Social Impact</a>
+								<a class="dropdown-item" href="sustainability.html">Sustainability</a>
+								<a class="dropdown-item" href="annualreports.html">Annual Reports</a>
+								<a class="dropdown-item" href="faq.html">Frequently Asked Questions</a>
+							</div>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="services.html">Our Capabilities</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link active" href="#" id="navbarDropdownIndustries" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">Industries <i
+									class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" id="industriesDropdown"></div>
+						</li>
+						<script>
+							fetch("json/industries.json")
+								.then(res => res.json())
+								.then(data => {
+									const dropdown = document.getElementById("industriesDropdown");
+									data.forEach(industry => {
+										const link = document.createElement("a");
+										link.className = "dropdown-item";
+										link.href = "industries.html?slug=" + industry.slug;
+										link.textContent = industry.title;
+										dropdown.appendChild(link);
+									});
+								});
+						</script>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">Overview <i class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+								<a class="dropdown-item" href="careers.html">Careers</a>
+								<a class="dropdown-item" href="partnerships.html">Partnerships</a>
+								<a class="dropdown-item" href="ongoing-projects.html">Our Ongoing Projects</a>
+								<a class="dropdown-item" href="pricing.html">Pricing Table</a>
+								<a class="dropdown-item" href="webinars.html">Webinars</a>
+								<a class="dropdown-item" href="publications.html">Publications</a>
+
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">INSIGHTS <i class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="portfolio-3-col.html">Artificial Intelligence</a>
+								<a class="dropdown-item" href="portfolio-4-col.html">News And Events</a>
+								<a class="dropdown-item" href="portfolio-item.html">Sustainability</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">Blog <i class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+								<a class="dropdown-item" href="blog.html">Blog</a>
+								<a class="dropdown-item" href="blog-post.html">Blog Post</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Page Title -->
+		<div class="full-title">
+			<div class="container">
+				<h1 class="mt-4 mb-3">Industries</h1>
+				<div class="breadcrumb-main">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+
+						<li class="breadcrumb-item active">Industries</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+
+		<!-- Services Section -->
+		<div class="container py-5">
+			<p class="lead text-center mb-5">
+				At Troycity Africa, we partner with organizations across diverse industries—helping them innovate,
+				transform, and thrive in complex, competitive markets.
+			</p>
+
+			<!-- <div class="accordion" id="industriesAccordion"></div> -->
+			<div id="industryContainer" class="container py-5"></div>
+		</div>
+
+		<script>
+			function getQueryParam(param) {
+				const urlParams = new URLSearchParams(window.location.search);
+				return urlParams.get(param);
+			}
+
+			fetch("json/industries.json")
+				.then(res => res.json())
+				.then(data => {
+					const slug = getQueryParam("slug");
+					const container = document.getElementById("industryContainer");
+
+					if (!slug) {
+						// Show all industries in grid
+						container.innerHTML = `
+					<div class="row">
+						${data.map(industry => `
+							<div class="col-md-4 mb-4">
+								<div class="card h-100 shadow-sm">
+									<img src="${industry.images[0]}" class="card-img-top" alt="${industry.title}">
+									<div class="card-body">
+										<h5 class="card-title">${industry.title}</h5>
+										<p class="card-text">${industry.description.substring(0, 120)}...</p>
+										<a href="industries.html?slug=${industry.slug}" class="btn btn-primary btn-sm">Learn More</a>
+									</div>
+								</div>
+							</div>
+						`).join("")}
+					</div>
+				`;
+						return;
+					}
+
+					const industry = data.find(i => i.slug === slug);
+					let subIndustry = null;
+					if (!industry) {
+						// If not found → look inside subIndustries
+						data.forEach(i => {
+							if (i.subIndustries) {
+								const match = i.subIndustries.find(sub => sub.slug === slug);
+								if (match) {
+									industry = i;       // parent industry
+									subIndustry = match; // the actual sub-industry
+								}
+							}
+						});
+					}
+
+					if (!industry && !subIndustry) {
+						container.innerHTML = "<p>Industry not found.</p>";
+						return;
+					}
+
+					// Check if industry has subIndustries
+					if (industry.subIndustries && industry.subIndustries.length > 0) {
+						// Render sub-industries list
+						container.innerHTML = `
+					<div class="row align-items-center mb-5">
+						<div class="col-md-6">
+							<img src="${industry.images[0]}" alt="${industry.title}" class="img-fluid rounded shadow">
+						</div>
+						<div class="col-md-6">
+							<h2>${industry.title}</h2>
+							<p>${industry.description}</p>
+						</div>
+					</div>
+
+					<h3 class="mb-4">Explore Sub-Industries</h3>
+					<div class="row">
+						${industry.subIndustries.map(sub => `
+							<div class="col-md-4 mb-4">
+								<div class="card h-100 shadow-sm">
+									<img src="${sub.images[0]}" class="card-img-top" alt="${sub.title}">
+									<div class="card-body">
+										<h5 class="card-title">${sub.title}</h5>
+										<p class="card-text">${sub.description.substring(0, 120)}...</p>
+										<a href="industries.html?slug=${sub.slug}" class="btn btn-outline-primary btn-sm">Learn More</a>
+									</div>
+								</div>
+							</div>
+						`).join("")}
+					</div>
+				`;
+					} else {
+						// Normal detail view
+						container.innerHTML = `
+					<div class="row align-items-center mb-5">
+						<div class="col-md-6">
+							<img src="${industry.images[0]}" alt="${industry.title}" class="img-fluid rounded shadow">
+						</div>
+						<div class="col-md-6">
+							<h2>${industry.title}</h2>
+							<p>${industry.description}</p>
+						</div>
+					</div>
+
+					<h3 class="mb-4">Our Expertise</h3>
+					<div class="row">
+						${industry.expertise.map(exp => `
+							<div class="col-md-6 mb-3">
+								<div class="card shadow-sm h-100">
+									<div class="card-body">
+										<i class="fas fa-check-circle text-primary mr-2"></i> ${exp}
+									</div>
+								</div>
+							</div>
+						`).join("")}
+					</div>
+
+					${industry.solutions && industry.solutions.length > 0 ? `
+					<h3 class="mt-5 mb-4">Solutions We Offer</h3>
+					<div class="accordion" id="solutionsAccordion">
+						${industry.solutions.map((sol, idx) => `
+							<div class="card">
+								<div class="card-header" id="heading${idx}">
+									<h5 class="mb-0">
+										<button class="btn btn-link ${idx > 0 ? "collapsed" : ""}" data-toggle="collapse" data-target="#collapse${idx}">
+											${sol.title}
+										</button>
+									</h5>
+								</div>
+								<div id="collapse${idx}" class="collapse ${idx === 0 ? "show" : ""}" data-parent="#solutionsAccordion">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-4">
+												<img src="${industry.images[1]}" class="img-fluid rounded shadow-sm" alt="${sol.title}">
+											</div>
+											<div class="col-md-8">
+												<ul>
+													${sol.items.map(item => `<li>${item}</li>`).join("")}
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						`).join("")}
+					</div>
+					` : ""}
+				`;
+					}
+				});
+		</script>
+
+
+
+
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container">
+				<p class="copyright text-center">
+					All Rights Reserved. &copy; 2025 <a href="#">Troycity Africa</a>. Design By:
+					<a href="https://troythemes.troycityafrica.com/">Troythemes Africa</a>
+				</p>
+			</div>
+		</footer>
+	</div>
+
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/script.js"></script>
+	<script>
+		function getQueryParam(param) {
+			const urlParams = new URLSearchParams(window.location.search);
+			return urlParams.get(param);
+		}
+
+		fetch("json/industries.json")
+			.then(res => res.json())
+			.then(data => {
+				const slug = getQueryParam("slug");
+				const container = document.getElementById("industryContainer");
+
+				if (!slug) {
+					// Show all industries in grid
+					container.innerHTML = `
+					<div class="row">
+						${data.map(industry => `
+							<div class="col-md-4 mb-4">
+								<div class="card h-100 shadow-sm">
+									<img src="${industry.images[0]}" class="card-img-top" alt="${industry.title}">
+									<div class="card-body">
+										<h5 class="card-title">${industry.title}</h5>
+										<p class="card-text">${industry.description.substring(0, 120)}...</p>
+										<a href="industries.html?slug=${industry.slug}" class="btn btn-primary btn-sm">Learn More</a>
+									</div>
+								</div>
+							</div>
+						`).join("")}
+					</div>
+				`;
+					return;
+				}
+
+				// Try to find top-level industry
+				let industry = data.find(i => i.slug === slug);
+				let subIndustry = null;
+
+				// If not found, check subIndustries
+				if (!industry) {
+					data.forEach(i => {
+						if (i.subIndustries) {
+							const match = i.subIndustries.find(sub => sub.slug === slug);
+							if (match) {
+								industry = i;       // parent industry
+								subIndustry = match; // matched sub-industry
+							}
+						}
+					});
+				}
+
+				if (!industry && !subIndustry) {
+					container.innerHTML = "<p>Industry not found.</p>";
+					return;
+				}
+
+				// Case 1: Parent industry with sub-industries
+				if (industry.subIndustries && industry.subIndustries.length > 0 && !subIndustry) {
+					container.innerHTML = `
+					<div class="row align-items-center mb-5">
+						<div class="col-md-6">
+							<img src="${industry.images[0]}" alt="${industry.title}" class="img-fluid rounded shadow">
+						</div>
+						<div class="col-md-6">
+							<h2>${industry.title}</h2>
+							<p>${industry.description}</p>
+						</div>
+					</div>
+
+					<h3 class="mb-4">Explore Sub-Industries</h3>
+					<div class="row">
+						${industry.subIndustries.map(sub => `
+							<div class="col-md-4 mb-4">
+								<div class="card h-100 shadow-sm">
+									<img src="${sub.images[0]}" class="card-img-top" alt="${sub.title}">
+									<div class="card-body">
+										<h5 class="card-title">${sub.title}</h5>
+										<p class="card-text">${sub.description.substring(0, 120)}...</p>
+										<a href="industries.html?slug=${sub.slug}" class="btn btn-outline-primary btn-sm">Learn More</a>
+									</div>
+								</div>
+							</div>
+						`).join("")}
+					</div>
+				`;
+				}
+				// Case 2: A single subIndustry
+				else if (subIndustry) {
+					container.innerHTML = `
+					<div class="row align-items-center mb-5">
+						<div class="col-md-6">
+							<img src="${subIndustry.images[0]}" alt="${subIndustry.title}" class="img-fluid rounded shadow">
+						</div>
+						<div class="col-md-6">
+							<h2>${subIndustry.title}</h2>
+							<p>${subIndustry.description}</p>
+						</div>
+					</div>
+
+					<h3 class="mb-4">Our Expertise</h3>
+					<div class="row">
+						${subIndustry.expertise.map(exp => `
+							<div class="col-md-6 mb-3">
+								<div class="card shadow-sm h-100">
+									<div class="card-body">
+										<i class="fas fa-check-circle text-primary mr-2"></i> ${exp}
+									</div>
+								</div>
+							</div>
+						`).join("")}
+					</div>
+
+					${subIndustry.solutions && subIndustry.solutions.length > 0 ? `
+					<h3 class="mt-5 mb-4">Solutions We Offer</h3>
+					<div class="accordion" id="solutionsAccordion">
+						${subIndustry.solutions.map((sol, idx) => `
+							<div class="card">
+								<div class="card-header" id="heading${idx}">
+									<h5 class="mb-0">
+										<button class="btn btn-link ${idx > 0 ? "collapsed" : ""}" data-toggle="collapse" data-target="#collapse${idx}">
+											${sol.title}
+										</button>
+									</h5>
+								</div>
+								<div id="collapse${idx}" class="collapse ${idx === 0 ? "show" : ""}" data-parent="#solutionsAccordion">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-4">
+												<img src="${subIndustry.images[1] || subIndustry.images[0]}" class="img-fluid rounded shadow-sm" alt="${sol.title}">
+											</div>
+											<div class="col-md-8">
+												<ul>
+													${sol.items.map(item => `<li>${item}</li>`).join("")}
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						`).join("")}
+					</div>
+					` : ""}
+				`;
+				}
+				// Case 3: A normal single industry without subIndustries
+				else {
+					container.innerHTML = `
+					<div class="row align-items-center mb-5">
+						<div class="col-md-6">
+							<img src="${industry.images[0]}" alt="${industry.title}" class="img-fluid rounded shadow">
+						</div>
+						<div class="col-md-6">
+							<h2>${industry.title}</h2>
+							<p>${industry.description}</p>
+						</div>
+					</div>
+
+					<h3 class="mb-4">Our Expertise</h3>
+					<div class="row">
+						${industry.expertise.map(exp => `
+							<div class="col-md-6 mb-3">
+								<div class="card shadow-sm h-100">
+									<div class="card-body">
+										<i class="fas fa-check-circle text-primary mr-2"></i> ${exp}
+									</div>
+								</div>
+							</div>
+						`).join("")}
+					</div>
+
+					${industry.solutions && industry.solutions.length > 0 ? `
+					<h3 class="mt-5 mb-4">Solutions We Offer</h3>
+					<div class="accordion" id="solutionsAccordion">
+						${industry.solutions.map((sol, idx) => `
+							<div class="card">
+								<div class="card-header" id="heading${idx}">
+									<h5 class="mb-0">
+										<button class="btn btn-link ${idx > 0 ? "collapsed" : ""}" data-toggle="collapse" data-target="#collapse${idx}">
+											${sol.title}
+										</button>
+									</h5>
+								</div>
+								<div id="collapse${idx}" class="collapse ${idx === 0 ? "show" : ""}" data-parent="#solutionsAccordion">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-4">
+												<img src="${industry.images[1] || industry.images[0]}" class="img-fluid rounded shadow-sm" alt="${sol.title}">
+											</div>
+											<div class="col-md-8">
+												<ul>
+													${sol.items.map(item => `<li>${item}</li>`).join("")}
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						`).join("")}
+					</div>
+					` : ""}
+				`;
+				}
+			});
+	</script>
+
+</body>
+
+</html>
