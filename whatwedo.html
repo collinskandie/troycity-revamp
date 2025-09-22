@@ -49,99 +49,97 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav">
-			<div class="container">
-				<a class="navbar-brand" href="index.html">
-					<img src="images/logo.png" alt="logo" />
-				</a>
-				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-					data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="fas fa-bars"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarResponsive">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link active" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false"> About Us <i
-									class="fas fa-sort-down"></i></a>
-							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-								<a class="dropdown-item" href="about.html">About Us</a>
-								<a class="dropdown-item active" href="whatwedo.html">What we do</a>
-								<a class="dropdown-item" href="whatwebelieve.html">What We Believe</a>
-								<a class="dropdown-item" href="ourleadership.html">Our Leadership</a>
-								<a class="dropdown-item" href="becomeamember.html">Become a Member</a>
-								<a class="dropdown-item" href="awardsrecognition.html">Awards & Recognition</a>
-								<a class="dropdown-item" href="socialimpact.html">Social Impact</a>
-								<a class="dropdown-item" href="sustainability.html">Sustainability</a>
-								<a class="dropdown-item" href="annualreports.html">Annual Reports</a>
-								<a class="dropdown-item" href="faq.html">Frequently Asked Questions</a>
-							</div>
-						</li>
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="logo" />
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+          data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="fas fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"> About Us <i class="fas fa-sort-down"></i></a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="about.html">About Us</a>
+                <a class="dropdown-item active" href="whatwedo.html">What we do</a>
+                <a class="dropdown-item" href="whatwebelieve.html">What We Believe</a>
+                <a class="dropdown-item" href="ourleadership.html">Our Leadership</a>
+                <a class="dropdown-item" href="becomeamember.html">Become a Member</a>
+                <a class="dropdown-item" href="awardsrecognition.html">Awards & Recognition</a>
+                <a class="dropdown-item" href="socialimpact.html">Social Impact</a>
+                <a class="dropdown-item" href="sustainability.html">Sustainability</a>
+                <a class="dropdown-item" href="annualreports.html">Annual Reports</a>
+                <a class="dropdown-item" href="faq.html">Frequently Asked Questions</a>
+              </div>
+            </li>
 
-						<li class="nav-item">
-							<a class="nav-link" href="services.html">Our Capabilities</a>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link" href="#" id="navbarDropdownIndustries" data-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false">Industries <i
-									class="fas fa-sort-down"></i></a>
-							<div class="dropdown-menu dropdown-menu-right" id="industriesDropdown"></div>
-						</li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Our Capabilities</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdownIndustries" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Industries <i class="fas fa-sort-down"></i></a>
+              <div class="dropdown-menu dropdown-menu-right" id="industriesDropdown"></div>
+            </li>
 
-						<script>
-							fetch("json/industries.json")
-								.then(res => res.json())
-								.then(data => {
-									const dropdown = document.getElementById("industriesDropdown");
-									data.forEach(industry => {
-										const link = document.createElement("a");
-										link.className = "dropdown-item";
-										link.href = "industries.html?slug=" + industry.slug;
-										link.textContent = industry.title;
-										dropdown.appendChild(link);
-									});
-								});
-						</script>
-						<li class="nav-item dropdown">
-							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false">Overview <i class="fas fa-sort-down"></i></a>
-							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-								<a class="dropdown-item" href="careers.html">Careers</a>
-								<a class="dropdown-item" href="partnerships.html">Partnerships</a>
-								<a class="dropdown-item" href="ongoing-projects.html">Our Ongoing Projects</a>
-								<a class="dropdown-item" href="pricing.html">Pricing Table</a>
-								<a class="dropdown-item" href="webinars.html">Webinars</a>
-								<a class="dropdown-item" href="publications.html">Publications</a>
+            <script>
+              fetch("json/industries.json")
+                .then(res => res.json())
+                .then(data => {
+                  const dropdown = document.getElementById("industriesDropdown");
+                  data.forEach(industry => {
+                    const link = document.createElement("a");
+                    link.className = "dropdown-item";
+                    link.href = "industries.html?slug=" + industry.slug;
+                    link.textContent = industry.title;
+                    dropdown.appendChild(link);
+                  });
+                });
+            </script>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Overview <i class="fas fa-sort-down"></i></a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="careers.html">Careers</a>
+                <a class="dropdown-item" href="partnerships.html">Partnerships</a>
+                <a class="dropdown-item" href="ongoing-projects.html">Our Ongoing Projects</a>
+                <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+                <a class="dropdown-item" href="webinars.html">Webinars</a>
+                <a class="dropdown-item" href="publications.html">Publications</a>
 
-							</div>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false">INSIGHTS <i class="fas fa-sort-down"></i></a>
-							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="portfolio-3-col.html">Artificial Intelligence</a>
-								<a class="dropdown-item" href="portfolio-4-col.html">News And Events</a>
-								<a class="dropdown-item" href="portfolio-item.html">Sustainability</a>
-							</div>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false">Blog <i class="fas fa-sort-down"></i></a>
-							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-								<a class="dropdown-item" href="blog.html">Blog</a>
-								<a class="dropdown-item" href="blog-post.html">Blog Post</a>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="contact.html">Contact</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">INSIGHTS <i class="fas fa-sort-down"></i></a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="portfolio-3-col.html">Artificial Intelligence</a>
+                <a class="dropdown-item" href="portfolio-4-col.html">News And Events</a>
+                <a class="dropdown-item" href="portfolio-item.html">Sustainability</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Blog <i class="fas fa-sort-down"></i></a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="blog.html">Blog</a>
+                <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <!-- Page Title -->
     <div class="full-title">
@@ -167,7 +165,8 @@
           </div>
           <div class="col-md-6">
             <h3>Business Growth Strategies</h3>
-            <p>We design customized growth plans that align with your industry, resources, and long-term vision. From market expansion to diversification, we help you scale sustainably.</p>
+            <p>We design customized growth plans that align with your industry, resources, and long-term vision. From
+              market expansion to diversification, we help you scale sustainably.</p>
             <ul class="list-unstyled">
               <li><i class="fas fa-bullseye text-primary mr-2"></i> Market Expansion & Diversification</li>
               <li><i class="fas fa-chart-line text-success mr-2"></i> Sustainable Scaling Strategies</li>
@@ -183,7 +182,8 @@
           </div>
           <div class="col-md-6">
             <h3>Marketing Strategy & Branding</h3>
-            <p>Our experts craft strategies that blend traditional and digital channels. We focus on building strong brands, compelling messaging, and impactful customer reach.</p>
+            <p>Our experts craft strategies that blend traditional and digital channels. We focus on building strong
+              brands, compelling messaging, and impactful customer reach.</p>
             <ul class="list-unstyled">
               <li><i class="fas fa-bullhorn text-danger mr-2"></i> Integrated Marketing Campaigns</li>
               <li><i class="fas fa-feather-alt text-primary mr-2"></i> Branding & Messaging</li>
@@ -199,7 +199,8 @@
           </div>
           <div class="col-md-6">
             <h3>Digital Marketing & Online Presence</h3>
-            <p>We guide clients in leveraging SEO, social media, and online advertising to boost visibility, generate leads, and engage audiences effectively.</p>
+            <p>We guide clients in leveraging SEO, social media, and online advertising to boost visibility, generate
+              leads, and engage audiences effectively.</p>
             <ul class="list-unstyled">
               <li><i class="fas fa-search text-info mr-2"></i> SEO & Visibility Boost</li>
               <li><i class="fab fa-facebook text-primary mr-2"></i> Social Media Marketing</li>
@@ -215,7 +216,8 @@
           </div>
           <div class="col-md-6">
             <h3>Sales Optimization</h3>
-            <p>We analyze sales processes, identify bottlenecks, and implement systems to improve conversion, retention, and overall performance.</p>
+            <p>We analyze sales processes, identify bottlenecks, and implement systems to improve conversion, retention,
+              and overall performance.</p>
             <ul class="list-unstyled">
               <li><i class="fas fa-handshake text-success mr-2"></i> Improved Lead Conversion</li>
               <li><i class="fas fa-user-check text-primary mr-2"></i> Customer Retention Strategies</li>
@@ -231,7 +233,8 @@
           </div>
           <div class="col-md-6">
             <h3>Research & Development, Strategy & Proposal Development</h3>
-            <p>We empower organizations to innovate, compete, and secure funding through research-driven insights, strategic planning, and persuasive proposals.</p>
+            <p>We empower organizations to innovate, compete, and secure funding through research-driven insights,
+              strategic planning, and persuasive proposals.</p>
             <ul class="list-unstyled">
               <li><i class="fas fa-microscope text-danger mr-2"></i> Applied Research & Innovation</li>
               <li><i class="fas fa-project-diagram text-primary mr-2"></i> Business Strategy Design</li>
@@ -247,7 +250,8 @@
           </div>
           <div class="col-md-6">
             <h3>AI Insight Solutions & Customizable Websites</h3>
-            <p>We merge technology and creativity to deliver AI-powered insights and 2,500+ customizable, ready-to-launch websites that save time, reduce costs, and unlock digital opportunities.</p>
+            <p>We merge technology and creativity to deliver AI-powered insights and 2,500+ customizable,
+              ready-to-launch websites that save time, reduce costs, and unlock digital opportunities.</p>
             <ul class="list-unstyled">
               <li><i class="fas fa-robot text-info mr-2"></i> Data-Driven AI Insights</li>
               <li><i class="fas fa-laptop-code text-success mr-2"></i> Customizable Website Templates</li>
@@ -263,7 +267,8 @@
           </div>
           <div class="col-md-6">
             <h3>Business & Legal Services</h3>
-            <p>We provide end-to-end legal support, from registration to compliance, and lead advocacy efforts such as DriveLegal for ride-hailing fairness in Kenya.</p>
+            <p>We provide end-to-end legal support, from registration to compliance, and lead advocacy efforts such as
+              DriveLegal for ride-hailing fairness in Kenya.</p>
             <ul class="list-unstyled">
               <li><i class="fas fa-file-signature text-primary mr-2"></i> Business & NGO Registration</li>
               <li><i class="fas fa-balance-scale text-warning mr-2"></i> Corporate & Commercial Law</li>
@@ -276,11 +281,86 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Contact Us -->
+    <div class="touch-line">
       <div class="container">
-        <p class="copyright text-center">
-          All Rights Reserved. &copy; 2025 <a href="#">Troycity Africa</a>. Design By:
+        <div class="row">
+          <div class="col-md-8">
+            <p>We Believe That Location Doesn't Matter. Though We Are Based In Kenya, Our Customers Span
+              Across the World. So, Please Don't Hesitate To Drop Us A Line!</p>
+          </div>
+          <div class="col-md-4">
+            <a class="btn btn-lg btn-secondary btn-block" href="#"> Contact Us </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- /.container -->
+    <!--footer starts from here-->
+    <footer class="footer">
+      <div class="container bottom_border">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">About Us</h5>
+            <!--headin5_amrc-->
+            <p class="mb10">We believe in building long term relationships with our clients, partners and
+              associates instead of a transaction driven approach.</p>
+            <ul class="footer-social">
+              <li><a class="facebook hb-xs-margin" href="#"><span class="hb hb-xs spin hb-facebook"><i
+                      class="fab fa-facebook-f"></i></span></a></li>
+              <li><a class="twitter hb-xs-margin" href="#"><span class="hb hb-xs spin hb-twitter"><i
+                      class="fab fa-twitter"></i></span></a></li>
+              <li><a class="instagram hb-xs-margin" href="#"><span class="hb hb-xs spin hb-instagram"><i
+                      class="fab fa-instagram"></i></span></a></li>
+              <li><a class="googleplus hb-xs-margin" href="#"><span class="hb hb-xs spin hb-google-plus"><i
+                      class="fab fa-google-plus-g"></i></span></a></li>
+              <li><a class="dribbble hb-xs-margin" href="#"><span class="hb hb-xs spin hb-dribbble"><i
+                      class="fab fa-dribbble"></i></span></a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+            <!--headin5_amrc-->
+            <ul class="footer_ul_amrc">
+              <li><a href="index.html"><i class="fas fa-long-arrow-alt-right"></i>Home</a></li>
+              <li><a href="services.html"><i class="fas fa-long-arrow-alt-right"></i>Our Service </a></li>
+              <li><a href="about.html"><i class="fas fa-long-arrow-alt-right"></i>About Us</a></li>
+              <li><a href="contact.html"><i class="fas fa-long-arrow-alt-right"></i>Get In Touch</a></li>
+            </ul>
+            <!--footer_ul_amrc ends here-->
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+            <!--headin5_amrc ends here-->
+            <ul class="footer_ul2_amrc">
+              <li><a class="facebook hb-xs-margin" href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a class="twitter hb-xs-margin" href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a class="instagram hb-xs-margin" href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a class="googleplus hb-xs-margin" href="#"><i class="fab fa-google-plus-g"></i></a>
+              </li>
+            </ul>
+            <!--footer_ul2_amrc ends here-->
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 ">
+            <div class="news-box">
+              <h5 class="headin5_amrc col_white_amrc pt2">Newsletter</h5>
+              <p>Get the latest news and ideas to your inbox</p>
+              <form action="#">
+                <div class="input-group">
+                  <input class="form-control" placeholder="Search for..." type="text">
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button">Go!</button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <p class="copyright text-center">All Rights Reserved. &copy; 2025 <a href="#">Troycity Africa</a> Design
+          By :
           <a href="https://troythemes.troycityafrica.com/">Troythemes Africa</a>
         </p>
       </div>
@@ -293,4 +373,5 @@
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/script.js"></script>
 </body>
+
 </html>
