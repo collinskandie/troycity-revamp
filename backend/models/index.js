@@ -20,6 +20,7 @@ db.Job = require("./jobs")(sequelize, DataTypes);
 db.ContactUs = require("./contactform")(sequelize, DataTypes);
 db.OurTeam = require("./ourteam")(sequelize, DataTypes);
 db.OurPartners = require("./partners")(sequelize, DataTypes);
+db.Application = require("./Application")(sequelize, DataTypes);
 
 // Apply associations if any (optional)
 Object.keys(db).forEach((modelName) => {

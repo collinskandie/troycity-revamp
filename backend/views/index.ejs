@@ -38,6 +38,9 @@
     <ul class="nav nav-tabs mb-4" id="adminTabs" role="tablist">
       <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#jobs">Jobs</button>
       </li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#jobs-applications">Jobs
+          Applications</button>
+      </li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#team">Team</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact">Contact</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#partners">Partners</button>
@@ -95,6 +98,52 @@
                       <i class="fas fa-trash-alt"></i> Delete
                     </button>
                   </form>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="jobs-applications">
+
+
+        <h3>Existing Jobs</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Applicant Name</th>
+              <th>Email</th>
+              <th>Cover Letter</th>
+              <th>Applied At</th>
+              <th>CV </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% applications.forEach(j=> { %>
+              <tr>
+                <td>
+                  <%= j.name %>
+                </td>
+                <td>
+                  <%= j.email %>
+                </td>
+                <td>
+                  <%= j.coverLetter %>
+                </td>
+                <td>
+                  <%= j.appliedAt || '' %>
+                </td>
+                <td>
+                  <% if (j.cv) { %>
+                    <a href="/uploads/<%= j.cv %>" download>
+                      <i class="fas fa-file-download"></i> Download CV
+                    </a>
+                    <% } else { %>
+                      <span class="text-muted">No CV</span>
+                      <% } %>
+                </td>
+
+  
                 </td>
               </tr>
               <% }) %>

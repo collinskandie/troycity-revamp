@@ -1,8 +1,22 @@
 const express = require("express");
 const router = express.Router();
-const { Job, OurTeam, ContactUs, OurPartners } = require("../models");
+const { Job, OurTeam, ContactUs, Application, OurPartners } = require("../models");
 const nodemailer = require("nodemailer");
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
+// Multer setup
+const uploadDir = path.join(__dirname, "..", "uploads");
 
+// Ensure uploads folder exists
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => cb(null, "uploads/"),
+    filename: (req, file, cb) => cb(null, Date.now() + path.extname(file.originalname))
+});
+const upload = multer({ storage });
 
 const EMAIL_HOST = process.env.EMAIL_HOST;
 const EMAIL_PORT = process.env.EMAIL_PORT;
@@ -28,15 +42,73 @@ router.get("/", async (req, res) => {
         const contacts = await ContactUs.findAll();
         const partners = await OurPartners.findAll();
 
+        //all job applications
+        const applications = await Application.findAll({ include: [{ model: Job, as: "job" }] });
+        //console.log("Fetched jobs:", jobs);
+        //console.log("Fetched team members:", teamMembers);
+        //console.log("Fetched contacts:", contacts);
+        //console.log("Fetched partners:", partners);
+        //console.log("Fetched applications:", applications);
 
-        res.render("index", { jobs, teamMembers, contacts, partners });
+
+        res.render("index", { jobs, teamMembers, contacts, partners, applications });
     } catch (err) {
-        //console.error("Error fetching admin data:", err);
+        ////console.error("Error fetching admin data:", err);
         res.status(500).send("Internal Server Error");
     }
 });
+// POST job application
+router.post("/job-applications", upload.single("cv"), async (req, res) => {
+    try {
+        const { jobId, name, email, coverLetter } = req.body;
+        const application = await Application.create({
+            jobId,
+            name,
+            email,
+            coverLetter,
+            cv: req.file ? req.file.filename : null
+        });
+        // send mail to admin and user?
+        const mailOptions = {
+            from: EMAIL_USER,
+            to: EMAIL_USER,
+            subject: "New Job Application",
+            text: `You have received a new job application from ${name}.`
+        };
+        const mailOptionsUser = {
+            from: EMAIL_USER,
+            to: email,
+            subject: "Job Application Confirmation",
+            text: `Thank you for applying for the job. We have received your application.`
+        };
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.error("Error sending email:", error);
+            }
+            console.log("Email sent:", info.response);
+        });
+        transporter.sendMail(mailOptionsUser, (error, info) => {
+            if (error) {
+                return console.error("Error sending email:", error);
+            }
+            console.log("Email sent:", info.response);
+        });
+        res.json({ message: "Application submitted successfully", application });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Failed to submit application" });
+    }
+});
 
-// ---- Form Handlers ----
+// router.get("/all-applications", async (req, res) => {
+//     try {
+//         const applications = await Application.findAll({ include: [{ model: Job, as: "job" }] });
+//         res.json(applications);
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).json({ error: "Failed to fetch applications" });
+//     }
+// });
 
 // Jobs
 router.post("/jobs", async (req, res) => {
@@ -44,7 +116,17 @@ router.post("/jobs", async (req, res) => {
         await Job.create(req.body);
         res.redirect("/admin");
     } catch (err) {
-        //console.error("Error creating job:", err);
+        ////console.error("Error creating job:", err);
+        res.status(500).send("Internal Server Error");
+    }
+});
+router.get("/api/jobs", async (req, res) => {
+    try {
+        const jobs = await Job.findAll();
+        //console.log("Fetched jobs:", jobs);
+        res.json(jobs);
+    } catch (err) {
+        ////console.error("Error fetching jobs:", err);
         res.status(500).send("Internal Server Error");
     }
 });
@@ -52,13 +134,13 @@ router.post("/jobs", async (req, res) => {
 router.post("/jobs/delete/:id", async (req, res) => {
     try {
         const jobId = req.params.id;
-        //console.log("Deleting job with ID: ", jobId);
+        ////console.log("Deleting job with ID: ", jobId);
         const deleted = await Job.destroy({ where: { id: jobId } });
-        // //console.log("Deleted rows count: ", deleted);
+        // ////console.log("Deleted rows count: ", deleted);
 
         res.redirect("/");
     } catch (err) {
-        //console.error("Error deleting job:", err);
+        ////console.error("Error deleting job:", err);
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
@@ -69,7 +151,7 @@ router.post("/team", async (req, res) => {
         await OurTeam.create(req.body);
         res.redirect("/admin");
     } catch (err) {
-        //console.error("Error creating team member:", err);
+        ////console.error("Error creating team member:", err);
         res.status(500).send("Internal Server Error");
     }
 });
@@ -83,8 +165,8 @@ router.get("/api/partner-team", async (req, res) => {
         // Fetch partners
         const partners = await OurPartners.findAll();
 
-        console.log("Fetched team members:", teamMembers);
-        console.log("Fetched partners:", partners);
+        // //console.log("Fetched team members:", teamMembers);
+        // //console.log("Fetched partners:", partners);
 
         // Build response
         res.json({
@@ -106,7 +188,7 @@ router.get("/api/partner-team", async (req, res) => {
             }))
         });
     } catch (err) {
-        console.error("Error fetching partner-team:", err);
+        //console.error("Error fetching partner-team:", err);
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
@@ -115,13 +197,13 @@ router.get("/api/partner-team", async (req, res) => {
 router.post("/team/delete/:id", async (req, res) => {
     try {
         const memberId = req.params.id;
-        //console.log("Deleting team member with ID: ", memberId);
+        ////console.log("Deleting team member with ID: ", memberId);
         const deleted = await OurTeam.destroy({ where: { id: memberId } });
-        // //console.log("Deleted rows count: ", deleted);
+        // ////console.log("Deleted rows count: ", deleted);
 
         res.redirect("/");
     } catch (err) {
-        //console.error("Error deleting team member:", err);
+        ////console.error("Error deleting team member:", err);
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
@@ -132,7 +214,7 @@ router.post("/contact", async (req, res) => {
         await ContactUs.create(req.body);
         res.redirect("/admin");
     } catch (err) {
-        //console.error("Error creating contact:", err);
+        ////console.error("Error creating contact:", err);
         res.status(500).send("Internal Server Error");
     }
 });
@@ -175,14 +257,14 @@ router.post("/api/contact", async (req, res) => {
         };
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
-                //console.error("Error sending email:", error);
+                ////console.error("Error sending email:", error);
             } else {
-                //console.log("Email sent:", info.response);
+                ////console.log("Email sent:", info.response);
             }
         });
         res.status(201).json(contact);
     } catch (err) {
-        //console.error("Error creating contact via API:", err);
+        ////console.error("Error creating contact via API:", err);
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
