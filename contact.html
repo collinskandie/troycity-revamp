@@ -319,7 +319,6 @@
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<!-- Contact form JavaScript -->
 	<script src="js/jqBootstrapValidation.js"></script>
 	<script src="js/contact_me.js"></script>
 	<script src="js/jquery.appear.js"></script>
@@ -337,7 +336,7 @@
 			};
 
 			try {
-				const res = await fetch("http://127.0.0.1:5001/api/contact", {
+				const res = await fetch("https://admin.troycityafrica.com/api/contact", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify(data),

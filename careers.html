@@ -160,23 +160,67 @@
 					Africa and beyond.</p>
 			</div>
 
+
 			<!-- Open Positions -->
-			<div class="row">
-				<div class="col-12">
-					<div class="card text-center p-5">
-						<div class="card-body">
-							<h4 class="card-title">No Current Openings</h4>
-							<p class="card-text">
-								We currently don’t have any open positions, but we’re always excited to connect with
-								talented individuals.
-								If you’d like to be considered for future opportunities, feel free to share your CV with
-								us.
-							</p>
-							<a href="contact.html" class="btn btn-primary">Send Us Your CV</a>
-						</div>
+			<div class="container py-5">
+				<!-- Filter Section -->
+				<div class="row mb-4">
+					<div class="col-md-4">
+						<input type="text" id="searchInput" class="form-control" placeholder="Search jobs...">
+					</div>
+					<div class="col-md-4">
+						<select id="categoryFilter" class="form-control">
+							<option value="">All Categories</option>
+							<option value="tech">Tech</option>
+							<option value="marketing">Marketing</option>
+							<option value="finance">Finance</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Jobs Grid -->
+				<div class="row" id="jobsContainer"></div>
+			</div>
+
+			<!-- Apply Modal -->
+			<div class="modal fade" id="applyModal" tabindex="-1" role="dialog">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<form id="applicationForm" enctype="multipart/form-data">
+							<div class="modal-header">
+								<h5 class="modal-title">Apply for <span id="jobTitle"></span></h5>
+								<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+							</div>
+							<div class="modal-body">
+								<input type="hidden" id="jobId" name="jobId">
+								<div class="form-group">
+									<label>Full Name</label>
+									<input type="text" class="form-control" name="name" required>
+								</div>
+								<div class="form-group">
+									<label>Email Address</label>
+									<input type="email" class="form-control" name="email" required>
+								</div>
+								<div class="form-group">
+									<label>CV/Resume</label>
+									<input type="file" class="form-control-file" name="cv" required>
+								</div>
+								<div class="form-group">
+									<label>Cover Letter</label>
+									<textarea class="form-control" name="coverLetter" rows="4"></textarea>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-primary">Submit Application</button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
+
+
+
+
 
 
 			<!-- Why Work With Us -->
@@ -282,6 +326,61 @@
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="js/script.js"></script>
+	<script>
+		async function loadJobs() {
+			const res = await fetch("http://127.0.0.1:5001/api/jobs"); // adjust if needed
+			const jobs = await res.json();
+			const container = document.getElementById('jobsContainer');
+			container.innerHTML = '';
+
+			jobs.forEach(job => {
+				const card = document.createElement('div');
+				card.className = 'col-md-4 mb-4';
+				card.innerHTML = `
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">${job.title}</h5>
+            <p class="card-text text-muted">${job.location || 'Location: Remote'}</p>
+            <p>${job.description.substring(0, 120)}...</p>
+            <button class="btn btn-outline-primary btn-block" onclick="openApplyModal('${job.id}', '${job.title}')">
+              Apply Now
+            </button>
+          </div>
+        </div>
+      `;
+				container.appendChild(card);
+			});
+		}
+
+		function openApplyModal(jobId, jobTitle) {
+			document.getElementById('jobId').value = jobId;
+			document.getElementById('jobTitle').innerText = jobTitle;
+			$('#applyModal').modal('show');
+		}
+
+		document.getElementById('applicationForm').addEventListener('submit', async (e) => {
+			e.preventDefault();
+			const formData = new FormData(e.target);
+
+			const res = await fetch('http://127.0.0.1:5001/job-applications', {
+				method: 'POST',
+				body: formData
+			});
+
+			if (res.ok) {
+				alert('Application submitted successfully!');
+				$('#applyModal').modal('hide');
+				e.target.reset();
+			} else {
+				alert('Failed to submit application. Try again.');
+			}
+		});
+
+		// Load jobs on page load
+		loadJobs();
+	</script>
+
+
 </body>
 
 </html>

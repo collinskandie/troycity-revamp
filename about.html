@@ -362,7 +362,7 @@
 	<script>
 		async function loadPartnerTeam() {
 			try {
-				const res = await fetch("http://127.0.0.1:5001/api/partner-team");
+				const res = await fetch("https://admin.troycityafrica.com/api/partner-team");
 				const data = await res.json();
 
 				console.log("Fetched partner team data:", data);
