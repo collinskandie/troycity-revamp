@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icon Fonts -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- TroyArticles Libraries -->
+  <link href="/lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+  <!-- TroyArticles Bootstrap Theme -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- TroyArticles Main Styles -->
+  <link href="/css/style.css" rel="stylesheet" />
+</head>
+
+<body class="bg-light">
+
+  <div class="container py-4">
+    <h1 class="mb-4 text-center">Admin Panel</h1>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs mb-4" id="adminTabs" role="tablist">
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#jobs">Jobs</button>
+      </li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#team">Team</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact">Contact</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#partners">Partners</button>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+
+      <!-- Jobs -->
+      <div class="tab-pane fade show active" id="jobs">
+        <form action="/admin/jobs" method="POST" class="bg-white p-4 rounded shadow-sm mb-4">
+          <h3>Add Job</h3>
+          <input class="form-control mb-2" name="title" placeholder="Title" required />
+          <textarea class="form-control mb-2" name="description" placeholder="Description" required></textarea>
+          <input type="date" class="form-control mb-2" name="postedDate" required />
+          <input type="date" class="form-control mb-2" name="deadline" />
+          <button class="btn btn-primary">Add Job</button>
+        </form>
+
+        <h3>Existing Jobs</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Posted</th>
+              <th>Deadline</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% jobs.forEach(j=> { %>
+              <tr>
+                <td>
+                  <%= j.title %>
+                </td>
+                <td>
+                  <%= j.description %>
+                </td>
+                <td>
+                  <%= j.postedDate %>
+                </td>
+                <td>
+                  <%= j.deadline || '' %>
+                </td>
+                <td>
+                  <!-- <a href="#" class="btn btn-warning btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editModal"
+                    data-template='<%- JSON.stringify(j).replace(/' /g, "&#39;" ) %>'
+                    onclick="populateEditFormFromElement(this)"
+                    >
+                    <i class="fas fa-edit"></i> Edit
+                  </a> -->
+                  <form action="/jobs/delete/<%= j.id %>" method="post" class="d-inline"
+                    onsubmit="return confirm('Are you sure you want to delete this job?');">
+                    <button type="submit" class="btn btn-danger btn-sm">
+                      <i class="fas fa-trash-alt"></i> Delete
+                    </button>
+                  </form>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Team -->
+      <div class="tab-pane fade" id="team">
+        <form action="/admin/team" method="POST" class="bg-white p-4 rounded shadow-sm mb-4">
+          <h3>Add Team Member</h3>
+          <input class="form-control mb-2" name="fullName" placeholder="Full Name" required />
+          <input class="form-control mb-2" name="role" placeholder="Role" required />
+          <input class="form-control mb-2" name="imageUrl" placeholder="Image URL" />
+          <button class="btn btn-primary">Add Member</button>
+        </form>
+
+        <h3>Existing Team</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% teamMembers.forEach(m=> { %>
+              <tr>
+                <td>
+                  <%= m.fullName %>
+                </td>
+                <td>
+                  <%= m.role %>
+                </td>
+                <td><img src="<%= m.imageUrl %>" style="height:40px" /></td>
+                <td>
+                  <form action="/team/delete/<%= m.id %>" method="POST" class="d-inline"
+                    onsubmit="return confirm('Are you sure you want to delete this team member?');">
+                    <button type="submit" class="btn btn-danger btn-sm">
+                      <i class="fas fa-trash-alt"></i> Delete
+                    </button>
+                  </form>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Contact -->
+      <div class="tab-pane fade" id="contact">
+        Here, you can manage contact inquiries.
+        <br /><br />
+
+        <h3>Existing Contacts</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% contacts.forEach(c=> { %>
+              <tr>
+                <td>
+                  <%= c.fullName %>
+                </td>
+                <td>
+                  <%= c.phone %>
+                </td>
+                <td>
+                  <%= c.email %>
+                </td>
+                <td>
+                  <%= c.message %>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Partners -->
+      <div class="tab-pane fade" id="partners">
+        <form action="/admin/partners" method="POST" class="bg-white p-4 rounded shadow-sm mb-4">
+          <h3>Add Partner</h3>
+          <input class="form-control mb-2" name="name" placeholder="Name" required />
+          <input class="form-control mb-2" name="website" placeholder="Website" required />
+          <input class="form-control mb-2" name="logo" placeholder="Logo URL" required />
+          <button class="btn btn-primary">Add Partner</button>
+        </form>
+
+        <h3>Existing Partners</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Website</th>
+              <th>Logo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% partners.forEach(p=> { %>
+              <tr>
+                <td>
+                  <%= p.name %>
+                </td>
+                <td>
+                  <%= p.website %>
+                </td>
+                <td><img src="<%= p.logo %>" style="height:40px" /></td>
+                <td>
+                  <form action="/partners/delete/<%= p.id %>" method="POST" class="d-inline"
+                    onsubmit="return confirm('Are you sure you want to delete this partner?');">
+                    <button type="submit" class="btn btn-danger btn-sm">
+                      <i class="fas fa-trash-alt"></i> Delete
+                    </button>
+                  </form>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

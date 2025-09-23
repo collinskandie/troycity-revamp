@@ -246,60 +246,13 @@
 			<!-- Team Members -->
 			<div class="team-members-box">
 				<h2>Our Team</h2>
-				<div class="row">
-					<div class="col-lg-4 mb-4">
-						<div class="card h-100 text-center">
-							<div class="our-team">
-								<img class="img-fluid" src="images/team_01.jpg" alt="" />
-								<div class="team-content">
-									<h3 class="title">Nazmul Hossen</h3>
-									<span class="post">web developer</span>
-									<ul class="social">
-										<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 mb-4">
-						<div class="card h-100 text-center">
-							<div class="our-team">
-								<img class="img-fluid" src="images/team_02.jpg" alt="" />
-								<div class="team-content">
-									<h3 class="title">Mahedi amin</h3>
-									<span class="post">web developer</span>
-									<ul class="social">
-										<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 mb-4">
-						<div class="card h-100 text-center">
-							<div class="our-team">
-								<img class="img-fluid" src="images/team_01.jpg" alt="" />
-								<div class="team-content">
-									<h3 class="title">Kawser Alam</h3>
-									<span class="post">web developer</span>
-									<ul class="social">
-										<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
+				<br>
+				<br>
+
+				<div class="row" id="team-container">
+					
+					<!-- JS will inject team cards here -->
 				</div>
-				<!-- /.row -->
 			</div>
 		</div>
 
@@ -335,6 +288,7 @@
 			</div>
 			<!-- /.container -->
 		</div>
+
 
 		<!-- Contact Us -->
 		<div class="touch-line">
@@ -405,6 +359,94 @@
 	<script src="js/jquery.appear.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/script.js"></script>
+	<script>
+		async function loadPartnerTeam() {
+			try {
+				const res = await fetch("http://127.0.0.1:5001/api/partner-team");
+				const data = await res.json();
+
+				console.log("Fetched partner team data:", data);
+
+				// Populate team
+				const teamContainer = document.getElementById("team-container");
+				teamContainer.innerHTML = data.team.map(member => `
+					<div class="col-lg-4 mb-4">
+					<div class="card h-100 text-center">
+						<div class="our-team">
+						<img class="img-fluid" src="${member.image || 'images/default.jpg'}" alt="${member.name}" />
+						<div class="team-content">
+							<h3 class="title">${member.name}</h3>
+							<span class="post">${member.role}</span>
+							<ul class="social">
+							${member.socials
+						? Object.entries(member.socials)
+							.filter(([_, link]) => link) // only render non-null socials
+							.map(([platform, link]) => `
+									<li><a href="${link}" target="_blank"><i class="fab fa-${platform}"></i></a></li>
+									`).join("")
+						: ""}
+							</ul>
+						</div>
+						</div>
+					</div>
+					</div>
+				`).join("");
+
+				// Populate clients
+				// Populate clients
+				// Populate clients
+				//
+
+				customersSlider.innerHTML = data.clients.map((client, idx) => {
+					// Fallback to logo_01.png … logo_06.png if DB value is junk
+					const fallbackLogos = [
+						"images/logo_01.png",
+						"images/logo_02.png",
+						"images/logo_03.png",
+						"images/logo_04.png",
+						"images/logo_05.png",
+						"images/logo_06.png"
+					];
+
+					// Pick DB value if valid, otherwise rotate through fallback logos
+					const logoPath = client.logo && client.logo.includes(".")
+						? client.logo
+						: fallbackLogos[idx % fallbackLogos.length];
+
+					return `
+					<div class="mb-4">
+					<img class="img-fluid" src="${logoPath}" alt="${client.name}" 
+						onerror="this.src='images/logo_01.png'"/>
+					</div>
+	`;
+				}).join("");
+
+				setTimeout(() => {
+					if (typeof $ !== "undefined" && $("#customers-slider").owlCarousel) {
+						$("#customers-slider").trigger("destroy.owl.carousel");
+						$("#customers-slider").owlCarousel({
+							loop: true,
+							margin: 10,
+							autoplay: true,
+							responsive: {
+								0: { items: 2 },
+								600: { items: 4 },
+								1000: { items: 6 }
+							}
+						});
+					}
+				}, 100);
+
+			} catch (err) {
+				console.error("Failed to load partner team data:", err);
+			}
+		}
+
+		// Kick it off
+		loadPartnerTeam();
+	</script>
+
+
 </body>
 
 </html>

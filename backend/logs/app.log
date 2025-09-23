@@ -1,0 +1,129 @@
+2025-09-23T06:29:25.029Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:29:36.040Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:29:45.531Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:31:04.708Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:34:40.882Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:35:27.225Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:36:03.383Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:37:59.805Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:38:01.470Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:38:07.005Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:38:18.049Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:38:20.573Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:38:22.225Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:47:08.977Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:47:16.210Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:47:27.966Z [ERROR]: GET / - Failed to lookup view "404" in views directory "/Users/collinskandie/Desktop/Syknown LTD/Troycity Web Final/backend/views"
+2025-09-23T06:47:29.407Z [ERROR]: GET /favicon.ico - Failed to lookup view "404" in views directory "/Users/collinskandie/Desktop/Syknown LTD/Troycity Web Final/backend/views"
+2025-09-23T06:48:18.180Z [ERROR]: GET /favicon.ico - Failed to lookup view "404" in views directory "/Users/collinskandie/Desktop/Syknown LTD/Troycity Web Final/backend/views"
+2025-09-23T06:48:57.228Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:49:01.098Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:49:06.812Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:50:00.993Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:51:30.787Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:51:37.494Z [ERROR]: GET /favicon.ico - Failed to lookup view "404" in views directory "/Users/collinskandie/Desktop/Syknown LTD/Troycity Web Final/backend/views"
+2025-09-23T06:51:38.618Z [ERROR]: GET /favicon.ico - Failed to lookup view "404" in views directory "/Users/collinskandie/Desktop/Syknown LTD/Troycity Web Final/backend/views"
+2025-09-23T06:52:21.707Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:52:28.737Z [INFO]: Server running on http://localhost:5001
+2025-09-23T06:52:35.055Z [ERROR]: GET /favicon.ico - Failed to lookup view "404" in views directory "/Users/collinskandie/Desktop/Syknown LTD/Troycity Web Final/backend/views"
+2025-09-23T06:57:14.723Z [ERROR]: GET /favicon.ico - Failed to lookup view "404" in views directory "/Users/collinskandie/Desktop/Syknown LTD/Troycity Web Final/backend/views"
+2025-09-23T07:00:51.482Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:02:24.950Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:02:27.256Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:02:28.617Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:02:32.856Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:03:19.732Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:03:21.806Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:06:57.950Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:07:08.919Z [ERROR]: GET /api/ - Failed to lookup view "admin" in views directory "/Users/collinskandie/Desktop/Syknown LTD/Troycity Web Final/backend/views"
+2025-09-23T07:07:23.240Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:08:28.244Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:22:07.026Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:22:21.447Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:22:39.780Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:26:24.096Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:26:43.918Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:26:50.091Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:26:52.268Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:26:53.739Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:28:10.870Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:28:13.500Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:28:23.667Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:33:46.894Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:38:29.183Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:39:22.194Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:39:24.099Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:44:40.199Z [ERROR]: GET /admin - /Users/collinskandie/Desktop/Syknown LTD/Troycity Web Final/backend/views/index.ejs:87
+    85|                 <td>
+    86|                   <a href="#" class="btn btn-warning btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editModal"
+ >> 87|                     data-template='<%- JSON.stringify(template).replace(/' /g, "&#39;" ) %>'
+    88|                     onclick="populateEditFormFromElement(this)"
+    89|                     >
+    90|                     <i class="fas fa-edit"></i> Edit
+
+template is not defined
+2025-09-23T07:46:13.392Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:46:29.732Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:46:32.031Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:46:34.113Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:46:43.719Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:48:26.158Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:48:38.191Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:48:44.067Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:48:51.232Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:51:31.314Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:51:34.139Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:51:41.882Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:51:44.368Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:51:45.507Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:53:08.441Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:53:12.897Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:53:39.875Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:53:46.155Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:54:17.595Z [ERROR]: GET /admin - /Users/collinskandie/Desktop/Syknown LTD/Troycity Web Final/backend/views/index.ejs:136
+    134|                 <td>
+    135|                   <a href="#" class="btn btn-warning btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editModal"
+ >> 136|                     data-template='<%- JSON.stringify(template).replace(/' /g, "&#39;" ) %>'
+    137|                     onclick="populateEditFormFromElement(this)"
+    138|                     >
+    139|                     <i class="fas fa-edit"></i> Edit
+
+template is not defined
+2025-09-23T07:55:34.844Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:55:42.421Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:59:40.598Z [INFO]: Server running on http://localhost:5001
+2025-09-23T07:59:56.491Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:00:23.484Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:00:36.134Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:01:05.304Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:01:12.233Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:01:27.296Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:02:04.188Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:02:15.662Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:02:34.924Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:02:41.918Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:02:43.229Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:02:46.643Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:08:32.594Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:09:01.959Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:30:42.339Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:31:01.285Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:33:06.312Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:33:12.930Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:33:24.889Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:42:44.387Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:43:15.793Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:45:03.164Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:45:05.588Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:45:17.671Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:45:19.865Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:45:38.335Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:45:43.277Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:45:58.076Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:46:34.404Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:46:36.355Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:47:28.738Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:47:31.240Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:49:59.851Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:50:02.297Z [INFO]: Server running on http://localhost:5001
+2025-09-23T08:50:58.522Z [INFO]: Server running on http://localhost:5001

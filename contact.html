@@ -163,7 +163,7 @@
 					<!-- Map Column -->
 					<div class="col-lg-8 mb-4 contact-left">
 						<h3>Send us a Message</h3>
-						<form name="sentMessage" id="contactForm" novalidate>
+						<form name="sentMessage" id="contactForm">
 							<div class="control-group form-group">
 								<div class="controls">
 									<input type="text" placeholder="Full Name" class="form-control" id="name" required
@@ -324,6 +324,40 @@
 	<script src="js/contact_me.js"></script>
 	<script src="js/jquery.appear.js"></script>
 	<script src="js/script.js"></script>
+
+	<script>
+		document.getElementById("contactForm").addEventListener("submit", async function (e) {
+			e.preventDefault();
+
+			const data = {
+				fullName: document.getElementById("name").value,
+				phone: document.getElementById("phone").value,
+				email: document.getElementById("email").value,
+				message: document.getElementById("message").value,
+			};
+
+			try {
+				const res = await fetch("http://127.0.0.1:5001/api/contact", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(data),
+				});
+				
+
+				if (res.ok) {
+					document.getElementById("success").innerHTML =
+						`<div class="alert alert-success">Message sent successfully!</div>`;
+					document.getElementById("contactForm").reset();
+				} else {
+					throw new Error("Server error: " + res.status);
+				}
+			} catch (err) {
+				console.error("Error:", err);
+				document.getElementById("success").innerHTML =
+					`<div class="alert alert-danger">Something went wrong. Try again later.</div>`;
+			}
+		});
+	</script>
 </body>
 
 </html>
