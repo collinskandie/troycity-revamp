@@ -328,7 +328,7 @@
 	<script src="js/script.js"></script>
 	<script>
 		async function loadJobs() {
-			const res = await fetch("http://127.0.0.1:5001/api/jobs"); // adjust if needed
+			const res = await fetch("https://admin.troycityafrica.com/api/jobs"); // adjust if needed
 			const jobs = await res.json();
 			const container = document.getElementById('jobsContainer');
 			container.innerHTML = '';
@@ -362,7 +362,7 @@
 			e.preventDefault();
 			const formData = new FormData(e.target);
 
-			const res = await fetch('http://127.0.0.1:5001/job-applications', {
+			const res = await fetch('https://admin.troycityafrica.com/job-applications', {
 				method: 'POST',
 				body: formData
 			});
