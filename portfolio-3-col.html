@@ -14,6 +14,19 @@
 	<link href="css/all.css" rel="stylesheet">
 	<!-- Custom styles for this template -->
 	<link href="css/style.css" rel="stylesheet">
+	<style>
+		.custom-modal {
+			max-width: 55% !important;
+			/* Desktop & large screens */
+		}
+
+		/* On smaller screens, just use full width */
+		@media (max-width: 768px) {
+			.custom-modal {
+				max-width: 70% !important;
+			}
+		}
+	</style>
 </head>
 
 <body>
@@ -175,6 +188,8 @@
 									you’ve stumbled across your own site mentioned in these AI platforms—and wondered
 									how it got there?</p>
 							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI1.html')">Read
+								More</button>
 						</div>
 					</div>
 					<div class="col-lg-4 col-sm-6 portfolio-item">
@@ -192,6 +207,8 @@
 									stocks, indices, cryptocurrencies, currencies, commodities,… The advantages of using
 									an artificial intelligence trading bot are numerous. </p>
 							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI2.html')">Read
+								More</button>
 						</div>
 					</div>
 					<div class="col-lg-4 col-sm-6 portfolio-item">
@@ -209,6 +226,8 @@
 									for criminals and terrorists. Now crypto sits at the heart crypto of American
 									politics, shaping elections and writing the rules for the financial future.</p>
 							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI3.html')">Read
+								More</button>
 						</div>
 					</div>
 					<div class="col-lg-4 col-sm-6 portfolio-item">
@@ -227,6 +246,8 @@
 									definitions or general concepts, a good research paper should always be based on
 									concrete data and offer useful answers to real problems or challenges.</p>
 							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI4.html')">Read
+								More</button>
 						</div>
 					</div>
 					<div class="col-lg-4 col-sm-6 portfolio-item">
@@ -245,6 +266,8 @@
 									strategic options based on 2 dimensions: the industry’s life-cycle stage and
 									competitive position.</p>
 							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI5.html')">Read
+								More</button>
 						</div>
 					</div>
 					<div class="col-lg-4 col-sm-6 portfolio-item">
@@ -264,9 +287,209 @@
 									want to start a career in marketing. The most important thing is to know how to get
 									started from scratch.</p>
 							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI6.html')">Read
+								More</button>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6 portfolio-item">
+						<div class="card h-100">
+							<a class="hover-box" href="#">
+								<div class="dot-full">
+									<i class="fas fa-link"></i>
+								</div>
+								<img class="card-img-top" src="images/image002.jpg" alt="" />
+							</a>
+							<div class="card-body">
+								<h4><a href="#">How to Ensure Originality in Your Content: A Marketer’s Guide to
+										Plagiarism-Free Writing</a></h4>
+								<p>Every marketer knows that the originality of content defines the difference between
+									building lasting brand loyalty and fading into the background noise. Apart from
+									failing to spark interest in the target audience, there’s a high probability of
+									facing penalties for duplicate content by search engines. We indeed live in times
+									when the temptation to “borrow” ideas or accidentally replicate existing insights is
+									relatively high. However, it doesn’t mean that you can’t avoid plagiarism, both
+									intentional and unintentional.</p>
+							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI7.html')">Read
+								More</button>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6 portfolio-item">
+						<div class="card h-100">
+							<a class="hover-box" href="#">
+								<div class="dot-full">
+									<i class="fas fa-link"></i>
+								</div>
+								<img class="card-img-top" src="images/Picture1.png" alt="" />
+							</a>
+							<div class="card-body">
+								<h4><a href="#">Essential Tools Every Modern Marketing Team Should Use</a></h4>
+								<p>When I first started working with marketing teams, one thing became clear fast:
+									without the right tools, even the most creative ideas can fall flat. There is just
+									too much going on. There are content calendars, social media posts, emails,
+									campaigns, performance reports, and so much more. It all adds up quickly.</p>
+							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI8.html')">Read
+								More</button>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6 portfolio-item">
+						<div class="card h-100">
+							<a class="hover-box" href="#">
+								<div class="dot-full">
+									<i class="fas fa-link"></i>
+								</div>
+								<img class="card-img-top" src="images/Picture1.jpg" alt="" />
+							</a>
+							<div class="card-body">
+								<h4><a href="#">How to Save on Roaming Fees When Travelling for Business</a></h4>
+								<p>International business travel is common these days. But staying connected abroad?
+									That can come with some hidden costs. Roaming charges can slowly eat into your
+									budget, especially if you’re still using your regular mobile plan from home. Most
+									business trips require internet access; checking emails, joining meetings, and using
+									maps while on the move.</p>
+							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI9.html')">Read
+								More</button>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6 portfolio-item">
+						<div class="card h-100">
+							<a class="hover-box" href="#">
+								<div class="dot-full">
+									<i class="fas fa-link"></i>
+								</div>
+								<img class="card-img-top" src="images/portfolio-big-01.jpg" alt="" />
+							</a>
+							<div class="card-body">
+								<h4><a href="#">How Students Can Start a Career in Marketing: How to Get Into Digital
+										Marketing</a></h4>
+								<p>Entering the world of digital marketing can seem complicated. There are too many
+									options, many different roles, and growing competition. But the good news is that
+									there have never been so many opportunities for students and recent graduates who
+									want to start a career in marketing. The most important thing is to know how to get
+									started from scratch.</p>
+							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI6.html')">Read
+								More</button>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6 portfolio-item">
+						<div class="card h-100">
+							<a class="hover-box" href="#">
+								<div class="dot-full">
+									<i class="fas fa-link"></i>
+								</div>
+								<img class="card-img-top" src="images/ai10.jpg" alt="" />
+							</a>
+							<div class="card-body">
+								<h4><a href="#">How Often Should You Get a 409A Valuation?</a></h4>
+								<p>A 409A valuation is a crucial tool for privately held companies issuing stock as part
+									of their compensation packages. A qualified independent appraiser conducts the
+									process to determine the company’s fair market value of its common stock.
+									Understanding how it works is essential for founders or investors looking to set the
+									stage for long-term growth. This article explores how often you get 409A valuation
+									and potential triggers.</p>
+							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI10.html')">Read
+								More</button>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6 portfolio-item">
+						<div class="card h-100">
+							<a class="hover-box" href="#">
+								<div class="dot-full">
+									<i class="fas fa-link"></i>
+								</div>
+								<img class="card-img-top" src="images/ai11.jpg" alt="" />
+							</a>
+							<div class="card-body">
+								<h4><a href="#">5 Ways a VPN Can Protect Your Online Business</a></h4>
+								<p>Running an online business has limitless potential, but there are also a lot of
+									cybersecurity risks involved.
+									You’re handling customer data, managing remote teams, and all your finances are
+									handled online. Getting hacked or having your data stolen can very well mean the end
+									of your business.
+									The good news?
+									One simple tool can help protect your business: a virtual private network, or VPN.
+								</p>
+							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI11.html')">Read
+								More</button>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6 portfolio-item">
+						<div class="card h-100">
+							<a class="hover-box" href="#">
+								<div class="dot-full">
+									<i class="fas fa-link"></i>
+								</div>
+								<img class="card-img-top" src="images/ai12.jpg" alt="" />
+							</a>
+							<div class="card-body">
+								<h4><a href="#">Top 6 Tools for Creating Videos With AI in 2025</a></h4>
+								<p>Visual storytelling is a winner across diverse niches, from the entertainment
+									industry to brand-building. The logic is simple: videos are easy to consume, and
+									they leave a memorable impact. However, producing them is an uphill journey, as it
+									involves multiple creative and labor-intensive steps.
+									Creators need to develop the concept, write scripts, and storyboard the ideas. Then
+									they have to do the real work, operating cameras, directing scenes, editing footage,
+									and adding graphics. Imagine the volume of effort required for transforming ideas
+									into engaging visual narratives
+								</p>
+							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI12.html')">Read
+								More</button>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6 portfolio-item">
+						<div class="card h-100">
+							<a class="hover-box" href="#">
+								<div class="dot-full">
+									<i class="fas fa-link"></i>
+								</div>
+								<img class="card-img-top" src="images/ai13.jpg" alt="" />
+							</a>
+							<div class="card-body">
+								<h4><a href="#">Top 10 Email Marketing Platforms in 2025</a></h4>
+								<p>Anyone who has a digital business will know that everything related to online
+									marketing can be more complex than it appears to be and that sometimes it is
+									beneficial to apply different strategies and methods to have effective results or
+									improve the existing performance.
+									Email marketing is one of these strategies that usually has a great impact on
+									conversions and total sales results in a company so every day is increasing the
+									number of users who opt to use this method and acquire software that is specifically
+									responsible for optimizing this aspect.
+								</p>
+							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI13.html')">Read
+								More</button>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6 portfolio-item">
+						<div class="card h-100">
+							<a class="hover-box" href="#">
+								<div class="dot-full">
+									<i class="fas fa-link"></i>
+								</div>
+								<img class="card-img-top" src="images/a14.jpg" alt="" />
+							</a>
+							<div class="card-body">
+								<h4><a href="#">Top 20 Most Expensive Domain Names in 2025</a></h4>
+								<p>In this article, you will discover the top most expensive domain names of 2025,
+									revealing the giants of the web and what makes them worth millions.
+									Have you ever wondered why some website names cost a fortune? Well, grab your
+									favorite snack, and let’s dive into a world where names like LasVegas.com sell for
+									millions—yes, you heard that right, millions! These aren’t just names; they’re the
+									online homes of big ideas, from selling shoes to booking your next vacation.
+								</p>
+							</div>
+							<button class="btn btn-primary" onclick="openArticle('articles/AI14.html')">Read
+								More</button>
 						</div>
 					</div>
 				</div>
+
 
 				<div class="pagination_bar">
 					<!-- Pagination -->
@@ -313,6 +536,33 @@
 			</div>
 		</div>
 
+		<!-- modal forEac -->
+
+		<!-- Article Modal -->
+		<div class="modal fade" id="articleModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-xl custom-modal" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Article</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<iframe id="articleFrame" src="" width="100%" height="600px" frameborder="0"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function openArticle(url) {
+				document.getElementById("articleFrame").src = url;
+				$('#articleModal').modal('show');
+			}
+		</script>
+
+
 		<!-- /.container -->
 		<!--footer starts from here-->
 		<footer class="footer">
@@ -341,10 +591,17 @@
 						<h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
 						<!--headin5_amrc-->
 						<ul class="footer_ul_amrc">
-							<li><a href="index.html"><i class="fas fa-long-arrow-alt-right"></i>Home</a></li>
-							<li><a href="services.html"><i class="fas fa-long-arrow-alt-right"></i>Our Service </a></li>
-							<li><a href="about.html"><i class="fas fa-long-arrow-alt-right"></i>About Us</a></li>
-							<li><a href="contact.html"><i class="fas fa-long-arrow-alt-right"></i>Get In Touch</a></li>
+
+							<li><a href="policies.html#cookie"><i class="fas fa-long-arrow-alt-right"></i> Cookie
+									Policy</a></li>
+							<li><a href="policies.html#disclaimer"><i class="fas fa-long-arrow-alt-right"></i>
+									Disclaimer</a></li>
+							<li><a href="policies.html#editorial"><i class="fas fa-long-arrow-alt-right"></i> Editorial
+									Policy</a></li>
+							<li><a href="policies.html#privacy"><i class="fas fa-long-arrow-alt-right"></i> Privacy
+									Policy</a></li>
+							<li><a href="policies.html#terms"><i class="fas fa-long-arrow-alt-right"></i> Terms of
+									Use</a></li>
 						</ul>
 						<!--footer_ul_amrc ends here-->
 					</div>
