@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Job, OurTeam, ContactUs, Application, OurPartners } = require("../models");
+const { Job, OurTeam, ContactUs, Application, OurPartners, MembershipRequest } = require("../models");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
 const path = require("path");
@@ -10,7 +10,7 @@ const uploadDir = path.join(__dirname, "..", "uploads");
 
 // Ensure uploads folder exists
 if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
+    fs.mkdirSync(uploadDir, { recursive: true });
 }
 const storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, "uploads/"),
@@ -41,9 +41,8 @@ router.get("/", async (req, res) => {
         const teamMembers = await OurTeam.findAll();
         const contacts = await ContactUs.findAll();
         const partners = await OurPartners.findAll();
-
-        //all job applications
         const applications = await Application.findAll({ include: [{ model: Job, as: "job" }] });
+        const membershipRequests = await MembershipRequest.findAll();
         //console.log("Fetched jobs:", jobs);
         //console.log("Fetched team members:", teamMembers);
         //console.log("Fetched contacts:", contacts);
@@ -51,7 +50,7 @@ router.get("/", async (req, res) => {
         //console.log("Fetched applications:", applications);
 
 
-        res.render("index", { jobs, teamMembers, contacts, partners, applications });
+        res.render("index", { jobs, teamMembers, contacts, partners, applications, membershipRequests });
     } catch (err) {
         ////console.error("Error fetching admin data:", err);
         res.status(500).send("Internal Server Error");
@@ -269,4 +268,34 @@ router.post("/api/contact", async (req, res) => {
     }
 });
 
+router.post("/api/membership-request", async (req, res) => {
+    try {
+        console.log("Received membership request:", req.body);
+        const request = await MembershipRequest.create(req.body);
+
+        console.log("Created membership request:", request.toJSON());
+        if (!request) {
+            return res.status(400).json({ error: "Failed to create membership request" });
+        }
+
+        // send email to both the admin and the user
+        const mailOptions = {
+            from: EMAIL_USER,
+            to: `${request.email}, ${EMAIL_USER}`, // send to both user and admin
+            subject: "Membership Request Received",
+            text: `Dear ${request.name},\n\nThank you for your interest in becoming a member. We have received your request and will get back to you shortly.\n\nBest regards,\nTroycity Africa Team`,
+        };
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                ////console.error("Error sending email:", error);
+            } else {
+                ////console.log("Email sent:", info.response);
+            }
+        });
+        res.status(201).json(request);
+    } catch (err) {
+        ////console.error("Error creating membership request via API:", err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
 module.exports = router;

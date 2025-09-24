@@ -45,6 +45,9 @@
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact">Contact</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#partners">Partners</button>
       </li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+          data-bs-target="#membership-requests">Membership Requests</button>
+      </li>
     </ul>
 
     <div class="tab-content">
@@ -143,7 +146,7 @@
                       <% } %>
                 </td>
 
-  
+
                 </td>
               </tr>
               <% }) %>
@@ -267,6 +270,52 @@
                     </button>
                   </form>
                 </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="membership-requests">
+
+        <h3>Membership Requests</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Plan</th>
+              <th>Message</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% membershipRequests.forEach(m=> { %>
+              <tr>
+                <td>
+                  <%= m.name %>
+                </td>
+                <td>
+                  <%= m.email %>
+                </td>
+                <td>
+                  <%= m.phone %>
+                </td>
+                <td>
+                  <%= m.plan %>
+                </td>
+                <td>
+                  <%= m.message %>
+                </td>
+                <td>
+                  <form action="mailto:<%= m.email %>" method="POST" class="d-inline"
+                    onsubmit="return confirm('You are about to send an email to this user. Do you want to continue?');">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                      <i class="fas fa-envelope"></i> Send Email
+                    </button>
+                  </form>
+                </td>
+                <td></td>
               </tr>
               <% }) %>
           </tbody>
