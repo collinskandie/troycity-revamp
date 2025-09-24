@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Troycity Africa Policies">
+	<link rel="icon" href="images/logo.png" />
+	<meta name="author" content="Collins Kandie">
+	<title>Policies | Troycity Africa</title>
+	<!-- Bootstrap core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Fontawesome CSS -->
+	<link href="css/all.css" rel="stylesheet">
+	<!-- Custom styles -->
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="wrapper-main">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="images/logo.png" alt="logo" />
+				</a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="fas fa-bars"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> About Us <i
+									class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+								<a class="dropdown-item" href="about.html">About Us</a>
+								<a class="dropdown-item" href="whatwedo.html">What we do</a>
+								<a class="dropdown-item" href="whatwebelieve.html">What We Believe</a>
+								<a class="dropdown-item" href="ourleadership.html">Our Leadership</a>
+								<a class="dropdown-item" href="becomeamember.html">Become a Member</a>
+								<a class="dropdown-item" href="awardsrecognition.html">Awards & Recognition</a>
+								<a class="dropdown-item" href="socialimpact.html">Social Impact</a>
+								<a class="dropdown-item" href="sustainability.html">Sustainability</a>
+								<a class="dropdown-item" href="annualreports.html">Annual Reports</a>
+								<a class="dropdown-item" href="faq.html">Frequently Asked Questions</a>
+							</div>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="services.html">Our Capabilities</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownIndustries" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">Industries <i
+									class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" id="industriesDropdown"></div>
+						</li>
+
+						<script>
+							fetch("json/industries.json")
+								.then(res => res.json())
+								.then(data => {
+									const dropdown = document.getElementById("industriesDropdown");
+									data.forEach(industry => {
+										const link = document.createElement("a");
+										link.className = "dropdown-item";
+										link.href = "industries.html?slug=" + industry.slug;
+										link.textContent = industry.title;
+										dropdown.appendChild(link);
+									});
+								});
+						</script>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">Overview <i class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+								<a class="dropdown-item active" href="careers.html">Careers</a>
+								<a class="dropdown-item" href="partnerships.html">Partnerships</a>
+								<a class="dropdown-item" href="ongoing-projects.html">Our Ongoing Projects</a>
+								<a class="dropdown-item" href="pricing.html">Pricing Table</a>
+								<a class="dropdown-item" href="webinars.html">Webinars</a>
+								<a class="dropdown-item" href="publications.html">Publications</a>
+
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">INSIGHTS <i class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="portfolio-3-col.html">Artificial Intelligence</a>
+								<a class="dropdown-item" href="portfolio-4-col.html">News And Events</a>
+								<a class="dropdown-item" href="portfolio-item.html">Sustainability</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">Blog <i class="fas fa-sort-down"></i></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+								<a class="dropdown-item active" href="blog.html">Blog</a>
+								<a class="dropdown-item" href="blog-post.html">Blog Post</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Page Title -->
+		<div class="full-title bg-light py-4">
+			<div class="container">
+				<h1 class="mb-2">Our Policies</h1>
+				<ol class="breadcrumb mb-0">
+					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item active">Policies</li>
+				</ol>
+			</div>
+		</div>
+
+		<!-- Policies Tabs -->
+		<section class="py-5">
+			<div class="container">
+				<ul class="nav nav-tabs" id="policyTabs" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="cookie-tab" data-toggle="tab" href="#cookie" role="tab">Cookie
+							Policy</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="disclaimer-tab" data-toggle="tab" href="#disclaimer"
+							role="tab">Disclaimer</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="editorial-tab" data-toggle="tab" href="#editorial" role="tab">Editorial
+							Policy</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="privacy-tab" data-toggle="tab" href="#privacy" role="tab">Privacy
+							Policy</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="terms-tab" data-toggle="tab" href="#terms" role="tab">Terms of Use</a>
+					</li>
+				</ul>
+				<div class="tab-content border p-4" id="policyTabsContent">
+					<div class="tab-pane fade show active" id="cookie" role="tabpanel">
+						<h3>Cookie Policy for Troycity Africa</h3>
+						<h4>How We Use Cookies</h4>
+
+						<p>We use cookies for a variety of reasons detailed below. Unfortunately, in most cases there
+							are no industry standard options for disabling cookies without completely disabling the
+							functionality and features they add to this site. It is recommended that you leave on all
+							cookies if you are not sure whether you need them or not in case, they are used to provide a
+							service that you use. </p>
+						<h4>Disabling Cookies</h4>
+						<p>You can prevent the setting of cookies by adjusting the settings on your browser (see your
+							browser Help for how to do this). Be aware that disabling cookies will affect the
+							functionality
+							of this and many other websites that you visit. Disabling cookies will usually result in
+							also
+							disabling certain functionality and features of this site. Therefore, it is recommended that
+							you do not disable cookies.
+						</p>
+						<h4>The Cookies We Set</h4>
+						<p>This site offers newsletter or email subscription services and cookies may be used to
+							remember if you are already registered and whether to show certain notifications which
+							might only be valid to subscribed/unsubscribed users.
+						</p>
+						<p>When you submit data to through a form such as those found on contact pages or comment
+							forms cookies may be set to remember your user details for future correspondence.
+						</p>
+						<h4>Third Party Cookies</h4>
+						<p>In some special cases we also use cookies provided by trusted third parties. The following
+							section details which third party cookies you might encounter through this site.
+							This site uses Google Analytics which is one of the most widespread and trusted analytics
+							solutions on the web for helping us to understand how you use the site and ways that we
+							can improve your experience. These cookies may track things such as how long you spend
+							on the site and the pages that you visit so we can continue to produce engaging content.
+							For more information on Google Analytics cookies, see the official Google Analytics page.
+							The Google AdSense service we use to serve advertising uses a DoubleClick cookie to serve
+							more relevant ads across the web and limit the number of times that a given ad is shown to
+							you.
+						</p>
+						<p>For more information on Google AdSense see the official Google AdSense privacy FAQ.
+							Several partners advertise on our behalf and affiliate tracking cookies simply allow us to
+							see
+							if our customers have come to the site through one of our partner sites so that we can
+							credit
+							them appropriately and where applicable allow our affiliate partners to provide any bonus
+							that they may provide you for making a purchase.
+						</p>
+						<p>We also use social media buttons and/or plugins on this site that allow you to connect with
+							your social network in various ways. For these to work the following social media sites
+							including; Facebook, twitter, LinkedIn, google plus, WhatsApp, will set cookies through our
+							site which may be used to enhance your profile on their site or contribute to the data they
+							hold for various purposes outlined in their respective privacy policies.
+						</p>
+						<h4>More Information</h4>
+
+						<p>
+							Hopefully that has clarified things for you and as was previously mentioned if there is
+							something that you aren’t sure whether you need or not it’s usually safer to leave cookies
+							enabled in case it does interact with one of the features you use on our site.
+							However, if you are still looking for more information then you can contact us through one
+							of our preferred contact methods.
+						</p>
+
+					</div>
+					<div class="tab-pane fade" id="disclaimer" role="tabpanel">
+						<h3>Disclaimer</h3>
+						<p>The information provided by Troycity Africa (“I”, “we,” “us” or “our”) is for
+							general informational purposes only on https://www.troycityafrica.com (the
+							“Site”).
+						</p>
+						<p>All information on the Site is provided in good faith, however, we make no
+							representation or warranty of any kind, express or implied, regarding the
+							accuracy, adequacy, validity, reliability, availability or completeness of any
+							information on the Site.</p>
+						<p>Under no circumstance shall we have any liability to you for any loss or damage
+							of any kind incurred as a result of the use of the site or reliance on any information
+							provided on the site. Your use of the site and your reliance on any information on
+							the site is solely at your own risk.</p>
+						<h4>PROPRIETARY RIGHTS</h4>
+						<p>The design of the Site and all information contained herein are owned by Troycity
+							Africa and protected by copyright, trademark, and other proprietary
+							rights. Troycity Africa is a registered service / trademarks of the company. The
+							contents and concept of the site may not be used in whole or in part in any manner
+							without the prior written consent of Troycity Africa. Troycity Africa cannot and
+							does not authorize the use of copyrighted materials contained in linked websites.
+							Users must request such authorization from the sponsor of the linked website.</p>
+
+
+						<p></p>
+
+						<h4>EXTERNAL LINKS DISCLAIMER</h4>
+						<p>
+							The Site may contain (or you may be sent through the Site) links to other websites
+							or content belonging to or originating from third parties or links to websites and
+							features in banners or other advertising. Such external links are not investigated,
+							monitored, or checked for accuracy, adequacy, validity, reliability, availability or
+							completeness by us.
+						</p>
+						<p><strong>WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME
+								RESPONSIBILITY FOR THE ACCURACY OR RELIABILITY OF ANY
+								INFORMATION OFFERED BY THIRD-PARTY WEBSITES LINKED THROUGH
+								THE SITE OR ANY WEBSITE OR FEATURE LINKED IN ANY BANNER OR
+								OTHER ADVERTISING. WE WILL NOT BE A PARTY TO OR IN ANY WAY BE
+								RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU
+								AND THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES.
+								PROFESSIONAL DISCLAIMER </strong></p>
+						<p>The Site cannot and does not contain professional advice. The research and
+							business consultancy information is provided for general informational and
+							educational purposes only and is not a substitute for professional
+							advice. Accordingly, before taking any actions based upon such information, we
+							encourage you to consult with the appropriate professionals. We do not provide
+							any kind of medical, health and legal advice. <strong>THE USE OR RELIANCE OF ANY
+								INFORMATION CONTAINED ON THIS SITE IS SOLELY AT YOUR OWN RISK.</strong>
+						</p>
+						<h4>COMMENTS DISCLAIMER</h4>
+						<p>While Troycity Africa makes reasonable efforts to monitor and moderate content
+							posted on its social media platforms, neither Troycity Africa nor its employees or
+							other affiliated individuals have the ability to moderate all comments at all times
+							and cannot always respond immediately to online requests for information.
+							Troycity Africa reserves the sole right to review, edit and/or delete any comments
+							it deems inappropriate. Comments including, but not limited to, the following
+							may be deleted or edited if deemed inappropriate or irrelevant by the moderators:</p>
+						<ul>
+							<li>Abusive or hurtful comments about a user or another participant</li>
+							<li>Off-topic and redundant comments (this includes promotion or
+								solicitation of events, groups, pages, websites, organizations, products
+								and programs not related to or affiliated with TROYCITY AFRICA)</li>
+							<li>Comments that use foul language or “hate speech” (for example,
+								including but not limited to racial, ethnic or gender-bashing language)</li>
+							<li>Personal attacks or defamatory statements or comments (i.e., making
+								negative personal, speculative or untrue comments about a
+								participant), instead of just criticizing his/her posting, opinion or
+								comments</li>
+							<li>Comments that violate the privacy of any individual;</li>
+							<li>Comments that are derogatory characterizations of any ethnic, racial,
+								gender, professional, age or religious groups</li>
+							<li>Content that defames, misrepresents or contains disparaging remarks
+								about other people, products or companies</li>
+							<li>Comments that suggest or encourage illegal activity</li>
+							<li>Comments that reference any claims or share personal, account or
+								policy information</li>
+							<li>Comments or links to sites that contain viruses or malicious software</li>
+						</ul>
+						<h4>COPYRIGHT</h4>
+						<p>Unauthorized use and/or duplication of this material without express permission
+							from this site’s author and/or owner is strictly prohibited. Excerpts and links may
+							be used, provided that full and clear credit is given to Troycity Africa with
+							appropriate and specific direction to the original content.</p>
+						<p>
+							You can email us at admin@troycityafrica.com for permissions</p>
+						<h3>CONSENT</h3>
+						<p>By using our website, you hereby consent to our disclaimer and agree to its terms.</p>
+						<h3>UPDATE</h3>
+						<p>Should we update, amend or make any changes to this document, those changes
+							will be prominently posted here.</p>
+					</div>
+					<div class="tab-pane fade" id="editorial" role="tabpanel">
+						<h3>Editorial Policy</h3>
+						<p>
+							At <strong>Troycity Africa</strong>, our primary goal is to provide valuable information and
+							insights for marketers.
+							To achieve this, we have a comprehensive editorial policy in place that drives our content
+							creation process.
+						</p>
+
+						<p>The process of content creation goes through several stages which include:</p>
+						<ul>
+							<li>Research</li>
+							<li>Writing</li>
+							<li>Editing</li>
+							<li>Fact-Checking</li>
+							<li>Creating Images</li>
+							<li>Publishing</li>
+						</ul>
+
+						<h4>1. Research Process</h4>
+						<p>Good research is the foundation of our articles. Our research process is systematic and
+							designed to create fresh and engaging content:</p>
+						<ol>
+							<li><strong>Identify the topic:</strong> We select topics relevant to our readers, often
+								focusing on a specific macro category (e.g., Branding). Once finalized, we explore
+								subtopics to ensure readers have complete information at their disposal.</li>
+							<li><strong>Secondary research:</strong> We gather data from credible sources — company
+								reports, financial statements, academic journals, and industry publications — ensuring
+								accuracy and relevance.</li>
+						</ol>
+
+						<h4>2. Writing Process</h4>
+						<p>Good writing is as important as good research. We ensure quality content by following these
+							steps:</p>
+						<ol>
+							<li><strong>Outline creation:</strong> After research, we prepare a structured outline that
+								logically develops the topic from basics to advanced points.</li>
+							<li><strong>Drafting the article:</strong> Articles are written by the Troycity Africa team
+								and primarily authored by <strong>Victor Nadebu</strong>, CEO of Troycity Africa, who
+								integrates case studies and real-world examples.</li>
+							<li><strong>Editing:</strong> The content team reviews drafts to fix grammar, typos, and
+								clarity issues.</li>
+						</ol>
+
+						<h4>3. Fact-Checking Process</h4>
+						<p>Accuracy and trustworthiness are key. Our editing team follows a strict fact-checking
+							process:</p>
+						<ol>
+							<li><strong>Verifying sources:</strong> We rely only on credible, cross-checked references.
+							</li>
+							<li><strong>Data validation:</strong> Financial and statistical claims are double-checked
+								with company statements and authoritative publications.</li>
+							<li><strong>Final review:</strong> The editorial team ensures all facts, references, and
+								attributions are accurate before publishing.</li>
+						</ol>
+
+						<p>
+							This systematic process ensures our readers receive high-quality, accurate, and engaging
+							content.
+							Our mission is to make <strong>Troycity Africa</strong> the number one trusted source of
+							marketing insights online.
+						</p>
+					</div>
+					<div class="tab-pane fade" id="privacy" role="tabpanel">
+						<h3>Privacy Policy and Disclaimer for Troycity Africa</h3>
+						<p><em>Effective Date: April 20, 2023</em></p>
+
+						<p>This Privacy Statement is designed to provide information about Troycity Africa (“Troycity
+							Africa”, “TA20”,
+							“we”, “our” or “us”) privacy and data collection practices. This privacy policy does not
+							apply to
+							Sites maintained by other companies or organizations to which we may link or who may link to
+							us.</p>
+
+						<h4>Our Principles</h4>
+						<ul>
+							<li>We don’t ask you for personal information unless we truly need it.</li>
+							<li>We don’t share your personal information with anyone.</li>
+							<li>The only personal information we store is your IP address to make the site function.
+							</li>
+						</ul>
+
+						<h4>How We Use Your Information</h4>
+						<ul>
+							<li>To help you quickly find services or information.</li>
+							<li>To deliver content most relevant to you.</li>
+							<li>To serve advertisements.</li>
+							<li>To protect the safety of users and the public when necessary.</li>
+						</ul>
+
+						<h4>Personal Identification Information</h4>
+						<p>We collect name and email only if voluntarily submitted (e.g., newsletter, forms).
+							IP addresses are always collected to ensure site functionality.</p>
+
+						<h4>Non-Personal Information</h4>
+						<p>We may collect browser type, device details, operating system, and ISP information for
+							analytics.</p>
+
+						<h4>Cookies</h4>
+						<p>We use cookies for personalization and ads. Users may disable cookies, but some features may
+							not function.</p>
+
+						<h4>Advertising</h4>
+						<p>Ads are served by third-party partners like Google AdSense and AdExchange, which may use
+							cookies for personalization.</p>
+
+						<h4>Third-Party Services</h4>
+						<ul>
+							<li>Google (AdSense, Analytics, DoubleClick).</li>
+							<li>Aweber Newsletter (if you sign up).</li>
+							<li>WordPress Comments with anti-spam plugin.</li>
+						</ul>
+
+						<h4>Embedded Content</h4>
+						<p>Articles may include videos, images, or posts from third-party websites which may collect
+							your data.</p>
+
+						<h4>Data Sharing</h4>
+						<p>We do not sell your data. We may share anonymized demographic data with trusted affiliates or
+							advertisers.</p>
+
+						<h4>Data Security</h4>
+						<ul>
+							<li>Regular audits and software updates.</li>
+							<li>SSL/TLS encryption.</li>
+							<li>Strong passwords and two-factor authentication.</li>
+						</ul>
+
+						<h4>Changes to Policy</h4>
+						<p>We may update this policy from time to time. Please review this page regularly.</p>
+
+						<h4>Contact Us</h4>
+						<p>If you have any questions, contact:</p>
+						<p><strong>Victor Nadebu</strong><br>Email: admin@troycityafrica.com</p>
+					</div>
+
+
+					<div class="tab-pane fade" id="terms" role="tabpanel">
+						<h3>Terms of Use</h3>
+						<p>Welcome to Troycity Africa. By using our website, you agree to comply with the following
+							terms of use:</p>
+
+						<ul>
+							<li>The content of this website is for general information only and may change without
+								notice.</li>
+							<li>This website uses cookies to monitor browsing preferences. By allowing cookies, certain
+								personal data may be stored for use by third parties.</li>
+							<li>We and third parties do not guarantee the accuracy, completeness, or suitability of the
+								information on this site. You acknowledge that it may contain errors, and we exclude
+								liability for any inaccuracies.</li>
+							<li>Your use of information or materials on this site is at your own risk. It is your
+								responsibility to ensure suitability for your needs.</li>
+							<li>All design, layout, and graphics are owned or licensed by Troycity Africa (excluding
+								images that belong to their respective owners). Unauthorized reproduction is prohibited.
+							</li>
+							<li>All trademarks not owned by Troycity Africa are acknowledged.</li>
+							<li>Unauthorized use of this website may give rise to legal claims or constitute a criminal
+								offense.</li>
+							<li>Links to external sites are provided for convenience. We do not endorse and are not
+								responsible for their content.</li>
+							<li>Use of this website and disputes arising from it are subject to the laws of Kenya.</li>
+						</ul>
+
+						<p>
+							For any questions about these terms, contact us at
+							<a href="mailto:admin@troycityafrica.com">admin@troycityafrica.com</a>.
+						</p>
+
+						<p class="mb-0"><strong>Thanks and Regards,</strong><br>
+							Victor Nadebu<br>
+							CEO, Troycity Africa</p>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<div class="touch-line">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<p>We Believe That Location Doesn't Matter. Though We Are Based In Kenya, Our Customers Span
+							Across the World.</p>
+					</div>
+					<div class="col-md-4">
+						<a class="btn btn-lg btn-secondary btn-block" href="contact.html">Contact Us</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container bottom_border">
+				<p class="copyright text-center">All Rights Reserved. &copy; 2025 <a href="#">Troycity Africa</a></p>
+			</div>
+		</footer>
+	</div>
+
+	<!-- Scripts -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
