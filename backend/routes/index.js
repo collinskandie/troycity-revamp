@@ -12,10 +12,24 @@ const uploadDir = path.join(__dirname, "..", "uploads");
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true });
 }
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => cb(null, "uploads/"),
+//     filename: (req, file, cb) => cb(null, Date.now() + path.extname(file.originalname))
+// });
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, "uploads/"),
-    filename: (req, file, cb) => cb(null, Date.now() + path.extname(file.originalname))
+    destination: function (req, file, cb) {
+        // ✅ Save into public/team instead of public/uploads/team
+        const teamDir = path.join(__dirname, "../public/team");
+        if (!fs.existsSync(teamDir)) {
+            fs.mkdirSync(teamDir, { recursive: true });
+        }
+        cb(null, teamDir);
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + path.extname(file.originalname));
+    },
 });
+
 const upload = multer({ storage });
 
 const EMAIL_HOST = process.env.EMAIL_HOST;
@@ -141,9 +155,7 @@ router.post("/team", upload.single("image"), async (req, res) => {
     try {
         console.log("Received team member data:", req.body, req.file);
         const { fullName, role } = req.body;
-        const imageUrl = req.file ? `../uploads/team/${req.file.filename}` : null;
-
-
+        const imageUrl = req.file ? `/team/${req.file.filename}` : null;
         await OurTeam.create({ fullName, role, imageUrl });
         res.redirect("/admin");
 
@@ -160,7 +172,7 @@ router.post("/team/edit/:id", upload.single("image"), async (req, res) => {
     const { fullName, role } = req.body;
     const updates = { fullName, role };
 
-    if (req.file) updates.imageUrl = `../uploads/team/${req.file.filename}`;
+    if (req.file) updates.imageUrl = `/team/${req.file.filename}`;
 
     await OurTeam.update(updates, { where: { id: req.params.id } });
     console.log("Team member updated successfully");
@@ -175,9 +187,6 @@ router.get("/api/partner-team", async (req, res) => {
 
         // Fetch partners
         const partners = await OurPartners.findAll();
-
-        // //console.log("Fetched team members:", teamMembers);
-        // //console.log("Fetched partners:", partners);
 
         // Build response
         res.json({
