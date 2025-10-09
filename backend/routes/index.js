@@ -19,7 +19,7 @@ if (!fs.existsSync(uploadDir)) {
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         // ✅ Save into public/team instead of public/uploads/team
-        const teamDir = path.join(__dirname, "../public/team");
+        const teamDir = path.join(__dirname, "../../team");
         if (!fs.existsSync(teamDir)) {
             fs.mkdirSync(teamDir, { recursive: true });
         }
