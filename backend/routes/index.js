@@ -43,11 +43,6 @@ router.get("/", async (req, res) => {
         const partners = await OurPartners.findAll();
         const applications = await Application.findAll({ include: [{ model: Job, as: "job" }] });
         const membershipRequests = await MembershipRequest.findAll();
-        //console.log("Fetched jobs:", jobs);
-        //console.log("Fetched team members:", teamMembers);
-        //console.log("Fetched contacts:", contacts);
-        //console.log("Fetched partners:", partners);
-        //console.log("Fetched applications:", applications);
 
 
         res.render("index", { jobs, teamMembers, contacts, partners, applications, membershipRequests });
@@ -99,17 +94,6 @@ router.post("/job-applications", upload.single("cv"), async (req, res) => {
     }
 });
 
-// router.get("/all-applications", async (req, res) => {
-//     try {
-//         const applications = await Application.findAll({ include: [{ model: Job, as: "job" }] });
-//         res.json(applications);
-//     } catch (err) {
-//         console.error(err);
-//         res.status(500).json({ error: "Failed to fetch applications" });
-//     }
-// });
-
-// Jobs
 router.post("/jobs", async (req, res) => {
     try {
         await Job.create(req.body);
@@ -145,14 +129,42 @@ router.post("/jobs/delete/:id", async (req, res) => {
 });
 
 // Team
-router.post("/team", async (req, res) => {
+// app.post("/admin/team", upload.single("image"), async (req, res) => {
+//     const { fullName, role } = req.body;
+//     const imageUrl = req.file ? `/uploads/team/${req.file.filename}` : null;
+
+//     await db.Team.create({ fullName, role, imageUrl });
+//     res.redirect("/admin#team");
+// });
+
+router.post("/team", upload.single("image"), async (req, res) => {
     try {
-        await OurTeam.create(req.body);
+        console.log("Received team member data:", req.body, req.file);
+        const { fullName, role } = req.body;
+        const imageUrl = req.file ? `../uploads/team/${req.file.filename}` : null;
+
+
+        await OurTeam.create({ fullName, role, imageUrl });
+        res.redirect("/admin");
+
+        // await db.Team.create({ fullName, role, imageUrl });
+        console.log("Team member created successfully");
         res.redirect("/admin");
     } catch (err) {
         ////console.error("Error creating team member:", err);
         res.status(500).send("Internal Server Error");
     }
+});
+
+router.post("/team/edit/:id", upload.single("image"), async (req, res) => {
+    const { fullName, role } = req.body;
+    const updates = { fullName, role };
+
+    if (req.file) updates.imageUrl = `../uploads/team/${req.file.filename}`;
+
+    await OurTeam.update(updates, { where: { id: req.params.id } });
+    console.log("Team member updated successfully");
+    res.redirect("/admin#team");
 });
 
 // routes/index.js or wherever

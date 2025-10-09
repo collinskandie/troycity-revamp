@@ -332,6 +332,7 @@
 		async function loadPartnerTeam() {
 			try {
 				const res = await fetch("https://admin.troycityafrica.com/api/partner-team");
+				// const res = await fetch("http://127.0.0.1:5001/api/partner-team"); -->
 				const data = await res.json();
 
 				console.log("Fetched partner team data:", data);
@@ -341,7 +342,7 @@
 				teamContainer.innerHTML = data.team.map(member => `
 				<div class="col-lg-4 col-md-6 mb-4">
 					<div class="card h-100 text-center shadow-sm">
-						<img class="card-img-top" src="${member.image || 'images/default.jpg'}" alt="${member.name}">
+						<img class="card-img-top" src="backend${member.image || 'images/default.jpg'}" alt="${member.name}">
 						<div class="card-body">
 							<h4 class="card-title">${member.name}</h4>
 							<h6 class="card-subtitle mb-2 text-muted">${member.role || ''}</h6>
