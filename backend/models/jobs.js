@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: false
         },
+        category: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         postedDate: {
             type: DataTypes.DATE,
             allowNull: false

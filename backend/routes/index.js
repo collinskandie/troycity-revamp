@@ -69,6 +69,7 @@ router.get("/", async (req, res) => {
 router.post("/job-applications", upload.single("cv"), async (req, res) => {
     try {
         const { jobId, name, email, coverLetter } = req.body;
+        const troycityEmail = "careers@troycityafrica.com";
         const application = await Application.create({
             jobId,
             name,
@@ -79,7 +80,7 @@ router.post("/job-applications", upload.single("cv"), async (req, res) => {
         // send mail to admin and user?
         const mailOptions = {
             from: EMAIL_USER,
-            to: EMAIL_USER,
+            to: troycityEmail,
             subject: "New Job Application",
             text: `You have received a new job application from ${name}.`
         };

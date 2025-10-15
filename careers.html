@@ -23,9 +23,11 @@
 					<div class="col-lg-6">
 						<div class="social-media">
 							<ul>
-								<li><a href="https://www.facebook.com/profile.php?id=61576336976457"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="https://www.facebook.com/profile.php?id=61576336976457"><i
+											class="fab fa-facebook-f"></i></a></li>
 								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="https://www.linkedin.com/in/victor-nadebu-283390bb/"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="https://www.linkedin.com/in/victor-nadebu-283390bb/"><i
+											class="fab fa-linkedin-in"></i></a></li>
 								<li>
 									<a href="https://www.youtube.com/@troycityafrica6769" target="_blank">
 										<i class="fab fa-youtube"></i>
@@ -85,7 +87,7 @@
 						</li>
 
 						<li class="nav-item">
-							
+
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link" href="#" id="navbarDropdownIndustries" data-toggle="dropdown"
@@ -167,9 +169,6 @@
 					for passionate, driven, and innovative individuals to join us in shaping a sustainable future across
 					Africa and beyond.</p>
 			</div>
-
-
-			<!-- Open Positions -->
 			<div class="container py-5">
 				<!-- Filter Section -->
 				<div class="row mb-4">
@@ -179,14 +178,19 @@
 					<div class="col-md-4">
 						<select id="categoryFilter" class="form-control">
 							<option value="">All Categories</option>
-							<option value="tech">Tech</option>
-							<option value="marketing">Marketing</option>
-							<option value="finance">Finance</option>
+							<option value="technology_innovation">Technology & Innovation</option>
+							<option value="business_finance">Business & Finance</option>
+							<option value="research_strategy">Research & Strategy</option>
+							<option value="legal_regulatory_affairs">Legal & Regulatory Affairs</option>
+							<option value="marketing_communications">Marketing & Communications</option>
+							<option value="operations_administration">Operations & Administration</option>
+							<option value="social_impact_community_development">Social Impact & Community Development
+							</option>
+							<option value="internships_graduate_trainee_programs">Internships & Graduate Trainee
+								Programs</option>
 						</select>
 					</div>
 				</div>
-
-				<!-- Jobs Grid -->
 				<div class="row" id="jobsContainer"></div>
 			</div>
 
@@ -225,13 +229,6 @@
 					</div>
 				</div>
 			</div>
-
-
-
-
-
-
-			<!-- Why Work With Us -->
 			<div class="mt-5">
 				<h3>Why Work With Us?</h3>
 				<p>We offer a dynamic and inclusive environment where innovation thrives. Our benefits include:</p>
@@ -313,12 +310,16 @@
 						<h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
 						<!--headin5_amrc ends here-->
 						<ul class="footer_ul2_amrc">
-              <li><a class="facebook hb-xs-margin" href="https://www.facebook.com/profile.php?id=61576336976457" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a class="twitter hb-xs-margin" href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a class="instagram hb-xs-margin" href="https://wa.me/254113094450"><i class="fab fa-whatsapp"> 254113094450</i></a></li>
-              <li><a class="youtube hb-xs-margin" href="https://www.youtube.com/@troycityafrica6769"><i class="fab fa-youtube"> Troycity</i></a>
-              </li>
-            </ul>
+							<li><a class="facebook hb-xs-margin"
+									href="https://www.facebook.com/profile.php?id=61576336976457" target="_blank"><i
+										class="fab fa-facebook-f"></i></a></li>
+							<li><a class="twitter hb-xs-margin" href="#"><i class="fab fa-twitter"></i></a></li>
+							<li><a class="instagram hb-xs-margin" href="https://wa.me/254113094450"><i
+										class="fab fa-whatsapp"> 254113094450</i></a></li>
+							<li><a class="youtube hb-xs-margin" href="https://www.youtube.com/@troycityafrica6769"><i
+										class="fab fa-youtube"> Troycity</i></a>
+							</li>
+						</ul>
 						<!--footer_ul2_amrc ends here-->
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-6 ">
@@ -350,29 +351,60 @@
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="js/script.js"></script>
 	<script>
+		let allJobs = [];
+
 		async function loadJobs() {
-			const res = await fetch("https://admin.troycityafrica.com/api/jobs"); // adjust if needed
-			const jobs = await res.json();
+			const res = await fetch("https://admin.troycityafrica.com/api/jobs"); // or your production URL
+			allJobs = await res.json();
+			renderJobs(allJobs);
+		}
+
+		function renderJobs(jobs) {
 			const container = document.getElementById('jobsContainer');
 			container.innerHTML = '';
+
+			if (!jobs.length) {
+				container.innerHTML = `<div class="col-12 text-center text-muted">No jobs found in this category.</div>`;
+				return;
+			}
 
 			jobs.forEach(job => {
 				const card = document.createElement('div');
 				card.className = 'col-md-4 mb-4';
 				card.innerHTML = `
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">${job.title}</h5>
-            <p class="card-text text-muted">${job.location || 'Location: Remote'}</p>
-            <p>${job.description.substring(0, 120)}...</p>
-            <button class="btn btn-outline-primary btn-block" onclick="openApplyModal('${job.id}', '${job.title}')">
-              Apply Now
-            </button>
-          </div>
-        </div>
-      `;
+				<div class="card h-100 shadow-sm">
+					<div class="card-body">
+						<h5 class="card-title">${job.title}</h5>
+						<p class="card-text text-muted">${job.category ? job.category.replace(/_/g, ' ') : 'Uncategorized'}</p>
+						<p>${job.description.substring(0, 120)}...</p>
+						<button class="btn btn-outline-primary btn-block" onclick="openApplyModal('${job.id}', '${job.title}')">
+							Apply Now
+						</button>
+					</div>
+				</div>
+			`;
 				container.appendChild(card);
 			});
+		}
+
+		function filterJobs() {
+			const category = document.getElementById('categoryFilter').value;
+			const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+			let filtered = allJobs;
+
+			if (category) {
+				filtered = filtered.filter(job => job.category === category);
+			}
+
+			if (searchTerm) {
+				filtered = filtered.filter(job =>
+					job.title.toLowerCase().includes(searchTerm) ||
+					job.description.toLowerCase().includes(searchTerm)
+				);
+			}
+
+			renderJobs(filtered);
 		}
 
 		function openApplyModal(jobId, jobTitle) {
@@ -399,9 +431,14 @@
 			}
 		});
 
+		// Wire up filter inputs
+		document.getElementById('categoryFilter').addEventListener('change', filterJobs);
+		document.getElementById('searchInput').addEventListener('input', filterJobs);
+
 		// Load jobs on page load
 		loadJobs();
 	</script>
+
 
 
 </body>
