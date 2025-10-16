@@ -87,27 +87,115 @@
 						<li class="nav-item">
 							
 						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link" href="#" id="navbarDropdownIndustries" data-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false">Industries <i
-									class="fas fa-sort-down"></i></a>
-							<div class="dropdown-menu dropdown-menu-right" id="industriesDropdown"></div>
-						</li>
+						<li class="nav-item dropdown mega-dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownIndustries"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Industries <i class="fas fa-sort-down"></i>
+							</a>
 
-						<script>
-							fetch("json/industries.json")
-								.then(res => res.json())
-								.then(data => {
-									const dropdown = document.getElementById("industriesDropdown");
-									data.forEach(industry => {
-										const link = document.createElement("a");
-										link.className = "dropdown-item";
-										link.href = "industries.html?slug=" + industry.slug;
-										link.textContent = industry.title;
-										dropdown.appendChild(link);
-									});
-								});
-						</script>
+							<div class="dropdown-menu mega-menu p-4" aria-labelledby="navbarDropdownIndustries">
+								<div class="container-fluid">
+									<div class="row">
+										<!-- Column 1 -->
+										<div class="col-lg-3 col-md-6 mb-3">
+											<div class="industry-block">
+												<h6 class="industry-title mt-4"><a
+														href="/industries.html?slug=aerospace-defense">Aerospace &
+														Defense,</a>
+												</h6>
+												<h6 class="industry-title mt-4"><a
+														href="/industries.html?slug=automotive-mobility">Automotive &
+														Mobility</a>
+												</h6>
+												<h6 class="industry-title mt-4"><a
+														href="/industries.html?slug=aviation">Aviation</a>
+												</h6>
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=construction-infrastructure">Construction &
+														Infrastructure</a>
+												</h6>
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=energy-natural-resources">Energy & Natural
+														Resources</a>
+												</h6>
+												<ul class="list-unstyled sub-list">
+													<li><a href="/industries.html?slug=agribusiness">Agribusiness</a></li>
+													<li><a href="/industries.html?slug=chemicals">Chemicals</a></li>
+													<li><a href="/industries.html?slug=mining">Mining</a></li>
+													<li><a href="/industries.html?slug=oil-gas">Oil & Gas</a></li>
+													<li><a href="/industries.html?slug=utilities-renewables">Utilities & Renewables</a></li>
+												</ul>
+											</div>
+										</div>
+
+										<!-- Column 2 -->
+										<div class="col-lg-3 col-md-6 mb-3">
+											<div class="industry-block">
+												<h6 class="industry-title"><a href="/industries.html?slug=financial-services">Financial Services</a></h6>
+												<ul class="list-unstyled sub-list">
+													<li><a href="/industries.html?slug=banking">Banking</a></li>
+													<li><a href="/industries.html?slug=insurance">Insurance</a></li>
+													<li><a href="/industries.html?slug=payments">Payments</a></li>
+													<li><a href="/industries.html?slug=wealth-asset-management">Wealth & Asset Management</a></li>
+													<li><a href="/industries.html?slug=fintech">Fintech</a></li>
+													<li><a href="/industries.html?slug=digital-assets-blockchain">Digital Assets and Blockchain</a></li>
+												</ul>
+
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=forest-products-paper-packaging">Forest Products, Paper &
+														Packaging</a></h6>
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=healthcare-life-sciences">Healthcare & Life
+														Sciences</a></h6>
+												<ul class="sub-list">
+													<li><a href="/industries.html?slug=pharmaceuticals">Pharmaceuticals</a></li>
+													<li><a href="/industries.html?slug=medical-technology">Medical Technology</a></li>
+													<li><a href="/industries.html?slug=healthcare-payers">Healthcare Payers</a></li>
+													<li><a href="/industries.html?slug=healthcare-providers-services">Healthcare Providers and Services</a></li>
+												</ul>
+											</div>
+										</div>
+
+										<!-- Column 3 -->
+										<div class="col-lg-3 col-md-6 mb-3">
+											<div class="industry-block">
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=machinery-equipment">Machinery & Equipment</a>
+												</h6>
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=media-entertainment">Media & Entertainment</a>
+												</h6>
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=metals">Metals</a></h6>
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=private-equity">Private Equity</a></h6>
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=real-estate">Real Estate</a></h6>
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=retail">Retail</a></h6>
+												<ul class="list-unstyled sub-list">
+													<li><a href="/industries.html?slug=grocery">Grocery</a></li>
+													<li><a href="/industries.html?slug=fashion-luxury">Fashion & Luxury</a></li>
+													<li><a href="/industries.html?slug=restaurants">Restaurants</a></li>
+												</ul>
+											</div>
+										</div>
+
+										<!-- Column 4 -->
+										<div class="col-lg-3 col-md-6 mb-3">
+											<div class="industry-block">
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=social-impact">Social Impact</a></h6>
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=technology">Technology</a></h6>
+												<ul class="list-unstyled sub-list">
+													<li><a href="/industries.html?slug=hardware">Hardware</a></li>
+													<li><a href="/industries.html?slug=it-services">IT Services</a></li>
+													<li><a href="/industries.html?slug=semiconductors">Semiconductors</a></li>
+													<li><a href="/industries.html?slug=software">Software</a></li>
+												</ul>
+
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=telecommunications">Telecommunications</a></h6>
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=transportation">Transportation</a></h6>
+												<ul class="list-unstyled sub-list">
+													<li><a href="/industries.html?slug=freight-logistics">Freight & Logistics</a></li>
+													<li><a href="/industries.html?slug=public-transit">Public Transit</a></li>
+												</ul>
+												<h6 class="industry-title mt-4"><a href="/industries.html?slug=travel-leisure">Travel & Leisure</a></h6>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false">Overview <i class="fas fa-sort-down"></i></a>
