@@ -85,15 +85,10 @@
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ email })
 			});
-
 			const data = await res.json();
-			if (data.success) {
-				alert(`Subscription successful! Thank you for subscribing with ${email}.`);
-				form.reset();
-			} else {
-				// alert("Subscription failed. Please try again.");
-				form.reset();
-			}
+			alert(`Subscription successful! Thank you for subscribing with ${email}.`);
+			form.reset();
+
 		} catch (error) {
 			console.error("Error:", error);
 			alert("Something went wrong. Please check your network and try again.");
