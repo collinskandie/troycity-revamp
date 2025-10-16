@@ -604,20 +604,22 @@
 						</ul>
 						<!--footer_ul2_amrc ends here-->
 					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6 ">
+					<div class="col-lg-3 col-md-6 col-sm-6">
 						<div class="news-box">
 							<h5 class="headin5_amrc col_white_amrc pt2">Newsletter</h5>
 							<p>Get the latest news and ideas to your inbox</p>
-							<form action="#">
+							<form id="newsletterForm">
 								<div class="input-group">
-									<input class="form-control" placeholder="Search for..." type="text">
+									<input class="form-control" placeholder="Enter Email to subscribe..." type="text"
+										name="email" required>
 									<span class="input-group-btn">
-										<button class="btn btn-secondary" type="button">Go!</button>
+										<button class="btn btn-secondary" type="submit">Go!</button>
 									</span>
 								</div>
 							</form>
 						</div>
 					</div>
+
 				</div>
 			</div>
 			<div class="container">
@@ -639,6 +641,7 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/jquery.fancybox.min.js"></script>
 	<script src="js/script.js"></script>
+
 </body>
 
 </html>

@@ -68,5 +68,36 @@
 			this.querySelector('.dropdown-menu').classList.remove('show');
 		});
 	});
+	document.getElementById("newsletterForm").addEventListener("submit", async (event) => {
+		event.preventDefault();
+
+		const form = event.target;
+		const email = form.querySelector("input[type='text']").value.trim();
+
+		if (!email) {
+			alert("Please enter a valid email.");
+			return;
+		}
+
+		try {
+			const res = await fetch("http://localhost:5002/subscribe", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ email })
+			});
+
+			const data = await res.json();
+			if (data.success) {
+				alert(`Subscription successful! Thank you for subscribing with ${email}.`);
+				form.reset();
+			} else {
+				// alert("Subscription failed. Please try again.");
+				form.reset();
+			}
+		} catch (error) {
+			console.error("Error:", error);
+			alert("Something went wrong. Please check your network and try again.");
+		}
+	});
 
 })(window.jQuery);	

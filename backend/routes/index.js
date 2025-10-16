@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Job, OurTeam, ContactUs, Application, OurPartners, MembershipRequest, Publication } = require("../models");
+const { Job, OurTeam, ContactUs, Application, OurPartners, MembershipRequest, Publication, Newsletter } = require("../models");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
 const path = require("path");
@@ -59,8 +59,9 @@ router.get("/", async (req, res) => {
         const applications = await Application.findAll({ include: [{ model: Job, as: "job" }] });
         const membershipRequests = await MembershipRequest.findAll();
         const publications = await Publication.findAll();
+        const newsletterSubscribers = await Newsletter.findAll();
 
-        res.render("index", { jobs, teamMembers, contacts, partners, applications, membershipRequests, publications });
+        res.render("index", { jobs, teamMembers, contacts, partners, applications, membershipRequests, publications, newsletterSubscribers });
     } catch (err) {
         ////console.error("Error fetching admin data:", err);
         res.status(500).send("Internal Server Error");
@@ -174,6 +175,58 @@ router.get("/api/publications/list", async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
+router.post("/subscribe", async (req, res) => {
+    try {
+        console.log("Received subscription request:", req.body);
+        const { email } = req.body;
+        // Here you would typically save the email to your database
+        // For demonstration, we'll just log it
+        console.log(`New subscription from: ${email}`);
+        await Newsletter.create({ email });
+
+        // Send a confirmation email
+        const mailOptions = {
+            from: EMAIL_USER,
+            to: email,
+            subject: "Subscription Confirmation",
+            text: `Thank you for subscribing to our newsletter!`
+        };
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.error("Error sending email:", error);
+            }
+            console.log("Email sent:", info.response);
+        });
+        // email to admin
+        const adminEmail = "info@troycityafrica.com"
+        const adminMailOptions = {
+            from: EMAIL_USER,
+            to: adminEmail,
+            subject: "New Newsletter Subscription",
+            text: `A new user has subscribed to the newsletter with the email: ${email}`
+        };
+        transporter.sendMail(adminMailOptions, (error, info) => {
+            if (error) {
+                return console.error("Error sending email:", error);
+            }
+            console.log("Email sent:", info.response);
+        });
+
+        res.status(200).json({ status: "success", message: "Subscription successful" });
+    } catch (err) {
+        ////console.error("Error processing subscription:", err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+// router.get("/api/newsletter", async (req, res) => {
+//     try {
+//         const subscribers = await Newsletter.findAll();
+//         res.json(subscribers);
+//     } catch (err) {
+//         ////console.error("Error fetching newsletter subscribers:", err);
+//         res.status(500).json({ error: "Internal Server Error" });
+//     }
+// });
 
 router.post("/jobs/delete/:id", async (req, res) => {
     try {
