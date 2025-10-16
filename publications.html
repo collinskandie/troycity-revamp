@@ -27,9 +27,11 @@
 					<div class="col-lg-6">
 						<div class="social-media">
 							<ul>
-								<li><a href="https://www.facebook.com/profile.php?id=61576336976457"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="https://www.facebook.com/profile.php?id=61576336976457"><i
+											class="fab fa-facebook-f"></i></a></li>
 								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="https://www.linkedin.com/in/victor-nadebu-283390bb/"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="https://www.linkedin.com/in/victor-nadebu-283390bb/"><i
+											class="fab fa-linkedin-in"></i></a></li>
 								<li>
 									<a href="https://www.youtube.com/@troycityafrica6769" target="_blank">
 										<i class="fab fa-youtube"></i>
@@ -89,7 +91,7 @@
 						</li>
 
 						<li class="nav-item">
-							
+
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link" href="#" id="navbarDropdownIndustries" data-toggle="dropdown"
@@ -287,12 +289,16 @@
 						<h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
 						<!--headin5_amrc ends here-->
 						<ul class="footer_ul2_amrc">
-              <li><a class="facebook hb-xs-margin" href="https://www.facebook.com/profile.php?id=61576336976457" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a class="twitter hb-xs-margin" href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a class="instagram hb-xs-margin" href="https://wa.me/254113094450"><i class="fab fa-whatsapp"> 254113094450</i></a></li>
-              <li><a class="youtube hb-xs-margin" href="https://www.youtube.com/@troycityafrica6769"><i class="fab fa-youtube"> Troycity</i></a>
-              </li>
-            </ul>
+							<li><a class="facebook hb-xs-margin"
+									href="https://www.facebook.com/profile.php?id=61576336976457" target="_blank"><i
+										class="fab fa-facebook-f"></i></a></li>
+							<li><a class="twitter hb-xs-margin" href="#"><i class="fab fa-twitter"></i></a></li>
+							<li><a class="instagram hb-xs-margin" href="https://wa.me/254113094450"><i
+										class="fab fa-whatsapp"> 254113094450</i></a></li>
+							<li><a class="youtube hb-xs-margin" href="https://www.youtube.com/@troycityafrica6769"><i
+										class="fab fa-youtube"> Troycity</i></a>
+							</li>
+						</ul>
 						<!--footer_ul2_amrc ends here-->
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-6 ">
@@ -326,6 +332,53 @@
 	<script src="js/jquery.appear.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/script.js"></script>
+	<script>
+		let allPublications = [];
+		async function fetchPublications() {
+			try {
+				//const response = await fetch('https://admin.troycityafrica.com/api/publications/list');
+				const response = await fetch('http://localhost:5002/api/publications/list');
+				if (!response.ok) {
+					throw new Error('Network response was not ok ' + response.statusText);
+				}
+				allPublications = await response.json();
+				renderPublications(allPublications);
+			} catch (error) {
+				console.error('There has been a problem with your fetch operation:', error);
+			}
+		}
+		function renderPublications(publications) {
+			const container = document.querySelector('.container.pb-5 .row');
+			container.innerHTML = '';
+
+			if (!publications.length) {
+				container.innerHTML = '<p>No publications available at the moment. Please check back later.</p>';
+				return;
+			}
+			publications.forEach(pub => {
+				const col = document.createElement('div');
+				col.className = 'col-md-4 mb-4';
+				col.innerHTML = `
+					<div class="card h-100 shadow-sm">
+						<div class="card-body">
+							<h5 class="card-title">${pub.title}</h5>
+							<p class="card-text">${pub.description}</p>
+							<a href="${pub.buttonLink}" class="btn btn-primary" target="_blank">Read Report</a>
+						</div>
+					</div>
+				`;
+				container.appendChild(col);
+			});
+		}
+		function filterPublications(keyword) {
+			const filtered = allPublications.filter(pub =>
+				pub.title.toLowerCase().includes(keyword.toLowerCase()) ||
+				pub.description.toLowerCase().includes(keyword.toLowerCase())
+			);
+			renderPublications(filtered);
+		}
+		fetchPublications();
+	</script>
 </body>
 
 </html>

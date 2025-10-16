@@ -22,6 +22,7 @@ db.OurTeam = require("./ourteam")(sequelize, DataTypes);
 db.OurPartners = require("./partners")(sequelize, DataTypes);
 db.Application = require("./Application")(sequelize, DataTypes);
 db.MembershipRequest = require("./MembershipRequest")(sequelize, DataTypes);
+db.Publication = require("./publications")(sequelize, DataTypes);
 
 // Apply associations if any (optional)
 Object.keys(db).forEach((modelName) => {

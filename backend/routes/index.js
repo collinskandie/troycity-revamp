@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Job, OurTeam, ContactUs, Application, OurPartners, MembershipRequest } = require("../models");
+const { Job, OurTeam, ContactUs, Application, OurPartners, MembershipRequest, Publication } = require("../models");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
 const path = require("path");
@@ -51,15 +51,16 @@ transporter = nodemailer.createTransport({
 // Render Admin Panel with all data
 router.get("/", async (req, res) => {
     try {
+        // console.log("Fetching admin data...");
         const jobs = await Job.findAll();
         const teamMembers = await OurTeam.findAll();
         const contacts = await ContactUs.findAll();
         const partners = await OurPartners.findAll();
         const applications = await Application.findAll({ include: [{ model: Job, as: "job" }] });
         const membershipRequests = await MembershipRequest.findAll();
+        const publications = await Publication.findAll();
 
-
-        res.render("index", { jobs, teamMembers, contacts, partners, applications, membershipRequests });
+        res.render("index", { jobs, teamMembers, contacts, partners, applications, membershipRequests, publications });
     } catch (err) {
         ////console.error("Error fetching admin data:", err);
         res.status(500).send("Internal Server Error");
@@ -128,6 +129,51 @@ router.get("/api/jobs", async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
+router.post("/publications", async (req, res) => {
+    try {
+        const { title, description, category, buttonLink, postedDate } = req.body;
+        await Publication.create({ title, description, category, buttonLink, postedDate });
+        res.redirect("/admin");
+    } catch (err) {
+        console.error("Error creating publication:", err);
+        res.status(500).send("Internal Server Error");
+    }
+});
+router.post("/publications/delete/:id", async (req, res) => {
+    try {
+        await Publication.destroy({ where: { id: req.params.id } });
+        res.redirect("/admin");
+    } catch (err) {
+        console.error("Error deleting publication:", err);
+        res.status(500).send("Internal Server Error");
+    }
+});
+router.post("/publications/edit/:id", async (req, res) => {
+    try {
+        const { title, description, category, buttonLink, postedDate } = req.body;
+        await Publication.update(
+            { title, description, category, buttonLink, postedDate },
+            { where: { id: req.params.id } }
+        );
+        res.redirect("/");
+    } catch (err) {
+        console.error("Error updating publication:", err);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+
+
+router.get("/api/publications/list", async (req, res) => {
+    try {
+        const publications = await Publication.findAll();
+        //console.log("Fetched jobs:", jobs);
+        res.json(publications);
+    } catch (err) {
+        ////console.error("Error fetching jobs:", err);
+        res.status(500).send("Internal Server Error");
+    }
+});
 
 router.post("/jobs/delete/:id", async (req, res) => {
     try {
@@ -143,14 +189,6 @@ router.post("/jobs/delete/:id", async (req, res) => {
     }
 });
 
-// Team
-// app.post("/admin/team", upload.single("image"), async (req, res) => {
-//     const { fullName, role } = req.body;
-//     const imageUrl = req.file ? `/uploads/team/${req.file.filename}` : null;
-
-//     await db.Team.create({ fullName, role, imageUrl });
-//     res.redirect("/admin#team");
-// });
 
 router.post("/team", upload.single("image"), async (req, res) => {
     try {
@@ -266,15 +304,16 @@ router.post("/partners/delete/:id", async (req, res) => {
 router.post("/api/contact", async (req, res) => {
     try {
         const contact = await ContactUs.create(req.body);
+
         if (!contact) {
             return res.status(400).json({ error: "Failed to create contact" });
         }
-        // send email to both the admin and the user
+        const troycityafricaEmail = "marketing@troycityafrica.com";
         const mailOptions = {
             from: EMAIL_USER,
-            to: `${contact.email}, ${EMAIL_USER}`, // send to both user and admin
+            to: `${contact.email}, ${troycityafricaEmail}`, // send to both user and admin
             subject: "Contact Form Submission Received",
-            text: `Dear ${contact.name},\n\nThank you for reaching out to us. We have received your message and will get back to you shortly.\n\nBest regards,\nTroycity Africa Team`,
+            text: `Dear ${contact.fullName},\n\nThank you for reaching out to us. We have received your message and will get back to you shortly.\n\nBest regards,\nTroycity Africa Team`,
         };
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
