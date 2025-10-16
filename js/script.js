@@ -80,7 +80,7 @@
 		}
 
 		try {
-			const res = await fetch("http://localhost:5002/subscribe", {
+			const res = await fetch("https://admin.troycityafrica.com/subscribe", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ email })
