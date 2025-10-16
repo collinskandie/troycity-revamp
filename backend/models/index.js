@@ -24,6 +24,7 @@ db.Application = require("./Application")(sequelize, DataTypes);
 db.MembershipRequest = require("./MembershipRequest")(sequelize, DataTypes);
 db.Publication = require("./publications")(sequelize, DataTypes);
 db.Newsletter = require("./newsletter")(sequelize, DataTypes);
+db.AnnualReports = require("./annualreport")(sequelize, DataTypes);
 
 // Apply associations if any (optional)
 Object.keys(db).forEach((modelName) => {

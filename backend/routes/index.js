@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Job, OurTeam, ContactUs, Application, OurPartners, MembershipRequest, Publication, Newsletter } = require("../models");
+const { Job, OurTeam, ContactUs, Application, OurPartners, MembershipRequest, Publication, Newsletter, AnnualReports } = require("../models");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
 const path = require("path");
@@ -60,10 +60,57 @@ router.get("/", async (req, res) => {
         const membershipRequests = await MembershipRequest.findAll();
         const publications = await Publication.findAll();
         const newsletterSubscribers = await Newsletter.findAll();
+        const annualReports = await AnnualReports.findAll();
 
-        res.render("index", { jobs, teamMembers, contacts, partners, applications, membershipRequests, publications, newsletterSubscribers });
+        res.render("index", { jobs, teamMembers, contacts, partners, applications, membershipRequests, publications, newsletterSubscribers, annualReports });
     } catch (err) {
         ////console.error("Error fetching admin data:", err);
+        res.status(500).send("Internal Server Error");
+    }
+});
+router.post("/annual-reports", upload.single("reportFile"), async (req, res) => {
+    try {
+        const { reportTitle, reportYear, description } = req.body;
+        const reportUrl = req.file ? `/${req.file.filename}` : null;
+        await AnnualReports.create({ reportTitle, reportYear, description, reportUrl });
+        res.redirect("/admin");
+    } catch (err) {
+        console.error("Error creating annual report:", err);
+        res.status(500).send("Internal Server Error");
+    }
+});
+router.get("/api/annual-reports", async (req, res) => {
+    try {
+        const reports = await AnnualReports.findAll({ order: [["reportYear", "DESC"]] });
+        res.json(reports);
+    } catch (err) {
+        console.error("Error fetching annual reports:", err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+router.post("/annual-reports/delete/:id", async (req, res) => {
+    try {
+        const reportId = req.params.id;
+        await AnnualReports.destroy({ where: { id: reportId } });
+        res.redirect("/");
+    } catch (err) {
+        console.error("Error deleting annual report:", err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+router.post("/annual-reports/edit/:id", upload.single("reportFile"), async (req, res) => {
+    try {
+        const { reportTitle, reportYear, description } = req.body;
+        const updates = { reportTitle, reportYear, description };
+
+        if (req.file) {
+            updates.reportUrl = `/reports/${req.file.filename}`;
+        }
+
+        await AnnualReports.update(updates, { where: { id: req.params.id } });
+        res.redirect("/admin");
+    } catch (err) {
+        console.error("Error updating annual report:", err);
         res.status(500).send("Internal Server Error");
     }
 });

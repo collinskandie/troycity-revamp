@@ -27,9 +27,11 @@
 					<div class="col-lg-6">
 						<div class="social-media">
 							<ul>
-								<li><a href="https://www.facebook.com/profile.php?id=61576336976457"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="https://www.facebook.com/profile.php?id=61576336976457"><i
+											class="fab fa-facebook-f"></i></a></li>
 								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="https://www.linkedin.com/in/victor-nadebu-283390bb/"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="https://www.linkedin.com/in/victor-nadebu-283390bb/"><i
+											class="fab fa-linkedin-in"></i></a></li>
 								<li>
 									<a href="https://www.youtube.com/@troycityafrica6769" target="_blank">
 										<i class="fab fa-youtube"></i>
@@ -89,7 +91,7 @@
 						</li>
 
 						<li class="nav-item">
-							
+
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link" href="#" id="navbarDropdownIndustries" data-toggle="dropdown"
@@ -179,37 +181,13 @@
 	<!-- Report Highlights -->
 	<div class="container py-5">
 		<h2 class="text-center mb-4">Highlights by Year</h2>
-		<div class="row">
-			<div class="col-md-4 mb-4">
-				<div class="card h-100 shadow-sm">
-					<div class="card-body">
-						<h5 class="card-title">2024 Annual Report</h5>
-						<p class="card-text">A year of growth, sustainability, and innovation across Africa.</p>
-						<a href="pdfs/TroycityAfrica_AnnualReport2024.pdf" class="btn btn-outline-primary btn-sm"
-							target="_blank">Download PDF</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 mb-4">
-				<div class="card h-100 shadow-sm">
-					<div class="card-body">
-						<h5 class="card-title">2023 Annual Report</h5>
-						<p class="card-text">Showcasing our impact and strategic initiatives during a pivotal year.</p>
-						<a href="pdfs/TroycityAfrica_AnnualReport2023.pdf" class="btn btn-outline-primary btn-sm"
-							target="_blank">Download PDF</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 mb-4">
-				<div class="card h-100 shadow-sm">
-					<div class="card-body">
-						<h5 class="card-title">2022 Annual Report</h5>
-						<p class="card-text">Our journey of resilience and community-driven growth.</p>
-						<a href="pdfs/TroycityAfrica_AnnualReport2022.pdf" class="btn btn-outline-primary btn-sm"
-							target="_blank">Download PDF</a>
-					</div>
-				</div>
-			</div>
+		<div id="reportsContainer" class="row justify-content-center">
+			<!-- Dynamic cards will appear here -->
+		</div>
+
+		<!-- Loading & Error States -->
+		<div id="loadingMessage" class="text-center text-muted">Loading reports...</div>
+		<div id="errorMessage" class="text-center text-danger d-none">Failed to load reports. Please try again later.
 		</div>
 	</div>
 
@@ -222,21 +200,6 @@
 	</div>
 
 	<!-- Contact Us -->
-	<div class="touch-line">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8">
-					<p>We Believe That Location Doesn't Matter. Though We Are Based In Kenya, Our Customers Span
-						Across the World. So, Please Don't Hesitate To Drop Us A Line!</p>
-				</div>
-				<div class="col-md-4">
-					<a class="btn btn-lg btn-secondary btn-block" href="contact.html"> Contact Us </a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- /.container -->
 	<!--footer starts from here-->
 	<div class="touch-line">
 		<div class="container">
@@ -304,12 +267,16 @@
 					<h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
 					<!--headin5_amrc ends here-->
 					<ul class="footer_ul2_amrc">
-              <li><a class="facebook hb-xs-margin" href="https://www.facebook.com/profile.php?id=61576336976457" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a class="twitter hb-xs-margin" href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a class="instagram hb-xs-margin" href="https://wa.me/254113094450"><i class="fab fa-whatsapp"> 254113094450</i></a></li>
-              <li><a class="youtube hb-xs-margin" href="https://www.youtube.com/@troycityafrica6769"><i class="fab fa-youtube"> Troycity</i></a>
-              </li>
-            </ul>
+						<li><a class="facebook hb-xs-margin"
+								href="https://www.facebook.com/profile.php?id=61576336976457" target="_blank"><i
+									class="fab fa-facebook-f"></i></a></li>
+						<li><a class="twitter hb-xs-margin" href="#"><i class="fab fa-twitter"></i></a></li>
+						<li><a class="instagram hb-xs-margin" href="https://wa.me/254113094450"><i
+									class="fab fa-whatsapp"> 254113094450</i></a></li>
+						<li><a class="youtube hb-xs-margin" href="https://www.youtube.com/@troycityafrica6769"><i
+									class="fab fa-youtube"> Troycity</i></a>
+						</li>
+					</ul>
 					<!--footer_ul2_amrc ends here-->
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6 ">
@@ -343,6 +310,51 @@
 	<script src="js/jquery.appear.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/script.js"></script>
+	<script>
+		async function fetchAnnualReports() {
+			const container = document.getElementById('reportsContainer');
+			const loadingMsg = document.getElementById('loadingMessage');
+			const errorMsg = document.getElementById('errorMessage');
+
+			try {
+				const response = await fetch('http://localhost:5002/api/annual-reports');
+				if (!response.ok) throw new Error('Network response was not ok');
+
+				const reports = await response.json();
+				container.innerHTML = ''; // clear placeholder
+				loadingMsg.style.display = 'none';
+
+				if (reports.length === 0) {
+					container.innerHTML = `<p class="text-center text-muted">No reports available yet.</p>`;
+					return;
+				}
+
+				reports.forEach(report => {
+					const card = document.createElement('div');
+					card.className = 'col-md-4 mb-4';
+					card.innerHTML = `
+						<div class="card h-100 shadow-sm border-0">
+							<div class="card-body">
+								<h5 class="card-title">${report.reportTitle || 'Untitled Report'}</h5>
+								<p class="card-text">${report.description || 'No description provided.'}</p>
+								<p class="text-muted mb-2"><strong>Year:</strong> ${report.reportYear}</p>
+								<a href="${report.reportUrl}" target="_blank" class="btn btn-outline-primary btn-sm">
+									<i class="fas fa-file-pdf"></i> Download PDF
+								</a>
+							</div>
+						</div>
+					`;
+					container.appendChild(card);
+				});
+			} catch (error) {
+				console.error('Error fetching reports:', error);
+				errorMsg.classList.remove('d-none');
+				loadingMsg.style.display = 'none';
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', fetchAnnualReports);
+	</script>
 </body>
 
 </html>
