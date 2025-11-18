@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Job, OurTeam, ContactUs, Application, OurPartners, MembershipRequest, Publication, Newsletter, AnnualReports } = require("../models");
+const { Job, OurTeam, ContactUs, Application, OurPartners, MembershipRequest, Publication, Newsletter, AnnualReports, ShortCourseApplication } = require("../models");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
 const path = require("path");
@@ -57,13 +57,91 @@ router.get("/", async (req, res) => {
         const publications = await Publication.findAll();
         const newsletterSubscribers = await Newsletter.findAll();
         const annualReports = await AnnualReports.findAll();
+        const shortCourseApplicants = await ShortCourseApplication.findAll();
 
-        res.render("index", { jobs, teamMembers, contacts, partners, applications, membershipRequests, publications, newsletterSubscribers, annualReports });
+        res.render("index", { jobs, teamMembers, contacts, partners, applications, membershipRequests, publications, newsletterSubscribers, annualReports, shortCourseApplicants });
     } catch (err) {
         ////console.error("Error fetching admin data:", err);
         res.status(500).send("Internal Server Error");
     }
 });
+router.post(
+    '/short_application_form',
+    upload.fields([
+        { name: 'idUpload', maxCount: 1 },
+        { name: 'academicFiles', maxCount: 5 }
+    ]),
+    async (req, res) => {
+        try {
+            // Collect file paths
+            const idUploadPath = req.files.idUpload ? req.files.idUpload[0].path : null;
+            const academicFilesPaths = req.files.academicFiles
+                ? req.files.academicFiles.map(f => f.path)
+                : [];
+
+            // Save to database
+            const application = await ShortCourseApplication.create({
+                firstName: req.body.firstName,
+                middleName: req.body.middleName,
+                lastName: req.body.lastName,
+                gender: req.body.gender,
+                dob: req.body.dob,
+                citizenship: req.body.citizenship,
+                nationalId: req.body.nationalId,
+                idUpload: idUploadPath,
+                mobile: req.body.mobile,
+                altMobile: req.body.altMobile,
+                email: req.body.email,
+                kinName: req.body.kinName,
+                kinRelationship: req.body.kinRelationship,
+                kinPhone: req.body.kinPhone,
+                kinEmail: req.body.kinEmail,
+                programmeLevel: req.body.programmeLevel,
+                studyMode: req.body.studyMode,
+                educationLevel: req.body.educationLevel,
+                academicFiles: academicFilesPaths,
+                declarationConfirmed: req.body.declarationConfirmed === 'on' ? true : false,
+                dataConsent: req.body.dataConsent === 'on' ? true : false,
+                signature: req.body.signature
+            });
+
+            // send email notifications here to troycityEmail and applicant email 
+            const troycityEmail = "info@troycityafrica.com"
+            const mailOptions = {
+                from: EMAIL_USER,
+                to: `${application.email}`, // send to both user and admin
+                subject: "Short Course Application Received",
+                text: `Dear ${application.firstName} ${application.lastName},\n\nThank you for applying for the short course. We have received your application and will get back to you shortly.\n\nBest regards,\nTroycity Africa Team`,
+            };
+            transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    console.error("Error sending email:", error);
+                } else {
+                    console.log("Email sent:", info.response);
+                }
+            });
+            const adminMailOptions = {
+                from: EMAIL_USER,
+                to: troycityEmail, // send to admin
+                subject: "New Short Course Application Received",
+                text: `A new short course application has been received from ${application.firstName} ${application.lastName} (${application.email}).`,
+            };
+            transporter.sendMail(adminMailOptions, (error, info) => {
+                if (error) {
+                    console.error("Error sending email:", error);
+                } else {
+                    console.log("Email sent:", info.response);
+                }
+            });
+
+            res.json({ success: true, message: 'Application submitted successfully!', application });
+        } catch (err) {
+            console.error(err);
+            res.status(500).json({ success: false, message: 'Server error', error: err.message });
+        }
+    }
+);
+
 router.post("/annual-reports", upload.single("reportFile"), async (req, res) => {
     try {
         const { reportTitle, reportYear, description } = req.body;

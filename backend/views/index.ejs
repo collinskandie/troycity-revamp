@@ -57,6 +57,8 @@
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#newsletter">Newsletter
           Subscribers</button>
       </li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#shortcourses">Short Course Applicants</button>
+      </li>
     </ul>
 
     <div class="tab-content">
@@ -125,7 +127,7 @@
           </tbody>
         </table>
       </div>
-      <div class="tab-pane fade show active" id="annual-reports">
+      <div class="tab-pane fade show" id="annual-reports">
         <!-- Add Annual Report Form -->
         <form action="/admin/annual-reports" method="POST" enctype="multipart/form-data"
           class="bg-white p-4 rounded shadow-sm mb-4">
@@ -599,6 +601,66 @@
                 <td>
                   <form action="mailto:<%= m.email %>" method="POST" class="d-inline"
                     onsubmit="return confirm('You are about to send an email to this user. Do you want to continue?');">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                      <i class="fas fa-envelope"></i> Send Email
+                    </button>
+                  </form>
+                </td>
+                <td></td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="shortcourses">
+        <h3>Short Course Applicant</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Date of Birth</th>
+              <th>Gender</th>
+              <th>Citizenship</th>
+              <th>Phone Number</th>
+              <th>Program registered</th>
+              <th>Mode of Learning</th> 
+              <th>Signature</th>
+              
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% shortCourseApplicants.forEach(s=> { %>
+              <tr>
+                <td>
+                  <%= s.firstName %> <%= s.lastName %>
+                </td>
+                <td>
+                  <%= s.email %>
+                </td>
+                <td>
+                  <%= s.dob %>
+                </td>
+                <td>
+                  <%= s.gender %>
+                </td>
+                <td>
+                  <%= s.citizenship %>
+                </td>
+                <td>
+                  <%= s.programmeLevel %>
+                </td>
+                <td>
+                  <%= s.studyMode %>
+                </td>
+                <td>
+                  <%= s.signature %>
+                </td>
+                <td>
+                <td>
+                  <form action="mailto:<%= s.email %>" method="POST" class="d-inline"
+                    onsubmit="return confirm('You are about to send an email to this applicant. Do you want to continue?');">
                     <button type="submit" class="btn btn-primary btn-sm">
                       <i class="fas fa-envelope"></i> Send Email
                     </button>
