@@ -57,7 +57,8 @@
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#newsletter">Newsletter
           Subscribers</button>
       </li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#shortcourses">Short Course Applicants</button>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#shortcourses">Short Course
+          Applicants</button>
       </li>
     </ul>
 
@@ -286,6 +287,7 @@
 
           <input class="form-control mb-2" name="fullName" placeholder="Full Name" required />
           <input class="form-control mb-2" name="role" placeholder="Role" required />
+          <textarea class="form-control mb-2" name="bio" placeholder="Short Bio" rows="3"></textarea>
 
           <!-- Replace URL input with file upload -->
           <label class="form-label">Profile Image</label>
@@ -300,6 +302,7 @@
             <tr>
               <th>Name</th>
               <th>Role</th>
+              <th>Bio</th>
               <th>Image</th>
               <th>Actions</th>
             </tr>
@@ -313,13 +316,19 @@
                 <td>
                   <%= m.role %>
                 </td>
-                <td><img src="<%= m.imageUrl %>" style="height:40px; border-radius:4px;" /></td>
+                <td>
+                  <%= m.bio %>
+                </td>
+                <td>
+                  <img src="https://www.troycityafrica.com/<%= m.imageUrl %>" style="height:40px; border-radius:4px;" />
+                </td>
                 <td>
                   <!-- Edit Button -->
-                  <button type="button" class="btn btn-warning btn-sm me-2"
-                    onclick="editMember('<%= m.id %>', '<%= m.fullName %>', '<%= m.role %>')">
+                  <button type="button" class="btn btn-warning btn-sm me-2 edit-btn" data-id="<%= m.id %>"
+                    data-name="<%= m.fullName %>" data-role="<%= m.role %>" data-bio="<%= m.bio %>">
                     <i class="fas fa-edit"></i> Edit
                   </button>
+
 
                   <!-- Delete Form -->
                   <form action="/team/delete/<%= m.id %>" method="POST" class="d-inline"
@@ -347,6 +356,7 @@
                 <input type="text" class="form-control mb-2" name="fullName" id="editName" placeholder="Full Name"
                   required>
                 <input type="text" class="form-control mb-2" name="role" id="editRole" placeholder="Role" required>
+                <textarea class="form-control mb-2" name="bio" id="editBio" placeholder="Bio" rows="3"></textarea>
                 <label class="form-label">Change Image (optional)</label>
                 <input type="file" class="form-control mb-3" name="image" accept="image/*">
               </div>
@@ -624,9 +634,9 @@
               <th>Citizenship</th>
               <th>Phone Number</th>
               <th>Program registered</th>
-              <th>Mode of Learning</th> 
+              <th>Mode of Learning</th>
               <th>Signature</th>
-              
+
               <th>Action</th>
             </tr>
           </thead>
@@ -634,7 +644,8 @@
             <% shortCourseApplicants.forEach(s=> { %>
               <tr>
                 <td>
-                  <%= s.firstName %> <%= s.lastName %>
+                  <%= s.firstName %>
+                    <%= s.lastName %>
                 </td>
                 <td>
                   <%= s.email %>
@@ -695,21 +706,33 @@
       const modal = new bootstrap.Modal(modalElement);
       modal.show();
     }
-    function editMember(id, name, role) {
+
+  </script>
+  <script>
+    document.addEventListener("click", function (e) {
+      const btn = e.target.closest(".edit-btn");
+      if (!btn) return;
+
+      const id = btn.dataset.id;
+
       // Fill modal fields
       document.getElementById("editId").value = id;
-      document.getElementById("editName").value = name;
-      document.getElementById("editRole").value = role;
+      document.getElementById("editName").value = btn.dataset.name;
+      document.getElementById("editRole").value = btn.dataset.role;
+      document.getElementById("editBio").value = btn.dataset.bio;
 
-      // Set form action dynamically
+      // Set form action dynamically (IMPORTANT)
       const form = document.getElementById("editTeamForm");
       form.action = `/team/edit/${id}`;
 
-      // Show modal (requires Bootstrap JS)
-      const editModal = new bootstrap.Modal(document.getElementById("editTeamModal"));
-      editModal.show();
-    }
+      // Show modal (Bootstrap 5)
+      const modal = new bootstrap.Modal(
+        document.getElementById("editTeamModal")
+      );
+      modal.show();
+    });
   </script>
+
   <script>
     function editReport(id, title, year, description) {
       document.getElementById('editReportId').value = id;

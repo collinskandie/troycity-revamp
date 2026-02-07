@@ -367,10 +367,10 @@ router.post("/jobs/delete/:id", async (req, res) => {
 router.post("/team", upload.single("image"), async (req, res) => {
     try {
         console.log("Received team member data:", req.body, req.file);
-        const { fullName, role } = req.body;
+        const { fullName, role, bio } = req.body;
         const imageUrl = req.file ? `/team/${req.file.filename}` : null;
-        await OurTeam.create({ fullName, role, imageUrl });
-        res.redirect("/admin");
+        await OurTeam.create({ fullName, role, bio, imageUrl });
+        // res.redirect("/admin");
 
         // await db.Team.create({ fullName, role, imageUrl });
         console.log("Team member created successfully");
@@ -382,8 +382,8 @@ router.post("/team", upload.single("image"), async (req, res) => {
 });
 
 router.post("/team/edit/:id", upload.single("image"), async (req, res) => {
-    const { fullName, role } = req.body;
-    const updates = { fullName, role };
+    const { fullName, role, bio } = req.body;
+    const updates = { fullName, role, bio };
 
     if (req.file) updates.imageUrl = `/team/${req.file.filename}`;
 
@@ -406,6 +406,7 @@ router.get("/api/partner-team", async (req, res) => {
             team: teamMembers.map(member => ({
                 name: member.fullName,
                 role: member.role,
+                bio: member.bio,
                 image: member.imageUrl,
                 socials: {
                     facebook: member.facebook,
