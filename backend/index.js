@@ -3,8 +3,13 @@ var express = require("express");
 var path = require("path");
 require("dotenv").config();
 var cookieParser = require("cookie-parser");
+const session = require("express-session");
 var indexRouter = require("./routes/index");
+var authRouter = require("./routes/authRoutes");
 const winston = require("winston");
+const bcrypt = require("bcrypt");
+const expressLayouts = require('express-ejs-layouts');
+
 
 const logger = winston.createLogger({
   level: "info", // Levels: error, warn, info, verbose, debug, silly
@@ -44,18 +49,45 @@ sequelize
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(session({
+  name: "admin.sid",
+  secret: process.env.SESSION_SECRET || "dev-secret",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    sameSite: "lax"
+  }
+}));
+
 app.use(cors());
 
-// Set EJS as the view engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+app.use(expressLayouts);
+app.set('layout', 'layout'); // 👈 DEFAULT LAYOUT
+
 app.use("/admin", indexRouter);
 app.use("/", indexRouter);
+app.use("/auth", authRouter);
+
+app.get("/login", (req, res) => {
+  res.render("login", {
+    layout: false,   // 👈 THIS IS THE KEY
+    error: null
+  });
+});
+app.get("/404", (req, res) => {
+  res.status(404).render("404", { message: "Page not found" });
+});
+
+
 
 // catch 404 and forward to error handler
 app.use((req, res) => {
-  res.status(404).render("404", { message: "Page not found" });
+  res.status(404).render("404", { layout: false, message: "Page not found" });
 });
 
 // error handler

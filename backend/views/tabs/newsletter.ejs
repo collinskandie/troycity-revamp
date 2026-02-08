@@ -1,0 +1,30 @@
+<div class="tab-pane fade" id="newsletter">
+    <h3>Newsletter Subscribers</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% newsletterSubscribers.forEach(m=> { %>
+                <tr>
+                    <td>
+                        <%= m.email %>
+                    </td>
+                    <td>
+                    <td>
+                        <form action="mailto:<%= m.email %>" method="POST" class="d-inline"
+                            onsubmit="return confirm('You are about to send an email to this user. Do you want to continue?');">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fas fa-envelope"></i> Send Email
+                            </button>
+                        </form>
+                    </td>
+                    <td></td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</div>

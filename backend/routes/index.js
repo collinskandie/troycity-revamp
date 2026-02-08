@@ -1,3 +1,4 @@
+// routes/index.js
 const express = require("express");
 const router = express.Router();
 const { Job, OurTeam, ContactUs, Application, OurPartners, MembershipRequest, Publication, Newsletter, AnnualReports, ShortCourseApplication } = require("../models");
@@ -7,6 +8,7 @@ const path = require("path");
 const fs = require("fs");
 // Multer setup
 const uploadDir = path.join(__dirname, "..", "uploads");
+const { requireAuth } = require("../controllers/userController");
 
 // Ensure uploads folder exists
 if (!fs.existsSync(uploadDir)) {
@@ -44,11 +46,12 @@ transporter = nodemailer.createTransport({
     },
 });
 
+
+
 // Render Admin Panel with all data
-router.get("/", async (req, res) => {
+router.get("/", requireAuth, async (req, res) => {
     try {
-        // console.log("Fetching admin data...");
-        const jobs = await Job.findAll();
+         const jobs = await Job.findAll();
         const teamMembers = await OurTeam.findAll();
         const contacts = await ContactUs.findAll();
         const partners = await OurPartners.findAll();
@@ -59,7 +62,10 @@ router.get("/", async (req, res) => {
         const annualReports = await AnnualReports.findAll();
         const shortCourseApplicants = await ShortCourseApplication.findAll();
 
-        res.render("index", { jobs, teamMembers, contacts, partners, applications, membershipRequests, publications, newsletterSubscribers, annualReports, shortCourseApplicants });
+        res.render("index", { title: 'Admin Dashboard', jobs, teamMembers, contacts, partners, applications, membershipRequests, publications, newsletterSubscribers, annualReports, shortCourseApplicants });
+
+
+
     } catch (err) {
         ////console.error("Error fetching admin data:", err);
         res.status(500).send("Internal Server Error");
@@ -70,7 +76,7 @@ router.post(
     upload.fields([
         { name: 'idUpload', maxCount: 1 },
         { name: 'academicFiles', maxCount: 5 }
-    ]),
+    ]), requireAuth,
     async (req, res) => {
         try {
             // Collect file paths
@@ -142,7 +148,7 @@ router.post(
     }
 );
 
-router.post("/annual-reports", upload.single("reportFile"), async (req, res) => {
+router.post("/annual-reports",requireAuth, upload.single("reportFile"), async (req, res) => {
     try {
         const { reportTitle, reportYear, description } = req.body;
         const reportUrl = req.file ? `/${req.file.filename}` : null;
@@ -162,7 +168,7 @@ router.get("/api/annual-reports", async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
-router.post("/annual-reports/delete/:id", async (req, res) => {
+router.post("/annual-reports/delete/:id",requireAuth, async (req, res) => {
     try {
         const reportId = req.params.id;
         await AnnualReports.destroy({ where: { id: reportId } });
@@ -172,7 +178,7 @@ router.post("/annual-reports/delete/:id", async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
-router.post("/annual-reports/edit/:id", upload.single("reportFile"), async (req, res) => {
+router.post("/annual-reports/edit/:id",requireAuth, upload.single("reportFile"), async (req, res) => {
     try {
         const { reportTitle, reportYear, description } = req.body;
         const updates = { reportTitle, reportYear, description };
@@ -232,7 +238,7 @@ router.post("/job-applications", upload.single("cv"), async (req, res) => {
     }
 });
 
-router.post("/jobs", async (req, res) => {
+router.post("/jobs",requireAuth, async (req, res) => {
     try {
         await Job.create(req.body);
         res.redirect("/admin");
@@ -251,7 +257,7 @@ router.get("/api/jobs", async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
-router.post("/publications", async (req, res) => {
+router.post("/publications",requireAuth, async (req, res) => {
     try {
         const { title, description, category, buttonLink, postedDate } = req.body;
         await Publication.create({ title, description, category, buttonLink, postedDate });
@@ -261,7 +267,7 @@ router.post("/publications", async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
-router.post("/publications/delete/:id", async (req, res) => {
+router.post("/publications/delete/:id",requireAuth, async (req, res) => {
     try {
         await Publication.destroy({ where: { id: req.params.id } });
         res.redirect("/admin");
@@ -270,7 +276,7 @@ router.post("/publications/delete/:id", async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
-router.post("/publications/edit/:id", async (req, res) => {
+router.post("/publications/edit/:id",requireAuth, async (req, res) => {
     try {
         const { title, description, category, buttonLink, postedDate } = req.body;
         await Publication.update(
@@ -283,9 +289,6 @@ router.post("/publications/edit/:id", async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
-
-
-
 router.get("/api/publications/list", async (req, res) => {
     try {
         const publications = await Publication.findAll();
@@ -339,17 +342,8 @@ router.post("/subscribe", async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
-// router.get("/api/newsletter", async (req, res) => {
-//     try {
-//         const subscribers = await Newsletter.findAll();
-//         res.json(subscribers);
-//     } catch (err) {
-//         ////console.error("Error fetching newsletter subscribers:", err);
-//         res.status(500).json({ error: "Internal Server Error" });
-//     }
-// });
 
-router.post("/jobs/delete/:id", async (req, res) => {
+router.post("/jobs/delete/:id",requireAuth, async (req, res) => {
     try {
         const jobId = req.params.id;
         ////console.log("Deleting job with ID: ", jobId);
@@ -364,7 +358,7 @@ router.post("/jobs/delete/:id", async (req, res) => {
 });
 
 
-router.post("/team", upload.single("image"), async (req, res) => {
+router.post("/team",requireAuth, upload.single("image"), async (req, res) => {
     try {
         console.log("Received team member data:", req.body, req.file);
         const { fullName, role, bio } = req.body;
@@ -381,7 +375,7 @@ router.post("/team", upload.single("image"), async (req, res) => {
     }
 });
 
-router.post("/team/edit/:id", upload.single("image"), async (req, res) => {
+router.post("/team/edit/:id",requireAuth, upload.single("image"), async (req, res) => {
     const { fullName, role, bio } = req.body;
     const updates = { fullName, role, bio };
 
@@ -428,7 +422,7 @@ router.get("/api/partner-team", async (req, res) => {
 });
 
 
-router.post("/team/delete/:id", async (req, res) => {
+router.post("/team/delete/:id",requireAuth, async (req, res) => {
     try {
         const memberId = req.params.id;
         ////console.log("Deleting team member with ID: ", memberId);
@@ -455,7 +449,7 @@ router.post("/contact", async (req, res) => {
 
 // Partners
 // Partners
-router.post("/partners", async (req, res) => {
+router.post("/partners",requireAuth, async (req, res) => {
     try {
         await OurPartners.create(req.body);
         res.redirect("/admin");
@@ -464,11 +458,11 @@ router.post("/partners", async (req, res) => {
     }
 });
 
-router.post("/partners/delete/:id", async (req, res) => {
+router.post("/partners/delete/:id",requireAuth, async (req, res) => {
     try {
         const partnerId = req.params.id;
         await OurPartners.destroy({ where: { id: partnerId } });
-        res.redirect("/");
+        res.redirect("/admin");
     } catch (err) {
         res.status(500).json({ error: "Internal Server Error" });
     }

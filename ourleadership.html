@@ -472,15 +472,10 @@
 
 			$("#teamModal").modal("show");
 		});
-
 		async function loadPartnerTeam() {
 			try {
 				const res = await fetch("https://admin.troycityafrica.com/api/partner-team");
-				//const res = await fetch("http://127.0.0.1:5002/api/partner-team");
 				const data = await res.json();
-
-				console.log("Fetched partner team data:", data);
-
 				/* ===== TEAM SECTION ===== */
 				const teamContainer = document.getElementById("team-container");
 				teamContainer.innerHTML = data.team.map(member => `
@@ -576,7 +571,7 @@
 
 				<div class="modal-header">
 					<h5 class="modal-title" id="teamModalTitle"></h5>
-					
+
 					<button type="button" class="close" data-dismiss="modal">
 						&times;
 					</button>
